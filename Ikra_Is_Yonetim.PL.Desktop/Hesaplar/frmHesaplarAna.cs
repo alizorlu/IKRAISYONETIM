@@ -9,19 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ikra_Is_Yonetim.PL.Desktop
+namespace Ikra_Is_Yonetim.PL.Desktop.Hesaplar
 {
-    public partial class frmHome : KryptonForm
+    public partial class frmHesaplarAna : KryptonForm
     {
-        public frmHome()
+        public frmHesaplarAna()
         {
             InitializeComponent();
         }
 
-        private void hesaplarBtn_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
-            Hesaplar.frmHesaplarAna frm = new Hesaplar.frmHesaplarAna();
-            frm.ShowDialog();
+            frmAdd ac = new frmAdd();
+            ac.ShowDialog();
         }
     }
 }

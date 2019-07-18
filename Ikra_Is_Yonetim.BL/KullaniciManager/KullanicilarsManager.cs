@@ -21,6 +21,7 @@ namespace Ikra_Is_Yonetim.BL.KullaniciManager
         void Delete(Guid id);
         Kullanicilar Query(string username, string password);
         Kullanicilar Query(string phone);
+        Kullanicilar QueryEmail(string email);
         
     }
     public class EFKullaniciManager : IKullaniciManager
@@ -81,6 +82,11 @@ namespace Ikra_Is_Yonetim.BL.KullaniciManager
         public Kullanicilar Query(string phone)
         {
             return AllActive().Where(s => s.Phone.Equals(phone)).FirstOrDefault();
+        }
+
+        public Kullanicilar QueryEmail(string email)
+        {
+            return AllActive().Where(s => s.Email.Equals(email)).FirstOrDefault();
         }
 
         public void Update(Kullanicilar model)
@@ -145,6 +151,11 @@ namespace Ikra_Is_Yonetim.BL.KullaniciManager
         public Kullanicilar Query(string phone)
         {
             return _manager.Query(phone);
+        }
+
+        public Kullanicilar QueryEmail(string email)
+        {
+            return _manager.QueryEmail(email);
         }
 
         public void Update(Kullanicilar model)

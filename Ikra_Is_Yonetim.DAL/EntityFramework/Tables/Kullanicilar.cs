@@ -12,8 +12,6 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
     {
         Admin,
         Personel,
-        Yonetici,
-        Mudur,
         Musteri
     }
     [Table("Kullanicilar",Schema ="IkraGenel")]
@@ -49,6 +47,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         [Required]
         [DataType(DataType.Text)]
         public string Address { get; set; }
+        public int MealCount { get; set; } = 0;
 
     }
 }

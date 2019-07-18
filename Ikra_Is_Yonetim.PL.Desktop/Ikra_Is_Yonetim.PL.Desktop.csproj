@@ -95,6 +95,18 @@
     <Compile Include="frmLoginUserList.Designer.cs">
       <DependentUpon>frmLoginUserList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hesaplar\frmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hesaplar\frmAdd.Designer.cs">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hesaplar\frmHesaplarAna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hesaplar\frmHesaplarAna.Designer.cs">
+      <DependentUpon>frmHesaplarAna.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ninject\NinjectBindings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginUserList.resx">
       <DependentUpon>frmLoginUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hesaplar\frmAdd.resx">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hesaplar\frmHesaplarAna.resx">
+      <DependentUpon>frmHesaplarAna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +153,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
+      <Project>{69504593-641d-4dd0-b47c-be7c014ffd8a}</Project>
+      <Name>Ikra_Is_Yonetim.3rdApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ikra_Is_Yonetim.BL\Ikra_Is_Yonetim.BL.csproj">
       <Project>{a4c4fce4-8ed0-4333-b5e6-a70ce39b5fb5}</Project>
       <Name>Ikra_Is_Yonetim.BL</Name>
@@ -167,7 +189,10 @@
     <None Include="Resources\suitcase.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Siparis\" />
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

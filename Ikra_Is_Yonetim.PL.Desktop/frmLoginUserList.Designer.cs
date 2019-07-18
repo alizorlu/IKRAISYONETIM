@@ -44,8 +44,14 @@
             this.userList.RowTemplate.Height = 24;
             this.userList.Size = new System.Drawing.Size(243, 668);
             this.userList.TabIndex = 0;
+            this.userList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userList_CellContentClick);
+            this.userList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userList_CellContentDoubleClick);
             this.userList.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.userList_CellContextMenuStripNeeded);
             this.userList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userList_CellDoubleClick);
+            this.userList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userList_CellMouseClick);
+            this.userList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userList_CellMouseDoubleClick);
+            this.userList.DoubleClick += new System.EventHandler(this.userList_DoubleClick);
+            this.userList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userList_MouseClick);
             this.userList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.userList_MouseDoubleClick);
             // 
             // frmLoginUserList

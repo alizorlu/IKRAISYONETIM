@@ -30,7 +30,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop
         public void FillList()
         {
            
-            userList.DataSource = _kullaniciManager.AllActive().ToList();
+            userList.DataSource = _kullaniciManager.AllAdmin().ToList();
             userList.Columns[0].Visible = false;
             userList.Columns[1].Visible = false;
             userList.Columns[2].Visible = false;
@@ -43,6 +43,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop
             userList.Columns[9].Visible = false;
             userList.Columns["UserName"].Visible = true;
             userList.Columns["Address"].Visible = false;
+            userList.Columns["MealCount"].Visible = false;
         }
         protected override void OnActivated(EventArgs e)
         {
@@ -63,10 +64,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop
             catch (Exception)
             {
 
-                
+
             }
-            
-            
+
+
         }
 
         private void userList_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -77,6 +78,89 @@ namespace Ikra_Is_Yonetim.PL.Desktop
         private void userList_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
         {
 
+        }
+
+        private void userList_DoubleClick(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void userList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Kullanicilar selected =
+                (Kullanicilar)userList.
+                SelectedRows[e.RowIndex]
+                .DataBoundItem;
+                frmLoginUser._selected = selected;
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void userList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                Kullanicilar selected =
+                (Kullanicilar)userList.
+                SelectedRows[e.RowIndex]
+                .DataBoundItem;
+                frmLoginUser._selected = selected;
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void userList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Kullanicilar selected =
+                (Kullanicilar)userList.
+                SelectedRows[e.RowIndex]
+                .DataBoundItem;
+                frmLoginUser._selected = selected;
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void userList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                Kullanicilar selected =
+                (Kullanicilar)userList.
+                SelectedRows[e.RowIndex]
+                .DataBoundItem;
+                frmLoginUser._selected = selected;
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void userList_MouseClick(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

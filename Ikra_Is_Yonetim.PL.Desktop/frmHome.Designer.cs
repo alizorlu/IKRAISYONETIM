@@ -36,7 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.hesaplarBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.menüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -90,7 +90,7 @@
             // 
             this.kryptonPanel1.AutoScroll = true;
             this.kryptonPanel1.Controls.Add(this.kryptonButton3);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton2);
+            this.kryptonPanel1.Controls.Add(this.hesaplarBtn);
             this.kryptonPanel1.Controls.Add(this.kryptonButton1);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 28);
@@ -111,17 +111,18 @@
             this.kryptonButton3.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.suitcase;
             this.kryptonButton3.Values.Text = " KASA İŞLEMLER";
             // 
-            // kryptonButton2
+            // hesaplarBtn
             // 
-            this.kryptonButton2.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
-            this.kryptonButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton2.Location = new System.Drawing.Point(257, 6);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
-            this.kryptonButton2.Size = new System.Drawing.Size(239, 90);
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.team;
-            this.kryptonButton2.Values.Text = "HESAPLAR";
+            this.hesaplarBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
+            this.hesaplarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hesaplarBtn.Location = new System.Drawing.Point(257, 6);
+            this.hesaplarBtn.Name = "hesaplarBtn";
+            this.hesaplarBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.hesaplarBtn.Size = new System.Drawing.Size(239, 90);
+            this.hesaplarBtn.TabIndex = 1;
+            this.hesaplarBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.team;
+            this.hesaplarBtn.Values.Text = "HESAPLAR";
+            this.hesaplarBtn.Click += new System.EventHandler(this.hesaplarBtn_Click);
             // 
             // kryptonButton1
             // 
@@ -173,7 +174,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton hesaplarBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menüToolStripMenuItem;
