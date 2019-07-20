@@ -45,12 +45,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KullaniciManager\KullanicilarsManager.cs" />
+    <Compile Include="Ninject\NinjectBindings.cs" />
+    <Compile Include="Ninject\SingletonKernelManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
+      <Project>{69504593-641D-4DD0-B47C-BE7C014FFD8A}</Project>
+      <Name>Ikra_Is_Yonetim.3rdApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ikra_Is_Yonetim.DAL\Ikra_Is_Yonetim.DAL.csproj">
       <Project>{EC56DF53-48AA-49EA-B1FA-F6930BB135A7}</Project>
       <Name>Ikra_Is_Yonetim.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.Utilities\Ikra_Is_Yonetim.Utilities.csproj">
+      <Project>{417A1C59-11A2-45DE-B41B-C39F11089BE0}</Project>
+      <Name>Ikra_Is_Yonetim.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

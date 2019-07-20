@@ -49,7 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\Context\IkraContext.cs" />
+    <Compile Include="EntityFramework\Tables\Email.cs" />
     <Compile Include="EntityFramework\Tables\Kullanicilar.cs" />
+    <Compile Include="EntityFramework\Tables\Musteriler.cs" />
+    <Compile Include="EntityFramework\Tables\Stoklar.cs" />
+    <Compile Include="EntityFramework\Tables\Uretim.cs" />
+    <Compile Include="EntityFramework\Tables\UretimCikislar.cs" />
+    <Compile Include="EntityFramework\Tables\UretimMalzemeler.cs" />
     <Compile Include="Migrations\201907180042276_ikradb-v1.cs" />
     <Compile Include="Migrations\201907180042276_ikradb-v1.Designer.cs">
       <DependentUpon>201907180042276_ikradb-v1.cs</DependentUpon>
@@ -73,6 +79,14 @@
     <Compile Include="Migrations\201907180234510_ikradb-v6.cs" />
     <Compile Include="Migrations\201907180234510_ikradb-v6.Designer.cs">
       <DependentUpon>201907180234510_ikradb-v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907200103115_ikradb-v7.cs" />
+    <Compile Include="Migrations\201907200103115_ikradb-v7.Designer.cs">
+      <DependentUpon>201907200103115_ikradb-v7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907200115202_ikradb-v8.cs" />
+    <Compile Include="Migrations\201907200115202_ikradb-v8.Designer.cs">
+      <DependentUpon>201907200115202_ikradb-v8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907180234510_ikradb-v6.resx">
       <DependentUpon>201907180234510_ikradb-v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907200103115_ikradb-v7.resx">
+      <DependentUpon>201907200103115_ikradb-v7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907200115202_ikradb-v8.resx">
+      <DependentUpon>201907200115202_ikradb-v8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

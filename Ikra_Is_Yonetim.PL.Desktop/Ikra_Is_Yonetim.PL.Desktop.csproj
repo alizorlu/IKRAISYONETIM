@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,29 +72,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLoginUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLoginUser.Designer.cs">
-      <DependentUpon>frmLoginUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLoginUserList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLoginUserList.Designer.cs">
-      <DependentUpon>frmLoginUserList.cs</DependentUpon>
+    <Compile Include="frmAna.Designer.cs">
+      <DependentUpon>frmAna.cs</DependentUpon>
     </Compile>
     <Compile Include="Hesaplar\frmAdd.cs">
       <SubType>Form</SubType>
@@ -107,20 +90,10 @@
     <Compile Include="Hesaplar\frmHesaplarAna.Designer.cs">
       <DependentUpon>frmHesaplarAna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ninject\NinjectBindings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLoginUser.resx">
-      <DependentUpon>frmLoginUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLoginUserList.resx">
-      <DependentUpon>frmLoginUserList.cs</DependentUpon>
+    <EmbeddedResource Include="frmAna.resx">
+      <DependentUpon>frmAna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hesaplar\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>

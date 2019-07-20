@@ -15,10 +15,19 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Context
         {
 
         }
-        public virtual DbSet<Kullanicilar> Kullanicilars{ get; set; }      
+        public virtual DbSet<Kullanicilar> Kullanicilars{ get; set; }
+        public virtual DbSet<Stoklar> Stoklars { get; set; }
+        public virtual DbSet<Musteriler> Musterilers { get; set; }
+        public virtual DbSet<Uretim> Uretims { get; set; }
+        public virtual DbSet<UretimCikislar> Siparisler { get; set; }
+        public virtual DbSet<UretimMalzemeler> UretimMalzemelers { get; set; }
+        public virtual DbSet<Email> Emails { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<Uretim>()
+                .Property(i => i.BirimFiyat1)
+                
+                .HasColumnType("Money");
         }
     }
 }

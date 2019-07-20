@@ -19,7 +19,14 @@ namespace Ikra_Is_Yonetim.DAL.Repo
                 return this.kullaniciRepo ?? new EFRepo<Kullanicilar>(context);
             }
         }
-
+        private EFRepo<Email> emailRepo;
+        public EFRepo<Email> emailRepository
+        {
+            get
+            {
+                return this.emailRepo ?? new EFRepo<Email>(context);
+            }
+        }
         public void Save()
         {
             context.SaveChanges();

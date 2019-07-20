@@ -41,12 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailManager\EmailManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SenderMessageManager\MessageFormat.cs" />
+    <Compile Include="SenderMessageManager\SenderManager.cs" />
     <Compile Include="SmsManager\SMSManager.cs" />
     <Compile Include="SmsManager\SmsModel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="EmailManager\" />
+    <ProjectReference Include="..\Ikra_Is_Yonetim.DAL\Ikra_Is_Yonetim.DAL.csproj">
+      <Project>{EC56DF53-48AA-49EA-B1FA-F6930BB135A7}</Project>
+      <Name>Ikra_Is_Yonetim.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
