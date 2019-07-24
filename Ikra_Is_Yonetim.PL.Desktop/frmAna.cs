@@ -1,4 +1,5 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using ComponentFactory.Krypton.Workspace;
 using Ikra_Is_Yonetim._3rdApp.EmailManager;
 using Ikra_Is_Yonetim._3rdApp.SenderMessageManager;
 using Ikra_Is_Yonetim.BL.Ninject;
@@ -28,14 +29,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop
 
         private void frmAna_Load(object sender, EventArgs e)
         {
-            _sender = new SenderManager(new EmailSender(_email));
-            _sender.SendMessage(new MessageFormat()
-            {
-                Baslik = "Bu bir email sender instance",
-                Hedef = "azorlua@gmail.com",
-                Icerik = "Email sender mesaj gönderdi size"
-
-            });
+           
         }
     }
 }

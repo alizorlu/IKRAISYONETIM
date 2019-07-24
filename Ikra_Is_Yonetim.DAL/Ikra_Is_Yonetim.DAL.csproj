@@ -88,6 +88,10 @@
     <Compile Include="Migrations\201907200115202_ikradb-v8.Designer.cs">
       <DependentUpon>201907200115202_ikradb-v8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907240337491_ikradb-v9.cs" />
+    <Compile Include="Migrations\201907240337491_ikradb-v9.Designer.cs">
+      <DependentUpon>201907240337491_ikradb-v9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\EFRepo.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907200115202_ikradb-v8.resx">
       <DependentUpon>201907200115202_ikradb-v8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907240337491_ikradb-v9.resx">
+      <DependentUpon>201907240337491_ikradb-v9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

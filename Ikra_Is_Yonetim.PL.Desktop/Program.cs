@@ -16,7 +16,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAna());
+            Application.Run(new Stoklar.frmStoklarList());
         }
     }
 }
