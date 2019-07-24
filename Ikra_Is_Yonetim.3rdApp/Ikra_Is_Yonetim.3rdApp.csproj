@@ -48,7 +48,6 @@
     <Compile Include="SmsManager\SMSManager.cs" />
     <Compile Include="SmsManager\SmsModel.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Ikra_Is_Yonetim.DAL\Ikra_Is_Yonetim.DAL.csproj">
       <Project>{EC56DF53-48AA-49EA-B1FA-F6930BB135A7}</Project>

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,13 +37,15 @@
     <Reference Include="ComponentFactory.Krypton.Design">
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Navigator">
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
@@ -57,10 +60,13 @@
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,42 +76,29 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAna.cs">
+    <Compile Include="Ana\frmAna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAna.Designer.cs">
+    <Compile Include="Ana\frmAna.Designer.cs">
       <DependentUpon>frmAna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hesaplar\frmAdd.cs">
+    <Compile Include="frmGiris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hesaplar\frmAdd.Designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hesaplar\frmHesaplarAna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hesaplar\frmHesaplarAna.Designer.cs">
-      <DependentUpon>frmHesaplarAna.cs</DependentUpon>
+    <Compile Include="frmGiris.Designer.cs">
+      <DependentUpon>frmGiris.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stoklar\frmStoklarList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stoklar\frmStoklarList.Designer.cs">
-      <DependentUpon>frmStoklarList.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="frmAna.resx">
+    <EmbeddedResource Include="Ana\frmAna.resx">
       <DependentUpon>frmAna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hesaplar\frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hesaplar\frmHesaplarAna.resx">
-      <DependentUpon>frmHesaplarAna.cs</DependentUpon>
+    <EmbeddedResource Include="frmGiris.resx">
+      <DependentUpon>frmGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,9 +110,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Stoklar\frmStoklarList.resx">
-      <DependentUpon>frmStoklarList.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -135,10 +125,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
-      <Project>{69504593-641d-4dd0-b47c-be7c014ffd8a}</Project>
-      <Name>Ikra_Is_Yonetim.3rdApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ikra_Is_Yonetim.BL\Ikra_Is_Yonetim.BL.csproj">
       <Project>{a4c4fce4-8ed0-4333-b5e6-a70ce39b5fb5}</Project>
       <Name>Ikra_Is_Yonetim.BL</Name>
@@ -186,7 +172,96 @@
     <None Include="Resources\openFolder.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Uretimler\" />
+    <None Include="Resources\siparis.png" />
+    <None Include="Resources\order-food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxMSExchangeLib">
+      <Guid>{0AF7F3BE-8EA9-4816-889E-3ED22871FE05}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSExchangeLib">
+      <Guid>{0AF7F3BE-8EA9-4816-889E-3ED22871FE05}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\harvest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yemek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analiz-rapor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\harvest1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fatura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayarlar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yedekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profil_ayar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\degistir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hourglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
