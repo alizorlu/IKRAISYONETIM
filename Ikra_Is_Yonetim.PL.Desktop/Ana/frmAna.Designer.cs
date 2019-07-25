@@ -40,18 +40,19 @@
             this.faturaBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonBorderEdge1 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLinkLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.kryptonBorderEdge2 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
-            this.kryptonLinkLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.closeBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonLinkLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
+            this.kryptonBorderEdge2 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
+            this.kryptonLinkLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton10 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton9 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.personellerBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,7 +116,7 @@
             // 
             this.yedekBtn.Location = new System.Drawing.Point(69, 451);
             this.yedekBtn.Name = "yedekBtn";
-            this.yedekBtn.Size = new System.Drawing.Size(558, 78);
+            this.yedekBtn.Size = new System.Drawing.Size(370, 78);
             this.yedekBtn.TabIndex = 9;
             this.yedekBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.yedekle;
             this.yedekBtn.Values.Text = "Yedekle";
@@ -131,7 +132,7 @@
             // 
             // smsBtn
             // 
-            this.smsBtn.Location = new System.Drawing.Point(445, 367);
+            this.smsBtn.Location = new System.Drawing.Point(445, 451);
             this.smsBtn.Name = "smsBtn";
             this.smsBtn.Size = new System.Drawing.Size(182, 78);
             this.smsBtn.TabIndex = 7;
@@ -169,57 +170,6 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(632, 115);
             this.kryptonPanel1.TabIndex = 13;
             // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel1.Location = new System.Drawing.Point(102, 12);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.kryptonLabel1.Size = new System.Drawing.Size(129, 24);
-            this.kryptonLabel1.TabIndex = 1;
-            this.kryptonLabel1.Values.Text = "Fatih Topçuoğlu";
-            // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
-            this.kryptonLabel2.Location = new System.Drawing.Point(102, 42);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.kryptonLabel2.Size = new System.Drawing.Size(195, 26);
-            this.kryptonLabel2.TabIndex = 2;
-            this.kryptonLabel2.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.alarm_clock;
-            this.kryptonLabel2.Values.Text = "Son girişiniz : 16 dk önce";
-            // 
-            // kryptonLinkLabel1
-            // 
-            this.kryptonLinkLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.GroupBoxCaption;
-            this.kryptonLinkLabel1.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.NeverUnderline;
-            this.kryptonLinkLabel1.Location = new System.Drawing.Point(102, 74);
-            this.kryptonLinkLabel1.Name = "kryptonLinkLabel1";
-            this.kryptonLinkLabel1.Size = new System.Drawing.Size(131, 26);
-            this.kryptonLinkLabel1.TabIndex = 3;
-            this.kryptonLinkLabel1.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.profil_ayar;
-            this.kryptonLinkLabel1.Values.Text = "Hesap Ayaları";
-            // 
-            // kryptonBorderEdge2
-            // 
-            this.kryptonBorderEdge2.Location = new System.Drawing.Point(239, 75);
-            this.kryptonBorderEdge2.Name = "kryptonBorderEdge2";
-            this.kryptonBorderEdge2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.kryptonBorderEdge2.Size = new System.Drawing.Size(1, 25);
-            this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
-            // 
-            // kryptonLinkLabel2
-            // 
-            this.kryptonLinkLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.GroupBoxCaption;
-            this.kryptonLinkLabel2.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.NeverUnderline;
-            this.kryptonLinkLabel2.Location = new System.Drawing.Point(256, 74);
-            this.kryptonLinkLabel2.Name = "kryptonLinkLabel2";
-            this.kryptonLinkLabel2.Size = new System.Drawing.Size(159, 26);
-            this.kryptonLinkLabel2.TabIndex = 5;
-            this.kryptonLinkLabel2.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.hourglass;
-            this.kryptonLinkLabel2.Values.Text = "Sistem geçmişiniz";
-            // 
             // closeBtn
             // 
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Default;
@@ -232,6 +182,68 @@
             this.closeBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.arrow;
             this.closeBtn.Values.Text = "ÇIKIŞ";
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // kryptonLinkLabel2
+            // 
+            this.kryptonLinkLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.GroupBoxCaption;
+            this.kryptonLinkLabel2.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.NeverUnderline;
+            this.kryptonLinkLabel2.Location = new System.Drawing.Point(256, 74);
+            this.kryptonLinkLabel2.Name = "kryptonLinkLabel2";
+            this.kryptonLinkLabel2.Size = new System.Drawing.Size(159, 26);
+            this.kryptonLinkLabel2.TabIndex = 5;
+            this.kryptonLinkLabel2.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.hourglass;
+            this.kryptonLinkLabel2.Values.Text = "Sistem geçmişiniz";
+            // 
+            // kryptonBorderEdge2
+            // 
+            this.kryptonBorderEdge2.Location = new System.Drawing.Point(239, 75);
+            this.kryptonBorderEdge2.Name = "kryptonBorderEdge2";
+            this.kryptonBorderEdge2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.kryptonBorderEdge2.Size = new System.Drawing.Size(1, 25);
+            this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
+            // 
+            // kryptonLinkLabel1
+            // 
+            this.kryptonLinkLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.GroupBoxCaption;
+            this.kryptonLinkLabel1.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.NeverUnderline;
+            this.kryptonLinkLabel1.Location = new System.Drawing.Point(102, 74);
+            this.kryptonLinkLabel1.Name = "kryptonLinkLabel1";
+            this.kryptonLinkLabel1.Size = new System.Drawing.Size(131, 26);
+            this.kryptonLinkLabel1.TabIndex = 3;
+            this.kryptonLinkLabel1.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.profil_ayar;
+            this.kryptonLinkLabel1.Values.Text = "Hesap Ayaları";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
+            this.kryptonLabel2.Location = new System.Drawing.Point(102, 42);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.kryptonLabel2.Size = new System.Drawing.Size(195, 26);
+            this.kryptonLabel2.TabIndex = 2;
+            this.kryptonLabel2.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.alarm_clock;
+            this.kryptonLabel2.Values.Text = "Son girişiniz : 16 dk önce";
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel1.Location = new System.Drawing.Point(102, 12);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.kryptonLabel1.Size = new System.Drawing.Size(129, 24);
+            this.kryptonLabel1.TabIndex = 1;
+            this.kryptonLabel1.Values.Text = "Fatih Topçuoğlu";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.admin;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // kryptonButton3
             // 
@@ -278,16 +290,15 @@
             this.kryptonButton9.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.yedekle;
             this.kryptonButton9.Values.Text = "Yedekle";
             // 
-            // pictureBox1
+            // personellerBtn
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.admin;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.personellerBtn.Location = new System.Drawing.Point(445, 367);
+            this.personellerBtn.Name = "personellerBtn";
+            this.personellerBtn.Size = new System.Drawing.Size(182, 78);
+            this.personellerBtn.TabIndex = 15;
+            this.personellerBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.personeller;
+            this.personellerBtn.Values.Text = "Personeller";
+            this.personellerBtn.Click += new System.EventHandler(this.personellerBtn_Click);
             // 
             // frmAna
             // 
@@ -296,6 +307,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(697, 586);
             this.ControlBox = false;
+            this.Controls.Add(this.personellerBtn);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.yedekBtn);
@@ -350,5 +362,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton10;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton9;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton personellerBtn;
     }
 }

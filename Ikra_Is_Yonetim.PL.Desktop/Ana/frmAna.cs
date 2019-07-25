@@ -21,5 +21,12 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
         {
             Application.Exit();
         }
+
+        private void personellerBtn_Click(object sender, EventArgs e)
+        {
+            Personeller.frmPersonellerList
+                pList = new Personeller.frmPersonellerList();
+            pList.Show();
+        }
     }
 }

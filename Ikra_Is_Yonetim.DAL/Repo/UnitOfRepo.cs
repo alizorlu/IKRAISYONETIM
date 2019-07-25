@@ -19,6 +19,14 @@ namespace Ikra_Is_Yonetim.DAL.Repo
                 return this.kullaniciRepo ?? new EFRepo<Kullanicilar>(context);
             }
         }
+        private EFRepo<Personeller> personelRepo;
+        public EFRepo<Personeller> personelRepository
+        {
+            get
+            {
+                return this.personelRepo ?? new EFRepo<Personeller>(context);
+            }
+        }
         private EFRepo<Email> emailRepo;
         public EFRepo<Email> emailRepository
         {

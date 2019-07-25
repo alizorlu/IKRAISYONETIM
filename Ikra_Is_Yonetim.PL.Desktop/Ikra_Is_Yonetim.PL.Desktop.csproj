@@ -92,6 +92,18 @@
     <Compile Include="frmGiris.Designer.cs">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personeller\frmPersonellerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller\frmPersonellerList.Designer.cs">
+      <DependentUpon>frmPersonellerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personeller\frmYeniPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller\frmYeniPersonel.Designer.cs">
+      <DependentUpon>frmYeniPersonel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ana\frmAna.resx">
@@ -99,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personeller\frmPersonellerList.resx">
+      <DependentUpon>frmPersonellerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personeller\frmYeniPersonel.resx">
+      <DependentUpon>frmYeniPersonel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +129,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -262,6 +281,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personeller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personelView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bedtime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oncekiKayit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sonrakiKayit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

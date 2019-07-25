@@ -1,6 +1,7 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.EmailManager;
 using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.KullaniciManager;
+using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ikra_Is_Yonetim.Utilities.HashManager;
 using Ikra_Is_Yonetim.Utilities.PasswordCreateManager;
 using Ikra_Is_Yonetim.Utilities.RegexManager;
@@ -19,7 +20,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
         {
             //BL
             Bind<IKullaniciManager>().To<EFKullaniciManager>();
-
+            Bind<IPersonellerManager>().To<EFPersonellerManager>();
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();
             Bind<IRegexManager>().To<SystemRegexManager>();
@@ -27,6 +28,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             //3RD
             Bind<ISMSManager>().To<VatanSMS>();
             Bind<IEmailManager>().To<EFEmailManager>();
+
         }
     }
 }
