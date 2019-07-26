@@ -27,6 +27,8 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Context
         public virtual DbSet<Avanslar> Avanslars { get; set; }
         public virtual DbSet<Odemeler> Odemelers { get; set; }
         public virtual DbSet<Izinler> Izinlers { get; set; }
+        public virtual DbSet<Maaslar> Maaslars { get; set; }
+        public virtual DbSet<SirketBilgiTB> Sirkets { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Uretim>()

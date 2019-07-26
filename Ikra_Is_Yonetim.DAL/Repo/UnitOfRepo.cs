@@ -19,6 +19,38 @@ namespace Ikra_Is_Yonetim.DAL.Repo
                 return this.kullaniciRepo ?? new EFRepo<Kullanicilar>(context);
             }
         }
+        private EFRepo<SirketBilgiTB> sirketRepo;
+        public EFRepo<SirketBilgiTB> sirketRepository
+        {
+            get
+            {
+                return this.sirketRepo ?? new EFRepo<SirketBilgiTB>(context);
+            }
+        }
+        private EFRepo<Avanslar> avansRepo;
+        public EFRepo<Avanslar> avansRepository
+        {
+            get
+            {
+                return this.avansRepo ?? new EFRepo<Avanslar>(context);
+            }
+        }
+        private EFRepo<Maaslar> maasRepo;
+        public EFRepo<Maaslar> maasRepository
+        {
+            get
+            {
+                return this.maasRepo ?? new EFRepo<Maaslar>(context);
+            }
+        }
+        private EFRepo<Izinler> izinlerRepo;
+        public EFRepo<Izinler> izinlerRepository
+        {
+            get
+            {
+                return this.izinlerRepo ?? new EFRepo<Izinler>(context);
+            }
+        }
         private EFRepo<Personeller> personelRepo;
         public EFRepo<Personeller> personelRepository
         {

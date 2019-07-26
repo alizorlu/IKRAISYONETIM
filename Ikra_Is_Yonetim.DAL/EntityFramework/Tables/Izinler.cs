@@ -10,12 +10,13 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
     [Table("PersonelIzinlerTB", Schema = "IkraDesk")]
     public class Izinler
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
          
         [ForeignKey("Personel")]
         public Guid PersonelId { get; set; }
         public virtual Personeller Personel { get; set; }
         public DateTime IzinTarihi { get; set; }
         public DateTime IzinSuresi { get; set; }
+        public bool MaastanDusurulduMu { get; set; } = false;
     }
 }

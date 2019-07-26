@@ -92,6 +92,12 @@
     <Compile Include="frmGiris.Designer.cs">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personeller\Avanslar\frmYeniAvans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller\Avanslar\frmYeniAvans.Designer.cs">
+      <DependentUpon>frmYeniAvans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personeller\frmPersonellerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,18 @@
     <Compile Include="Personeller\frmYeniPersonel.Designer.cs">
       <DependentUpon>frmYeniPersonel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personeller\Izinler\frmYeniIzin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller\Izinler\frmYeniIzin.Designer.cs">
+      <DependentUpon>frmYeniIzin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personeller\Maaslar\frmMaasOdemsi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller\Maaslar\frmMaasOdemsi.Designer.cs">
+      <DependentUpon>frmMaasOdemsi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ana\frmAna.resx">
@@ -112,11 +130,20 @@
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personeller\Avanslar\frmYeniAvans.resx">
+      <DependentUpon>frmYeniAvans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personeller\frmPersonellerList.resx">
       <DependentUpon>frmPersonellerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personeller\frmYeniPersonel.resx">
       <DependentUpon>frmYeniPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personeller\Izinler\frmYeniIzin.resx">
+      <DependentUpon>frmYeniIzin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personeller\Maaslar\frmMaasOdemsi.resx">
+      <DependentUpon>frmMaasOdemsi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +156,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Avanslar.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Izinler.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,6 +173,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
+      <Project>{69504593-641d-4dd0-b47c-be7c014ffd8a}</Project>
+      <Name>Ikra_Is_Yonetim.3rdApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ikra_Is_Yonetim.BL\Ikra_Is_Yonetim.BL.csproj">
       <Project>{a4c4fce4-8ed0-4333-b5e6-a70ce39b5fb5}</Project>
       <Name>Ikra_Is_Yonetim.BL</Name>
@@ -324,5 +357,6 @@
   <ItemGroup>
     <None Include="Resources\info.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

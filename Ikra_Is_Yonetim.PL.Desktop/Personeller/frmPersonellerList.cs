@@ -1,4 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using Ikra_Is_Yonetim.BL.AvanslarManager;
+using Ikra_Is_Yonetim.BL.IzinlerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ninject;
@@ -18,12 +20,42 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
     {
         private StandardKernel kernel = SingletonKernelManager.Instance;
         private IPersonellerManager _personel;
+        private IizinlerManager _izin;
+        private IAvansManager _avans;
         internal DAL.EntityFramework.Tables.Personeller _selected;
         
         public frmPersonellerList()
         {
             InitializeComponent();
             _personel = kernel.Get<IPersonellerManager>();
+            _izin = kernel.Get<IizinlerManager>();
+            _avans = kernel.Get<IAvansManager>();
+        }
+        public void YenileAvans()
+        {
+            if (_selected != null)
+            {
+                IEnumerable<DAL.EntityFramework.Tables.Avanslar> result = _avans.All(_selected.Id);
+                avansGridView.DataSource = result;
+                avansGridView.Columns["Id"].Visible = false;
+                avansGridView.Columns["Personel"].Visible = false;
+                avansGridView.Columns["PersonelId"].Visible = false;
+            }
+            
+        }
+        public void YenileIzin()
+        {
+            if (_selected!=null)
+            {
+                IEnumerable<DAL.EntityFramework.Tables.Izinler> resultIzin
+                    = _izin.All(_selected.Id);
+
+
+                izinlerGridView.DataSource = resultIzin;
+                izinlerGridView.Columns["Personel"].Visible = false;
+                izinlerGridView.Columns["PersonelId"].Visible = false;
+                izinlerGridView.Columns["Id"].Visible = false;
+            }
         }
         public void Yenile()
         {
@@ -62,6 +94,8 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
         private void Yeni_FormClosing(object sender, FormClosingEventArgs e)
         {
             Yenile();
+            YenileIzin();
+            YenileAvans();
         }
 
         private void personalListbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,6 +107,8 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 personellerBindingSource.DataSource = _selected;
                 duzenleBtn.Enabled = true;
                 topDuzenleBtn.Enabled = true;
+                YenileIzin();
+                YenileAvans();
                 
             }
         }
@@ -89,6 +125,8 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 _personel.Delete((Guid)_selected.Id);
                 personellerBindingSource.ResetBindings(true);
                 Yenile();
+                YenileIzin();
+                YenileAvans();
             }
         }
 
@@ -121,6 +159,103 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
         private void yenileBtn_Click(object sender, EventArgs e)
         {
             Yenile();
+        }
+
+       
+
+        private void Ac_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            YenileIzin();
+            YenileAvans();
+        }
+
+        private void izinlerGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            try
+            {
+                DAL.EntityFramework.Tables.Izinler selected
+               = (DAL.EntityFramework.Tables.Izinler)
+               izinlerGridView.Rows[e.RowIndex].DataBoundItem;
+                izinSilBtn.Enabled = true;
+                izinSilBtn.Tag = (Guid)selected.Id;
+            }
+            catch (Exception)
+            {
+
+                izinSilBtn.Enabled = false;
+            }
+        }
+
+        private void izinSilBtn_Click(object sender, EventArgs e)
+        {
+            if (izinSilBtn.Tag != null)
+            {
+                DialogResult cevap = MessageBox.Show("Bu izin bilgisini silerseniz,personel maaşında artış olacaktır.Personel maaşı gün bazında hesaplanacağı için silinen izin günü kadar maaş artışı yapılır.Silmek istediğinize emin misiniz?", "Silinsin Mi ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (cevap==DialogResult.Yes)
+                {
+                    _izin.Delete(_izin.Find((Guid)izinSilBtn.Tag));
+                    izinSilBtn.Tag = null;
+                    YenileIzin();
+                    YenileAvans();
+                }
+            }
+        }
+
+        private void izinYenileBtn_Click(object sender, EventArgs e)
+        {
+            YenileIzin();
+        }
+
+        private void izinVerBtn_Click(object sender, EventArgs e)
+        {
+            if (_selected != null)
+            {
+
+                Izinler.frmYeniIzin ac = new Izinler.frmYeniIzin(_selected.Id);
+                ac.Show();
+                ac.FormClosing += Ac_FormClosing;
+            }
+        }
+
+        private void avansTanimlaBtn_Click(object sender, EventArgs e)
+        {
+            if (_selected != null)
+            {
+                Avanslar.frmYeniAvans avansac = new Avanslar.frmYeniAvans(_selected.Id);
+                avansac.FormClosing += Avansac_FormClosing;
+                avansac.Show();
+                
+            }
+           
+
+        }
+
+        private void Avansac_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            YenileAvans();
+        }
+
+        private void avansYenileBtn_Click(object sender, EventArgs e)
+        {
+            YenileAvans();
+        }
+
+        private void maasOdemeBtn_Click(object sender, EventArgs e)
+        {
+            if (_selected!=null)
+            {
+
+                Maaslar.frmMaasOdemsi maasOdemeYap = new Maaslar.frmMaasOdemsi((Guid)_selected.Id);
+                maasOdemeYap.FormClosing += MaasOdemeYap_FormClosing;
+                maasOdemeYap.ShowDialog();
+            }
+        }
+
+        private void MaasOdemeYap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Yenile();
+            YenileIzin();
+            YenileAvans();
         }
     }
 }

@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
 {
-    [Table("PersonelAvansTB", Schema = "IkraDesk")]
-    public class Avanslar
+    [Table("PersonelMaaslarTB", Schema = "IkraDesk")]
+    public class Maaslar
     {
         public Guid Id { get; set; }
+        public bool Odendi { get; set; } = false;
 
         [ForeignKey("Personel")]
-        public Guid  PersonelId{ get; set; }
+        public Guid PersonelId { get; set; }
         public virtual Personeller Personel { get; set; }
-
-        public decimal AvansTutari { get; set; }
-        public DateTime AvansTarihi { get; set; }
-        public bool MaastanDusulduMu { get; set; } = false;
+        public decimal OdemeTutari { get; set; }
+        public DateTime SonMaasDonemTarihi { get; set; }
+        public string FaturaId { get; set; }
     }
 }
