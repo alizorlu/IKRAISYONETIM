@@ -30,12 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.silBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaydetBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.maasTutar = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.personellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.girisZamani = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -50,20 +58,12 @@
             this.telefonTxt = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
             this.hataliLbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.basariliLbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.personellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.silBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kaydetBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +84,78 @@
             this.menuStrip1.Size = new System.Drawing.Size(989, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Enabled = false;
+            this.toolStripMenuItem2.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.edit;
+            this.toolStripMenuItem2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(137, 44);
+            this.toolStripMenuItem2.Text = "Bu Kaydı Düzenle";
+            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem2.Visible = false;
+            // 
+            // silBtn
+            // 
+            this.silBtn.Enabled = false;
+            this.silBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.delete1;
+            this.silBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.silBtn.Name = "silBtn";
+            this.silBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.silBtn.Size = new System.Drawing.Size(99, 44);
+            this.silBtn.Text = "Bu Kaydı Sil";
+            this.silBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.silBtn.Visible = false;
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Enabled = false;
+            this.toolStripMenuItem4.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.sonrakiKayit;
+            this.toolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 44);
+            this.toolStripMenuItem4.Text = "Sonraki Kayıt";
+            this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem4.Visible = false;
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Enabled = false;
+            this.toolStripMenuItem3.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.oncekiKayit;
+            this.toolStripMenuItem3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(103, 44);
+            this.toolStripMenuItem3.Text = "Önceki Kayıt";
+            this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem3.Visible = false;
+            // 
+            // kaydetBtn
+            // 
+            this.kaydetBtn.Enabled = false;
+            this.kaydetBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.save;
+            this.kaydetBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.kaydetBtn.Name = "kaydetBtn";
+            this.kaydetBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.kaydetBtn.Size = new System.Drawing.Size(67, 44);
+            this.kaydetBtn.Text = "Kaydet";
+            this.kaydetBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.kaydetBtn.Click += new System.EventHandler(this.kaydetBtn_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.closeBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.house;
+            this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.closeBtn.Size = new System.Drawing.Size(185, 44);
+            this.closeBtn.Text = "Personeller Listesine Dön";
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // kryptonPanel1
             // 
@@ -111,6 +183,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 524);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.personelView;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // kryptonLabel1
             // 
@@ -181,12 +265,15 @@
             this.maasTutar.TabIndex = 5;
             this.maasTutar.Leave += new System.EventHandler(this.maasTutar_Leave);
             // 
+            // personellerBindingSource
+            // 
+            this.personellerBindingSource.DataSource = typeof(Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller);
+            // 
             // girisZamani
             // 
-            this.girisZamani.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.personellerBindingSource, "GirisZamani", true));
-            this.girisZamani.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "GirisZamani", true));
             this.girisZamani.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.personellerBindingSource, "GirisZamani", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.girisZamani.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.girisZamani.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.girisZamani.Location = new System.Drawing.Point(199, 102);
             this.girisZamani.Name = "girisZamani";
             this.girisZamani.Size = new System.Drawing.Size(494, 25);
@@ -280,10 +367,9 @@
             // 
             // maasTarihi
             // 
-            this.maasTarihi.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "MaasTarihi", true));
             this.maasTarihi.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.personellerBindingSource, "MaasTarihi", true));
-            this.maasTarihi.DataBindings.Add(new System.Windows.Forms.Binding("ValueNullable", this.personellerBindingSource, "MaasTarihi", true));
             this.maasTarihi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maasTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.maasTarihi.Location = new System.Drawing.Point(199, 133);
             this.maasTarihi.Name = "maasTarihi";
             this.maasTarihi.Size = new System.Drawing.Size(494, 25);
@@ -340,94 +426,6 @@
             this.basariliLbl.Values.Text = "İşlem başarıyla kaydedildi.";
             this.basariliLbl.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.personelView;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // personellerBindingSource
-            // 
-            this.personellerBindingSource.DataSource = typeof(Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Enabled = false;
-            this.toolStripMenuItem2.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.edit;
-            this.toolStripMenuItem2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(137, 44);
-            this.toolStripMenuItem2.Text = "Bu Kaydı Düzenle";
-            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem2.Visible = false;
-            // 
-            // silBtn
-            // 
-            this.silBtn.Enabled = false;
-            this.silBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.delete1;
-            this.silBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.silBtn.Name = "silBtn";
-            this.silBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.silBtn.Size = new System.Drawing.Size(99, 44);
-            this.silBtn.Text = "Bu Kaydı Sil";
-            this.silBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.silBtn.Visible = false;
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Enabled = false;
-            this.toolStripMenuItem4.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.sonrakiKayit;
-            this.toolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 44);
-            this.toolStripMenuItem4.Text = "Sonraki Kayıt";
-            this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem4.Visible = false;
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Enabled = false;
-            this.toolStripMenuItem3.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.oncekiKayit;
-            this.toolStripMenuItem3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(103, 44);
-            this.toolStripMenuItem3.Text = "Önceki Kayıt";
-            this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem3.Visible = false;
-            // 
-            // kaydetBtn
-            // 
-            this.kaydetBtn.Enabled = false;
-            this.kaydetBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.save;
-            this.kaydetBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.kaydetBtn.Name = "kaydetBtn";
-            this.kaydetBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.kaydetBtn.Size = new System.Drawing.Size(67, 44);
-            this.kaydetBtn.Text = "Kaydet";
-            this.kaydetBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.kaydetBtn.Click += new System.EventHandler(this.kaydetBtn_Click);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.closeBtn.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.house;
-            this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.closeBtn.Size = new System.Drawing.Size(185, 44);
-            this.closeBtn.Text = "Personeller Listesine Dön";
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
             // frmYeniPersonel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,9 +447,9 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

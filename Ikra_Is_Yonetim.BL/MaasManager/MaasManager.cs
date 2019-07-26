@@ -22,7 +22,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
         IEnumerable<Maaslar> All();
         IEnumerable<Maaslar> All(Guid personalid);
         decimal CalcGunlukUcret(Guid personalid);
-        decimal CalcMaas(Guid personalid);
+        DateTime CalcMaas(Guid personalid);
         IEnumerable<Avanslar> CalcAvans(Guid personalid);
         IEnumerable<Izinler> CalcIzin(Guid personalid);
 
@@ -81,7 +81,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
         /// </summary>
         /// <param name="personalid"></param>
         /// <returns></returns>
-        public decimal CalcMaas(Guid personalid)
+        public DateTime CalcMaas(Guid personalid)
         {
             //1.Daha önce maaş ödendiyse o tarihten itibareni hesapla.
             //2.Hiç maaş ödenmemişse giriş tarihinden itibaren hesapla.
@@ -89,14 +89,14 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
             if (maasQuery.Count() > 0)
             {
                 var sontarih = maasQuery.OrderByDescending(sa => sa.SonMaasDonemTarihi);
-                TimeSpan fark = DateTime.Now - sontarih.First().SonMaasDonemTarihi;
-                return fark.Days;
+                //TimeSpan fark = DateTime.Now - sontarih.First().SonMaasDonemTarihi;
+                //return fark.Days;
+                return sontarih.First().SonMaasDonemTarihi;
             }
             else
             {
                 var girisTarihi = _personel.Find(personalid).GirisZamani;
-                TimeSpan fark = DateTime.Now - girisTarihi;
-                return fark.Days;
+                return girisTarihi;
             }
         }
 
@@ -114,7 +114,11 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
             IEnumerable<Izinler> izinler = CalcIzin(personalid);
             IEnumerable<Avanslar> avanslar = CalcAvans(personalid);
             decimal gunlukUcret = CalcGunlukUcret(personalid);
-            decimal maas = CalcMaas(personalid)*gunlukUcret;
+
+            DateTime sonMaasTarihi = CalcMaas(personalid);
+            int toplamCalismaGunu = (
+                DateTime.Now - sonMaasTarihi).Days;
+            decimal maas = toplamCalismaGunu * gunlukUcret;
             decimal kesintiler = 0;
             List<ItemRow> aciklamalar = new List<ItemRow>();
             foreach (var item in izinler)
@@ -129,6 +133,8 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
                 aciklamalar.Add(ItemRow.Make("AVANS", $"Avans kesintisi - {item.AvansTarihi.Date.ToShortDateString()}", 1, 0, item.AvansTutari, item.AvansTutari));
                 kesintiler += item.AvansTutari;
             }
+
+            aciklamalar.Add(ItemRow.Make("MAAŞ BİLGİSİ", $"Günlük çalışma ücreti {gunlukUcret}", toplamCalismaGunu, 0, gunlukUcret, maas));
 
             new InvoicerApi(SizeOption.A4, OrientationOption.Landscape, "₺")
           .TextColor("#8C2234")
@@ -204,7 +210,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
             return _manager.CalcIzin(personalid);
         }
 
-        public decimal CalcMaas(Guid personalid)
+        public DateTime CalcMaas(Guid personalid)
         {
             return _manager.CalcMaas(personalid);
         }

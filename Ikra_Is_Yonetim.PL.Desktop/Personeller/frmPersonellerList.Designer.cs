@@ -66,7 +66,17 @@
             this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.buttonSpecAny6 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny7 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny8 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny9 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny10 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.kryptonDateTimePicker2 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny2 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny3 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny4 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny5 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.kryptonMaskedTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -91,16 +101,7 @@
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny2 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny3 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny4 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny5 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny6 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny7 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny8 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny9 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny10 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.maasGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personellerList)).BeginInit();
             this.personellerList.SuspendLayout();
@@ -130,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             this.kryptonPage4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maasGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -375,8 +377,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1112, 263);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
@@ -386,7 +388,7 @@
             this.guncellbl.Location = new System.Drawing.Point(3, 239);
             this.guncellbl.Name = "guncellbl";
             this.guncellbl.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.guncellbl.Size = new System.Drawing.Size(154, 21);
+            this.guncellbl.Size = new System.Drawing.Size(154, 28);
             this.guncellbl.TabIndex = 21;
             this.guncellbl.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.info;
             this.guncellbl.Values.Text = "Kayıt güncellendi.";
@@ -411,10 +413,10 @@
             // 
             // avansTanimlaBtn
             // 
-            this.avansTanimlaBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.avansTanimlaBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.avansTanimlaBtn.Location = new System.Drawing.Point(3, 143);
             this.avansTanimlaBtn.Name = "avansTanimlaBtn";
-            this.avansTanimlaBtn.Size = new System.Drawing.Size(366, 68);
+            this.avansTanimlaBtn.Size = new System.Drawing.Size(366, 63);
             this.avansTanimlaBtn.TabIndex = 23;
             this.avansTanimlaBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.avans;
             this.avansTanimlaBtn.Values.Text = "Yeni avans tanımla";
@@ -579,7 +581,7 @@
             // 
             // kryptonLabel7
             // 
-            this.kryptonLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonLabel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
             this.kryptonLabel7.Location = new System.Drawing.Point(3, 197);
             this.kryptonLabel7.Name = "kryptonLabel7";
@@ -591,10 +593,10 @@
             // kryptonRichTextBox1
             // 
             this.kryptonRichTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personellerBindingSource, "DigerBilgiler", true));
-            this.kryptonRichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(149, 197);
+            this.kryptonRichTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kryptonRichTextBox1.Location = new System.Drawing.Point(149, 212);
             this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(420, 96);
+            this.kryptonRichTextBox1.Size = new System.Drawing.Size(420, 81);
             this.kryptonRichTextBox1.TabIndex = 15;
             this.kryptonRichTextBox1.Text = "";
             // 
@@ -618,6 +620,26 @@
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(408, 25);
             this.kryptonDateTimePicker1.TabIndex = 16;
             // 
+            // buttonSpecAny6
+            // 
+            this.buttonSpecAny6.UniqueName = "064921F09CEA4C84C3B9EAEAB748B608";
+            // 
+            // buttonSpecAny7
+            // 
+            this.buttonSpecAny7.UniqueName = "9C89AE41076C410458ADB2798781C42C";
+            // 
+            // buttonSpecAny8
+            // 
+            this.buttonSpecAny8.UniqueName = "40EE40C763744FA06E93BC6FB9F90CA1";
+            // 
+            // buttonSpecAny9
+            // 
+            this.buttonSpecAny9.UniqueName = "8092D31C977646E97986C047E97134F8";
+            // 
+            // buttonSpecAny10
+            // 
+            this.buttonSpecAny10.UniqueName = "26B3CA09D14D4AED669D76CB9D780B38";
+            // 
             // kryptonDateTimePicker2
             // 
             this.kryptonDateTimePicker2.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
@@ -638,6 +660,26 @@
             this.kryptonDateTimePicker2.RightToLeftLayout = true;
             this.kryptonDateTimePicker2.Size = new System.Drawing.Size(408, 25);
             this.kryptonDateTimePicker2.TabIndex = 17;
+            // 
+            // buttonSpecAny1
+            // 
+            this.buttonSpecAny1.UniqueName = "982950E5DBB7451E389AC23A03DDBFD0";
+            // 
+            // buttonSpecAny2
+            // 
+            this.buttonSpecAny2.UniqueName = "413E617A82244C5F0C99FFB20B1FA59E";
+            // 
+            // buttonSpecAny3
+            // 
+            this.buttonSpecAny3.UniqueName = "2F0D03C9D3C841443B98B09854E2CC6E";
+            // 
+            // buttonSpecAny4
+            // 
+            this.buttonSpecAny4.UniqueName = "79F4616D654F4BBB75BB1B5B7DEF1B9D";
+            // 
+            // buttonSpecAny5
+            // 
+            this.buttonSpecAny5.UniqueName = "CDA13F9A08EA4DE6A2864964A2E38E86";
             // 
             // kryptonMaskedTextBox1
             // 
@@ -715,7 +757,7 @@
             this.kryptonPage3,
             this.kryptonPage5,
             this.kryptonPage4});
-            this.personelIslemlerTab.SelectedIndex = 0;
+            this.personelIslemlerTab.SelectedIndex = 2;
             this.personelIslemlerTab.Size = new System.Drawing.Size(1114, 414);
             this.personelIslemlerTab.TabIndex = 3;
             this.personelIslemlerTab.Text = "kryptonNavigator1";
@@ -870,6 +912,7 @@
             // kryptonPage4
             // 
             this.kryptonPage4.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage4.Controls.Add(this.maasGridView);
             this.kryptonPage4.Controls.Add(this.menuStrip3);
             this.kryptonPage4.Flags = 65534;
             this.kryptonPage4.LastVisibleSet = true;
@@ -928,45 +971,23 @@
             this.toolStripMenuItem14.Size = new System.Drawing.Size(25, 44);
             this.toolStripMenuItem14.Text = "|";
             // 
-            // buttonSpecAny1
+            // maasGridView
             // 
-            this.buttonSpecAny1.UniqueName = "982950E5DBB7451E389AC23A03DDBFD0";
-            // 
-            // buttonSpecAny2
-            // 
-            this.buttonSpecAny2.UniqueName = "413E617A82244C5F0C99FFB20B1FA59E";
-            // 
-            // buttonSpecAny3
-            // 
-            this.buttonSpecAny3.UniqueName = "2F0D03C9D3C841443B98B09854E2CC6E";
-            // 
-            // buttonSpecAny4
-            // 
-            this.buttonSpecAny4.UniqueName = "79F4616D654F4BBB75BB1B5B7DEF1B9D";
-            // 
-            // buttonSpecAny5
-            // 
-            this.buttonSpecAny5.UniqueName = "CDA13F9A08EA4DE6A2864964A2E38E86";
-            // 
-            // buttonSpecAny6
-            // 
-            this.buttonSpecAny6.UniqueName = "064921F09CEA4C84C3B9EAEAB748B608";
-            // 
-            // buttonSpecAny7
-            // 
-            this.buttonSpecAny7.UniqueName = "9C89AE41076C410458ADB2798781C42C";
-            // 
-            // buttonSpecAny8
-            // 
-            this.buttonSpecAny8.UniqueName = "40EE40C763744FA06E93BC6FB9F90CA1";
-            // 
-            // buttonSpecAny9
-            // 
-            this.buttonSpecAny9.UniqueName = "8092D31C977646E97986C047E97134F8";
-            // 
-            // buttonSpecAny10
-            // 
-            this.buttonSpecAny10.UniqueName = "26B3CA09D14D4AED669D76CB9D780B38";
+            this.maasGridView.AllowUserToAddRows = false;
+            this.maasGridView.AllowUserToDeleteRows = false;
+            this.maasGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.maasGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.maasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.maasGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maasGridView.Location = new System.Drawing.Point(0, 48);
+            this.maasGridView.MultiSelect = false;
+            this.maasGridView.Name = "maasGridView";
+            this.maasGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.maasGridView.ReadOnly = true;
+            this.maasGridView.RowTemplate.Height = 24;
+            this.maasGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.maasGridView.Size = new System.Drawing.Size(1112, 335);
+            this.maasGridView.TabIndex = 3;
             // 
             // frmPersonellerList
             // 
@@ -1020,6 +1041,7 @@
             this.kryptonPage4.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maasGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1099,5 +1121,6 @@
         private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny3;
         private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny4;
         private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny5;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView maasGridView;
     }
 }

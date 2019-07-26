@@ -3,6 +3,7 @@ using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
 using Ikra_Is_Yonetim.BL.IzinlerManager;
 using Ikra_Is_Yonetim.BL.KullaniciManager;
+using Ikra_Is_Yonetim.BL.MaasManager;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ikra_Is_Yonetim.BL.SirketManager;
 using Ikra_Is_Yonetim.Utilities.HashManager;
@@ -28,6 +29,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             Bind<IizinlerManager>().To<EFIzinlerManager>();
             Bind<IAvansManager>().To<EFManager>();
             Bind<ISirketManager>().To<EFSirketManager>();
+            Bind<IMaasManager>().To<EFMaasManager>();
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();
             Bind<IRegexManager>().To<SystemRegexManager>();

@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
 using Ikra_Is_Yonetim.BL.IzinlerManager;
+using Ikra_Is_Yonetim.BL.MaasManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ninject;
@@ -22,6 +23,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
         private IPersonellerManager _personel;
         private IizinlerManager _izin;
         private IAvansManager _avans;
+        private IMaasManager _maas;
         internal DAL.EntityFramework.Tables.Personeller _selected;
         
         public frmPersonellerList()
@@ -30,6 +32,21 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
             _personel = kernel.Get<IPersonellerManager>();
             _izin = kernel.Get<IizinlerManager>();
             _avans = kernel.Get<IAvansManager>();
+            _maas = kernel.Get<IMaasManager>();
+        }
+        public void YenileMaas()
+        {
+            if (_selected != null)
+            {
+
+                IEnumerable<DAL.EntityFramework.Tables.Maaslar> result
+                    = _maas.All(_selected.Id);
+                maasGridView.DataSource = result;
+                maasGridView.Columns["Id"].Visible = false;
+                maasGridView.Columns["PersonelId"].Visible = false;
+                maasGridView.Columns["Personel"].Visible = false;
+            }
+
         }
         public void YenileAvans()
         {
@@ -69,11 +86,13 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                    personalListbox.SelectedItem;
                 personellerBindingSource.DataSource = _selected;
                 topDuzenleBtn.Enabled = true;
+                personelIslemlerTab.Visible = true;
                 topSilBtn.Enabled = true;
             }
             else
             {
                 personelViewTab.Visible = false;
+                personelIslemlerTab.Visible = false;
                 topDuzenleBtn.Enabled = false;
                 topSilBtn.Enabled = false;
             }
@@ -96,6 +115,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
             Yenile();
             YenileIzin();
             YenileAvans();
+            YenileMaas();
         }
 
         private void personalListbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,6 +129,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 topDuzenleBtn.Enabled = true;
                 YenileIzin();
                 YenileAvans();
+                YenileMaas();
                 
             }
         }
@@ -127,6 +148,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 Yenile();
                 YenileIzin();
                 YenileAvans();
+                YenileMaas();
             }
         }
 
@@ -138,6 +160,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 guncellbl.Visible = true;
                 duzenleBtn.Enabled = false;
                 topDuzenleBtn.Enabled = false;
+                Yenile();
+                YenileIzin();
+                YenileAvans();
+                YenileMaas();
             }
         }
 
@@ -165,8 +191,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
 
         private void Ac_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Yenile();
             YenileIzin();
             YenileAvans();
+            YenileMaas();
         }
 
         private void izinlerGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
@@ -195,8 +223,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 {
                     _izin.Delete(_izin.Find((Guid)izinSilBtn.Tag));
                     izinSilBtn.Tag = null;
+                    //Yenile();
                     YenileIzin();
                     YenileAvans();
+                    YenileMaas();
                 }
             }
         }
@@ -204,6 +234,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
         private void izinYenileBtn_Click(object sender, EventArgs e)
         {
             YenileIzin();
+            
         }
 
         private void izinVerBtn_Click(object sender, EventArgs e)
@@ -256,6 +287,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
             Yenile();
             YenileIzin();
             YenileAvans();
+            YenileMaas();
         }
     }
 }
