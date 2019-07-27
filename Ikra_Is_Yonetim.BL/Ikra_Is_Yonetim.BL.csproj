@@ -75,6 +75,7 @@
     <Compile Include="Invoicer\Services\Impl\PdfInvoice.Sections.cs" />
     <Compile Include="Invoicer\Services\InvoicerApi.cs" />
     <Compile Include="IzinlerManager\IzinlersManager.cs" />
+    <Compile Include="KasaManager\KasaManager.cs" />
     <Compile Include="KullaniciManager\KullanicilarsManager.cs" />
     <Compile Include="MaasManager\MaasManager.cs" />
     <Compile Include="Ninject\NinjectBindings.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="PersonellerManager\PersonellersManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SirketManager\SirketManager.cs" />
+    <Compile Include="StoklarManager\StoklarManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">

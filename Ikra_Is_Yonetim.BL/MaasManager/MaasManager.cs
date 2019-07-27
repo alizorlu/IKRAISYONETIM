@@ -1,5 +1,6 @@
 ﻿using Ikra_Is_Yonetim.BL.AvanslarManager;
 using Ikra_Is_Yonetim.BL.IzinlerManager;
+using Ikra_Is_Yonetim.BL.KasaManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ikra_Is_Yonetim.BL.SirketManager;
@@ -37,6 +38,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
         private IPersonellerManager _personel;
         private UnitOfRepo _repo;
         private ISirketManager _sirket;
+        private IKasaManager _kasa;
         //private IImageBinaryDataManager _image;
         public EFMaasManager()
         {
@@ -46,6 +48,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
             _personel = kernel.Get<IPersonellerManager>();
             _sirket = kernel.Get<ISirketManager>();
             //_image = kernel.Get<IImageBinaryDataManager>();
+            _kasa = kernel.Get<IKasaManager>();
         }
         public IEnumerable<Maaslar> All()
         {
@@ -164,6 +167,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
             yeniMaasOdemesi.FaturaId = fatid.ToString().Substring(0, 32);
             yeniMaasOdemesi.Odendi = true;
             Insert(yeniMaasOdemesi);
+            _kasa.InsertMaas(yeniMaasOdemesi);
             foreach (var item in izinler)
             {
                 item.MaastanDusurulduMu = true;

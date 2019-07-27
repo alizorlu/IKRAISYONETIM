@@ -18,7 +18,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public decimal StokKgBirimAlinan { get; set; }
         public decimal StokKgBirimKalan { get; set; }
         public DateTime AlisTarihi { get; set; } = DateTime.Now;
-        public bool StokBittiMi { get; set; } = false;
+        //public bool StokBittiMi { get; set; } = false;
 
     }
 }

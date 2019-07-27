@@ -28,5 +28,17 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
                 pList = new Personeller.frmPersonellerList();
             pList.Show();
         }
+
+        private void KasaBtn_Click(object sender, EventArgs e)
+        {
+            Kasa.frmKasaList kasaAc = new Kasa.frmKasaList();
+            kasaAc.Show();
+        }
+
+        private void StokBtn_Click(object sender, EventArgs e)
+        {
+            Stok.frmStoklarList stokAc = new Stok.frmStoklarList();
+            stokAc.ShowDialog();
+        }
     }
 }

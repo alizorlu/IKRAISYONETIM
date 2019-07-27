@@ -65,7 +65,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller.Maaslar
                     (DateTime.Now.Date - sonMaasTarih.Date)
                     .Days * gunlukUcret;
                 gunSayisi.Text = $"{(DateTime.Now.Date - sonMaasTarih.Date).Days} iş günü X {gunlukUcret.ToString("0.00")} ₺";
-                netMaas.Text = $"₺ {(maasTutari - kesintiler)}";
+                netMaas.Text = $"₺ {(maasTutari - kesintiler).ToString("0.00")}";
 
             }
            
@@ -74,8 +74,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller.Maaslar
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            MaasManager manager = new MaasManager(new EFMaasManager());
-            manager.MaasInvoice(_id);
+            //MaasManager manager = new MaasManager(new EFMaasManager());
+            _maas.MaasInvoice(_id);
+            MessageBox.Show("Maaş ödemesi başarıyla yapıldı.","Başarılı");
+            //manager.MaasInvoice(_id);
         }
     }
 }

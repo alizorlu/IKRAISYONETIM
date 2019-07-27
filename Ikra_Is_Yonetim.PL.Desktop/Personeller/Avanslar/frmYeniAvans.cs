@@ -1,5 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
+using Ikra_Is_Yonetim.BL.KasaManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ninject;
 using System;
@@ -18,7 +19,9 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller.Avanslar
     {
         private static StandardKernel kernel = SingletonKernelManager.Instance;
         private IAvansManager _avans;
+        private IKasaManager _kasa;
         private DAL.EntityFramework.Tables.Avanslar avans;
+
         public frmYeniAvans(Guid personelid)
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller.Avanslar
 
             //Kernels
             _avans = kernel.Get<IAvansManager>();
-            
+            _kasa = kernel.Get<IKasaManager>();    
         }
 
        
@@ -46,12 +49,13 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller.Avanslar
             try
             {
                 _avans.Insert(avans);
+                _kasa.InsertAvans(avans);
                 MessageBox.Show("Avans işlemi başarıyla tanımlandı.Şimdi personel anasayfasına döneceksiniz.","Başarılı");
                 this.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var sa = ex;
                 //throw;
             }
         }
