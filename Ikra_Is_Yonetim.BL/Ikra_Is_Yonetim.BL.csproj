@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvanslarManager\AvansManager.cs" />
+    <Compile Include="FirmalarManager\FirmalarManager.cs" />
     <Compile Include="Invoicer\Helpers\DateTimeExtensions.cs" />
     <Compile Include="Invoicer\Helpers\MigraDocHelpers.cs" />
     <Compile Include="Invoicer\Helpers\Utils.cs" />

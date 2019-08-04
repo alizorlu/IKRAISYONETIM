@@ -1,6 +1,7 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.EmailManager;
 using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
+using Ikra_Is_Yonetim.BL.FirmalarManager;
 using Ikra_Is_Yonetim.BL.IzinlerManager;
 using Ikra_Is_Yonetim.BL.KasaManager;
 using Ikra_Is_Yonetim.BL.KullaniciManager;
@@ -34,6 +35,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             Bind<IMaasManager>().To<EFMaasManager>();
             Bind<IKasaManager>().To<EFKasaManager>();
             Bind<IStoklarManager>().To<EFStoklarManager>();
+            Bind<IFirmalarManager>().To<EFFirmalarManager>();
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();
             Bind<IRegexManager>().To<SystemRegexManager>();

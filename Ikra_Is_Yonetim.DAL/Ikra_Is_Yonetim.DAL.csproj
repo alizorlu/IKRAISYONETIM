@@ -51,6 +51,7 @@
     <Compile Include="EntityFramework\Context\IkraContext.cs" />
     <Compile Include="EntityFramework\Tables\Avanslar.cs" />
     <Compile Include="EntityFramework\Tables\Email.cs" />
+    <Compile Include="EntityFramework\Tables\Firmalar.cs" />
     <Compile Include="EntityFramework\Tables\Izinler.cs" />
     <Compile Include="EntityFramework\Tables\Kasalar.cs" />
     <Compile Include="EntityFramework\Tables\Kullanicilar.cs" />
@@ -74,6 +75,14 @@
     <Compile Include="Migrations\201907270940341_ikradb-v35.Designer.cs">
       <DependentUpon>201907270940341_ikradb-v35.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907281053309_ikradb-v36.cs" />
+    <Compile Include="Migrations\201907281053309_ikradb-v36.Designer.cs">
+      <DependentUpon>201907281053309_ikradb-v36.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907281054431_ikradb-v37.cs" />
+    <Compile Include="Migrations\201907281054431_ikradb-v37.Designer.cs">
+      <DependentUpon>201907281054431_ikradb-v37.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\EFRepo.cs" />
@@ -92,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907270940341_ikradb-v35.resx">
       <DependentUpon>201907270940341_ikradb-v35.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281053309_ikradb-v36.resx">
+      <DependentUpon>201907281053309_ikradb-v36.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281054431_ikradb-v37.resx">
+      <DependentUpon>201907281054431_ikradb-v37.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

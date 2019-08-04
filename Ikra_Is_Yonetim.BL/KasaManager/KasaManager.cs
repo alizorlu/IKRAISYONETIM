@@ -18,6 +18,7 @@ namespace Ikra_Is_Yonetim.BL.KasaManager
         void Insert(Kasalar kasa);
         void InsertAvans(Avanslar avans);
         void InsertMaas(Maaslar maas);
+        void InsertStok(Stoklar stok);
         IEnumerable<string> Donem();
         
     }
@@ -79,6 +80,19 @@ namespace Ikra_Is_Yonetim.BL.KasaManager
                 IslemTipi=IslemTip.Cikis,
                 Miktar=maas.OdemeTutari
 
+            });
+        }
+
+        public void InsertStok(Stoklar stok)
+        {
+            Insert(new Kasalar()
+            {
+                Aciklama = $"{stok.StokAdi} stok girişi({stok.AlisTarihi}):₺{stok.StokTutari.ToString("0.00")}",
+                Donem = DateTime.Now.Year.ToString(),
+                Id = Guid.NewGuid(),
+                IslemTarihi = DateTime.Now,
+                IslemTipi = IslemTip.Cikis,
+                Miktar = stok.StokTutari
             });
         }
     }

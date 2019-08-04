@@ -24,7 +24,7 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
         }
         public IEnumerable<Stoklar> All()
         {
-            return _repo.stokRepository.Get();
+            return _repo.stokRepository.Get(s=>s.StokKgBirimAlinan>0m);
         }
 
         public IEnumerable<Stoklar> AllBiten()
@@ -34,6 +34,7 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
 
         public void Insert(Stoklar model)
         {
+            model.StokKgBirimKalan = model.StokKgBirimAlinan;
             _repo.stokRepository.Insert(model);
             _repo.Save();
         }
@@ -63,6 +64,7 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
 
         public void Insert(Stoklar model)
         {
+           
             _manager.Insert(model);
         }
 

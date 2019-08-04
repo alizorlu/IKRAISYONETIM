@@ -92,7 +92,7 @@
             this.toolStripMenuItem2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(137, 44);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(139, 44);
             this.toolStripMenuItem2.Text = "Bu Kaydı Düzenle";
             this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripMenuItem2.Visible = false;
@@ -104,7 +104,7 @@
             this.silBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.silBtn.Name = "silBtn";
             this.silBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.silBtn.Size = new System.Drawing.Size(99, 44);
+            this.silBtn.Size = new System.Drawing.Size(101, 44);
             this.silBtn.Text = "Bu Kaydı Sil";
             this.silBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.silBtn.Visible = false;
@@ -116,7 +116,7 @@
             this.toolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 44);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(109, 44);
             this.toolStripMenuItem4.Text = "Sonraki Kayıt";
             this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripMenuItem4.Visible = false;
@@ -128,7 +128,7 @@
             this.toolStripMenuItem3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(103, 44);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(105, 44);
             this.toolStripMenuItem3.Text = "Önceki Kayıt";
             this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripMenuItem3.Visible = false;
@@ -140,7 +140,7 @@
             this.kaydetBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.kaydetBtn.Name = "kaydetBtn";
             this.kaydetBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.kaydetBtn.Size = new System.Drawing.Size(67, 44);
+            this.kaydetBtn.Size = new System.Drawing.Size(69, 44);
             this.kaydetBtn.Text = "Kaydet";
             this.kaydetBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.kaydetBtn.Click += new System.EventHandler(this.kaydetBtn_Click);
@@ -152,7 +152,7 @@
             this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.closeBtn.Size = new System.Drawing.Size(185, 44);
+            this.closeBtn.Size = new System.Drawing.Size(187, 44);
             this.closeBtn.Text = "Personeller Listesine Dön";
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
@@ -204,7 +204,7 @@
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(821, 64);
             this.kryptonLabel1.TabIndex = 3;
-            this.kryptonLabel1.Values.Text = "{} Personel";
+            this.kryptonLabel1.Values.Text = "İşlemi";
             // 
             // tableLayoutPanel3
             // 

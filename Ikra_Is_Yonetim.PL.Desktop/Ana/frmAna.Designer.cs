@@ -33,7 +33,7 @@
             this.stokBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kasaBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.yemekBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.analizBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.firmalarBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.yedekBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ayarBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.smsBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -105,14 +105,15 @@
             this.yemekBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.yemek;
             this.yemekBtn.Values.Text = "Yemek İşlemleri";
             // 
-            // analizBtn
+            // firmalarBtn
             // 
-            this.analizBtn.Location = new System.Drawing.Point(445, 283);
-            this.analizBtn.Name = "analizBtn";
-            this.analizBtn.Size = new System.Drawing.Size(182, 78);
-            this.analizBtn.TabIndex = 5;
-            this.analizBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.analiz_rapor;
-            this.analizBtn.Values.Text = "Analiz Rapor";
+            this.firmalarBtn.Location = new System.Drawing.Point(445, 283);
+            this.firmalarBtn.Name = "firmalarBtn";
+            this.firmalarBtn.Size = new System.Drawing.Size(182, 78);
+            this.firmalarBtn.TabIndex = 5;
+            this.firmalarBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.firmalar1;
+            this.firmalarBtn.Values.Text = "Firmalar";
+            this.firmalarBtn.Click += new System.EventHandler(this.FirmalarBtn_Click);
             // 
             // yedekBtn
             // 
@@ -316,7 +317,7 @@
             this.Controls.Add(this.ayarBtn);
             this.Controls.Add(this.smsBtn);
             this.Controls.Add(this.faturaBtn);
-            this.Controls.Add(this.analizBtn);
+            this.Controls.Add(this.firmalarBtn);
             this.Controls.Add(this.yemekBtn);
             this.Controls.Add(this.kasaBtn);
             this.Controls.Add(this.stokBtn);
@@ -345,7 +346,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton stokBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kasaBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton yemekBtn;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton analizBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton firmalarBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton yedekBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton ayarBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton smsBtn;

@@ -57,6 +57,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -85,6 +88,18 @@
     </Compile>
     <Compile Include="Ana\frmAna.Designer.cs">
       <DependentUpon>frmAna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firmalar\Add\frmYeniFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firmalar\Add\frmYeniFirma.Designer.cs">
+      <DependentUpon>frmYeniFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firmalar\frmFirmalarList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firmalar\frmFirmalarList.Designer.cs">
+      <DependentUpon>frmFirmalarList.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiris.cs">
       <SubType>Form</SubType>
@@ -136,8 +151,21 @@
     <Compile Include="Stok\frmStoklarList.Designer.cs">
       <DependentUpon>frmStoklarList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\frmYeniStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmYeniStok.Designer.cs">
+      <DependentUpon>frmYeniStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StokValidator.cs" />
     <EmbeddedResource Include="Ana\frmAna.resx">
       <DependentUpon>frmAna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firmalar\Add\frmYeniFirma.resx">
+      <DependentUpon>frmYeniFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firmalar\frmFirmalarList.resx">
+      <DependentUpon>frmFirmalarList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
@@ -173,10 +201,15 @@
     <EmbeddedResource Include="Stok\frmStoklarList.resx">
       <DependentUpon>frmStoklarList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmYeniStok.resx">
+      <DependentUpon>frmYeniStok.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Avanslar.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Firmalar.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Izinler.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Stoklar.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -375,6 +408,17 @@
   <ItemGroup>
     <None Include="Resources\info.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\firmalar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmalar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmalar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

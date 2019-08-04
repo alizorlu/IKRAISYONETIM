@@ -38,7 +38,13 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
         private void StokBtn_Click(object sender, EventArgs e)
         {
             Stok.frmStoklarList stokAc = new Stok.frmStoklarList();
-            stokAc.ShowDialog();
+            stokAc.Show();
+        }
+
+        private void FirmalarBtn_Click(object sender, EventArgs e)
+        {
+            Firmalar.frmFirmalarList firmaAc = new Firmalar.frmFirmalarList();
+            firmaAc.Show();
         }
     }
 }
