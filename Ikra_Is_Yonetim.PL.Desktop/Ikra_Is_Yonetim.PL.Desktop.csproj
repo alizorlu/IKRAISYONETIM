@@ -157,7 +157,33 @@
     <Compile Include="Stok\frmYeniStok.Designer.cs">
       <DependentUpon>frmYeniStok.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MalzemeValidator.cs" />
     <Compile Include="UI\StokValidator.cs" />
+    <Compile Include="UI\YemekValidator.cs" />
+    <Compile Include="Yemek\frmEkleMalzeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yemek\frmEkleMalzeme.Designer.cs">
+      <DependentUpon>frmEkleMalzeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yemek\frmListStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yemek\frmListStok.Designer.cs">
+      <DependentUpon>frmListStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yemek\frmYemekListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yemek\frmYemekListesi.Designer.cs">
+      <DependentUpon>frmYemekListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yemek\frmYeniYemekler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yemek\frmYeniYemekler.Designer.cs">
+      <DependentUpon>frmYeniYemekler.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ana\frmAna.resx">
       <DependentUpon>frmAna.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,12 +230,26 @@
     <EmbeddedResource Include="Stok\frmYeniStok.resx">
       <DependentUpon>frmYeniStok.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Yemek\frmEkleMalzeme.resx">
+      <DependentUpon>frmEkleMalzeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yemek\frmListStok.resx">
+      <DependentUpon>frmListStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yemek\frmYemekListesi.resx">
+      <DependentUpon>frmYemekListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yemek\frmYeniYemekler.resx">
+      <DependentUpon>frmYeniYemekler.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Avanslar.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Firmalar.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Izinler.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Malzeme.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Stoklar.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Yemekler.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -419,6 +459,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gozat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

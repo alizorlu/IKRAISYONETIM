@@ -33,6 +33,7 @@ kernel = SingletonKernelManager.Instance;
                 = result.ToList();
             stoklarDataGridView.Columns["Id"].Visible = false;
             stoklarDataGridView.Columns["AlisTarihi"].Visible = false;
+            stoklarDataGridView.Columns["Malzemeler"].Visible = false;
             stoklarDataGridView.Columns["StokKgBirimAlinan"].Visible = false;
             stoklarDataGridView.Columns["StokAdi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             stoklarDataGridView.Columns["StokTutari"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

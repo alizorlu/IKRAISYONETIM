@@ -56,13 +56,12 @@
     <Compile Include="EntityFramework\Tables\Kasalar.cs" />
     <Compile Include="EntityFramework\Tables\Kullanicilar.cs" />
     <Compile Include="EntityFramework\Tables\Maaslar.cs" />
+    <Compile Include="EntityFramework\Tables\Malzeme.cs" />
     <Compile Include="EntityFramework\Tables\Musteriler.cs" />
     <Compile Include="EntityFramework\Tables\Personeller.cs" />
     <Compile Include="EntityFramework\Tables\SirketBilgiTB.cs" />
     <Compile Include="EntityFramework\Tables\Stoklar.cs" />
-    <Compile Include="EntityFramework\Tables\Uretim.cs" />
-    <Compile Include="EntityFramework\Tables\UretimCikislar.cs" />
-    <Compile Include="EntityFramework\Tables\UretimMalzemeler.cs" />
+    <Compile Include="EntityFramework\Tables\Yemekler.cs" />
     <Compile Include="Migrations\201907270502509_ikradb-v33.cs" />
     <Compile Include="Migrations\201907270502509_ikradb-v33.Designer.cs">
       <DependentUpon>201907270502509_ikradb-v33.cs</DependentUpon>
@@ -82,6 +81,10 @@
     <Compile Include="Migrations\201907281054431_ikradb-v37.cs" />
     <Compile Include="Migrations\201907281054431_ikradb-v37.Designer.cs">
       <DependentUpon>201907281054431_ikradb-v37.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908041850319_ikradb-v38.cs" />
+    <Compile Include="Migrations\201908041850319_ikradb-v38.Designer.cs">
+      <DependentUpon>201908041850319_ikradb-v38.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907281054431_ikradb-v37.resx">
       <DependentUpon>201907281054431_ikradb-v37.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908041850319_ikradb-v38.resx">
+      <DependentUpon>201908041850319_ikradb-v38.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

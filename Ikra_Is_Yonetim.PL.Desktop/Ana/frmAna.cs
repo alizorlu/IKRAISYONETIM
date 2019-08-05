@@ -46,5 +46,11 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
             Firmalar.frmFirmalarList firmaAc = new Firmalar.frmFirmalarList();
             firmaAc.Show();
         }
+
+        private void YemekBtn_Click(object sender, EventArgs e)
+        {
+            Yemek.frmYemekListesi yemekList = new Yemek.frmYemekListesi();
+            yemekList.Show();
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public DateTime AlisTarihi { get; set; } = DateTime.Now;
         //public bool StokBittiMi { get; set; } = false;
 
+        public ICollection<Malzeme> Malzemeler { get; set; }
+
     }
 }

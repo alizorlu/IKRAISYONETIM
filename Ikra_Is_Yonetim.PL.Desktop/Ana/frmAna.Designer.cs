@@ -46,13 +46,13 @@
             this.kryptonLinkLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton10 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton9 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.personellerBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +104,7 @@
             this.yemekBtn.TabIndex = 4;
             this.yemekBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.yemek;
             this.yemekBtn.Values.Text = "Yemek İşlemleri";
+            this.yemekBtn.Click += new System.EventHandler(this.YemekBtn_Click);
             // 
             // firmalarBtn
             // 
@@ -237,6 +238,17 @@
             this.kryptonLabel1.TabIndex = 1;
             this.kryptonLabel1.Values.Text = "Fatih Topçuoğlu";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.admin;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // kryptonButton3
             // 
             this.kryptonButton3.Location = new System.Drawing.Point(257, 199);
@@ -291,17 +303,6 @@
             this.personellerBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.personeller;
             this.personellerBtn.Values.Text = "Personeller";
             this.personellerBtn.Click += new System.EventHandler(this.personellerBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.admin;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // frmAna
             // 

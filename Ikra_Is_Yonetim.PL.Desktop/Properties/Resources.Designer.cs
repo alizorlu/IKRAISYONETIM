@@ -273,6 +273,16 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap gozat {
+            get {
+                object obj = ResourceManager.GetObject("gozat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap harvest {
             get {
                 object obj = ResourceManager.GetObject("harvest", resourceCulture);
