@@ -14,6 +14,7 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
         IEnumerable<Stoklar> AllBiten();
         void Insert(Stoklar model);
         void Update(Stoklar model);
+        Stoklar Find(Guid id);
     }
     public class EFStoklarManager : IStoklarManager
     {
@@ -24,12 +25,17 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
         }
         public IEnumerable<Stoklar> All()
         {
-            return _repo.stokRepository.Get(s=>s.StokKgBirimAlinan>0m);
+            return _repo.stokRepository.Get(s=>s.StokKgBirimKalan>0m);
         }
 
         public IEnumerable<Stoklar> AllBiten()
         {
             return _repo.stokRepository.Get(s => s.StokKgBirimKalan <= 0);
+        }
+
+        public Stoklar Find(Guid id)
+        {
+            return _repo.stokRepository.GetById(id);
         }
 
         public void Insert(Stoklar model)
@@ -39,13 +45,14 @@ namespace Ikra_Is_Yonetim.BL.StoklarManager
             _repo.Save();
         }
 
+        
         public void Update(Stoklar model)
         {
             _repo.stokRepository.Insert(model);
             _repo.Save();
         }
     }
-    public class StoklarManager : IStoklarManager
+    public class StoklarManager 
     {
         private IStoklarManager _manager;
         public StoklarManager(IStoklarManager manager)

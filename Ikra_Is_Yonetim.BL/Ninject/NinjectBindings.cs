@@ -1,15 +1,18 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.EmailManager;
 using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
+using Ikra_Is_Yonetim.BL.CarilerManager;
 using Ikra_Is_Yonetim.BL.FirmalarManager;
 using Ikra_Is_Yonetim.BL.IzinlerManager;
 using Ikra_Is_Yonetim.BL.KasaManager;
 using Ikra_Is_Yonetim.BL.KullaniciManager;
 using Ikra_Is_Yonetim.BL.MaasManager;
+using Ikra_Is_Yonetim.BL.MalzemeManager;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
 using Ikra_Is_Yonetim.BL.SirketManager;
 using Ikra_Is_Yonetim.BL.StoklarManager;
 using Ikra_Is_Yonetim.BL.YemekManager;
+using Ikra_Is_Yonetim.DAL.EntityFramework.TSQL;
 using Ikra_Is_Yonetim.Utilities.HashManager;
 //using Ikra_Is_Yonetim.Utilities.ImageBinaryDataManager;
 using Ikra_Is_Yonetim.Utilities.PasswordCreateManager;
@@ -38,6 +41,10 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             Bind<IStoklarManager>().To<EFStoklarManager>();
             Bind<IFirmalarManager>().To<EFFirmalarManager>();
             Bind<IYemekManager>().To<EFYemekManager>();
+            Bind<ICarilerManager>().To<EFCarilerManager>();
+            Bind<IMalzemeMananager>().To<EFMalzemeManager>();
+            
+
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();
             Bind<IRegexManager>().To<SystemRegexManager>();
@@ -46,8 +53,9 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             //3RD
             Bind<ISMSManager>().To<VatanSMS>();
             Bind<IEmailManager>().To<EFEmailManager>();
-            
 
+            //DAL
+            Bind<ISetSQLQuery>().To<IkraContextTsql>();
         }
     }
 }

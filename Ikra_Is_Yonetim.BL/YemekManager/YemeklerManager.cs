@@ -15,6 +15,7 @@ namespace Ikra_Is_Yonetim.BL.YemekManager
         void Update(Yemekler yemek);
         void Delete(Guid id);
         Yemekler Find(Guid id);
+        Yemekler GununYemegi();
     }
     public class EFYemekManager : IYemekManager
     {
@@ -36,6 +37,14 @@ namespace Ikra_Is_Yonetim.BL.YemekManager
         public Yemekler Find(Guid id)
         {
             return _repo.yemekRepository.GetById(id);
+        }
+
+        public Yemekler GununYemegi()
+        {
+            return All().Where(s => s.UretimZamani.ToShortDateString()
+            ==DateTime.Now.ToShortDateString()&&s.YayinDurumu==true)
+                .FirstOrDefault();
+                
         }
 
         public void Insert(Yemekler yemek)

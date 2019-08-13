@@ -62,6 +62,7 @@
     <Compile Include="EntityFramework\Tables\SirketBilgiTB.cs" />
     <Compile Include="EntityFramework\Tables\Stoklar.cs" />
     <Compile Include="EntityFramework\Tables\Yemekler.cs" />
+    <Compile Include="EntityFramework\TSQL\SetSQLQuery.cs" />
     <Compile Include="Migrations\201907270502509_ikradb-v33.cs" />
     <Compile Include="Migrations\201907270502509_ikradb-v33.Designer.cs">
       <DependentUpon>201907270502509_ikradb-v33.cs</DependentUpon>
@@ -85,6 +86,78 @@
     <Compile Include="Migrations\201908041850319_ikradb-v38.cs" />
     <Compile Include="Migrations\201908041850319_ikradb-v38.Designer.cs">
       <DependentUpon>201908041850319_ikradb-v38.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908112216527_ikradb-v39.cs" />
+    <Compile Include="Migrations\201908112216527_ikradb-v39.Designer.cs">
+      <DependentUpon>201908112216527_ikradb-v39.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908112218019_ikradb-v40.cs" />
+    <Compile Include="Migrations\201908112218019_ikradb-v40.Designer.cs">
+      <DependentUpon>201908112218019_ikradb-v40.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908112256506_ikradb-v41.cs" />
+    <Compile Include="Migrations\201908112256506_ikradb-v41.Designer.cs">
+      <DependentUpon>201908112256506_ikradb-v41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908112312546_ikradb-v42.cs" />
+    <Compile Include="Migrations\201908112312546_ikradb-v42.Designer.cs">
+      <DependentUpon>201908112312546_ikradb-v42.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121159033_ikradb-v43.cs" />
+    <Compile Include="Migrations\201908121159033_ikradb-v43.Designer.cs">
+      <DependentUpon>201908121159033_ikradb-v43.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121224121_ikradb-v44.cs" />
+    <Compile Include="Migrations\201908121224121_ikradb-v44.Designer.cs">
+      <DependentUpon>201908121224121_ikradb-v44.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121310047_ikradb-v45.cs" />
+    <Compile Include="Migrations\201908121310047_ikradb-v45.Designer.cs">
+      <DependentUpon>201908121310047_ikradb-v45.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121328520_ikradb-v46.cs" />
+    <Compile Include="Migrations\201908121328520_ikradb-v46.Designer.cs">
+      <DependentUpon>201908121328520_ikradb-v46.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121333390_ikradb-v47.cs" />
+    <Compile Include="Migrations\201908121333390_ikradb-v47.Designer.cs">
+      <DependentUpon>201908121333390_ikradb-v47.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121358392_ikradb-v48.cs" />
+    <Compile Include="Migrations\201908121358392_ikradb-v48.Designer.cs">
+      <DependentUpon>201908121358392_ikradb-v48.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121405160_ikradb-v49.cs" />
+    <Compile Include="Migrations\201908121405160_ikradb-v49.Designer.cs">
+      <DependentUpon>201908121405160_ikradb-v49.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121407371_ikradb-v50.cs" />
+    <Compile Include="Migrations\201908121407371_ikradb-v50.Designer.cs">
+      <DependentUpon>201908121407371_ikradb-v50.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121504249_ikradb-v51.cs" />
+    <Compile Include="Migrations\201908121504249_ikradb-v51.Designer.cs">
+      <DependentUpon>201908121504249_ikradb-v51.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908121505595_ikradb-v52.cs" />
+    <Compile Include="Migrations\201908121505595_ikradb-v52.Designer.cs">
+      <DependentUpon>201908121505595_ikradb-v52.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131653319_ikradb-v53.cs" />
+    <Compile Include="Migrations\201908131653319_ikradb-v53.Designer.cs">
+      <DependentUpon>201908131653319_ikradb-v53.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131809483_ikradb-v54.cs" />
+    <Compile Include="Migrations\201908131809483_ikradb-v54.Designer.cs">
+      <DependentUpon>201908131809483_ikradb-v54.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908132213118_ikradb-v55.cs" />
+    <Compile Include="Migrations\201908132213118_ikradb-v55.Designer.cs">
+      <DependentUpon>201908132213118_ikradb-v55.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908132246516_ikradb-v56.cs" />
+    <Compile Include="Migrations\201908132246516_ikradb-v56.Designer.cs">
+      <DependentUpon>201908132246516_ikradb-v56.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +186,60 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908041850319_ikradb-v38.resx">
       <DependentUpon>201908041850319_ikradb-v38.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908112216527_ikradb-v39.resx">
+      <DependentUpon>201908112216527_ikradb-v39.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908112218019_ikradb-v40.resx">
+      <DependentUpon>201908112218019_ikradb-v40.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908112256506_ikradb-v41.resx">
+      <DependentUpon>201908112256506_ikradb-v41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908112312546_ikradb-v42.resx">
+      <DependentUpon>201908112312546_ikradb-v42.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121159033_ikradb-v43.resx">
+      <DependentUpon>201908121159033_ikradb-v43.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121224121_ikradb-v44.resx">
+      <DependentUpon>201908121224121_ikradb-v44.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121310047_ikradb-v45.resx">
+      <DependentUpon>201908121310047_ikradb-v45.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121328520_ikradb-v46.resx">
+      <DependentUpon>201908121328520_ikradb-v46.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121333390_ikradb-v47.resx">
+      <DependentUpon>201908121333390_ikradb-v47.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121358392_ikradb-v48.resx">
+      <DependentUpon>201908121358392_ikradb-v48.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121405160_ikradb-v49.resx">
+      <DependentUpon>201908121405160_ikradb-v49.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121407371_ikradb-v50.resx">
+      <DependentUpon>201908121407371_ikradb-v50.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121504249_ikradb-v51.resx">
+      <DependentUpon>201908121504249_ikradb-v51.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908121505595_ikradb-v52.resx">
+      <DependentUpon>201908121505595_ikradb-v52.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131653319_ikradb-v53.resx">
+      <DependentUpon>201908131653319_ikradb-v53.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131809483_ikradb-v54.resx">
+      <DependentUpon>201908131809483_ikradb-v54.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908132213118_ikradb-v55.resx">
+      <DependentUpon>201908132213118_ikradb-v55.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908132246516_ikradb-v56.resx">
+      <DependentUpon>201908132246516_ikradb-v56.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

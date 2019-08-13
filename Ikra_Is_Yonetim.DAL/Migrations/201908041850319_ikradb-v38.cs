@@ -94,10 +94,10 @@ namespace Ikra_Is_Yonetim.DAL.Migrations
             CreateIndex("IkraGenel.YemekMalzemelerTB", "UretimId");
             CreateIndex("IkraGenel.SiparislerTB", "MusteriId");
             CreateIndex("IkraGenel.SiparislerTB", "UretimId");
-            AddForeignKey("IkraGenel.YemekMalzemelerTB", "UretimId", "IkraDesktop.YemeklerTB", "Id", cascadeDelete: true);
-            AddForeignKey("IkraGenel.YemekMalzemelerTB", "StokId", "IkraDesktop.StoklarTB", "Id", cascadeDelete: true);
-            AddForeignKey("IkraGenel.SiparislerTB", "UretimId", "IkraDesktop.YemeklerTB", "Id", cascadeDelete: true);
-            AddForeignKey("IkraGenel.SiparislerTB", "MusteriId", "IkraGenel.MusterilerTB", "Id", cascadeDelete: true);
+            AddForeignKey("IkraGenel.YemekMalzemelerTB", "UretimId", "IkraDesktop.YemeklerTB", "StokId", cascadeDelete: true);
+            AddForeignKey("IkraGenel.YemekMalzemelerTB", "StokId", "IkraDesktop.StoklarTB", "StokId", cascadeDelete: true);
+            AddForeignKey("IkraGenel.SiparislerTB", "UretimId", "IkraDesktop.YemeklerTB", "StokId", cascadeDelete: true);
+            AddForeignKey("IkraGenel.SiparislerTB", "MusteriId", "IkraGenel.MusterilerTB", "StokId", cascadeDelete: true);
         }
     }
 }

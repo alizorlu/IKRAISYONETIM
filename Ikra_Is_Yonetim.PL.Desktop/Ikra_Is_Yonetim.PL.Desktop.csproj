@@ -34,21 +34,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Design">
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Ribbon">
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Workspace">
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Krypton-master\Krypton-master\build\bin\Debug\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -56,6 +59,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
@@ -88,6 +94,18 @@
     </Compile>
     <Compile Include="Ana\frmAna.Designer.cs">
       <DependentUpon>frmAna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cariler\frmCarilerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cariler\frmCarilerList.Designer.cs">
+      <DependentUpon>frmCarilerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cariler\frmYeniCari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cariler\frmYeniCari.Designer.cs">
+      <DependentUpon>frmYeniCari.cs</DependentUpon>
     </Compile>
     <Compile Include="Firmalar\Add\frmYeniFirma.cs">
       <SubType>Form</SubType>
@@ -145,6 +163,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stok\frmStokHareketler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokHareketler.Designer.cs">
+      <DependentUpon>frmStokHareketler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\frmStoklarList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +181,7 @@
     <Compile Include="Stok\frmYeniStok.Designer.cs">
       <DependentUpon>frmYeniStok.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CariValidator.cs" />
     <Compile Include="UI\MalzemeValidator.cs" />
     <Compile Include="UI\StokValidator.cs" />
     <Compile Include="UI\YemekValidator.cs" />
@@ -186,6 +211,12 @@
     </Compile>
     <EmbeddedResource Include="Ana\frmAna.resx">
       <DependentUpon>frmAna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cariler\frmCarilerList.resx">
+      <DependentUpon>frmCarilerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cariler\frmYeniCari.resx">
+      <DependentUpon>frmYeniCari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Firmalar\Add\frmYeniFirma.resx">
       <DependentUpon>frmYeniFirma.cs</DependentUpon>
@@ -224,6 +255,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stok\frmStokHareketler.resx">
+      <DependentUpon>frmStokHareketler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmStoklarList.resx">
       <DependentUpon>frmStoklarList.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +281,7 @@
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Firmalar.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Izinler.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Malzeme.datasource" />
+    <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Musteriler.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Personeller.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Stoklar.datasource" />
     <None Include="Properties\DataSources\Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Yemekler.datasource" />

@@ -34,11 +34,14 @@
             // 
             // stokDataGridView
             // 
+            this.stokDataGridView.AllowUserToAddRows = false;
+            this.stokDataGridView.AllowUserToDeleteRows = false;
             this.stokDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stokDataGridView.Location = new System.Drawing.Point(0, 0);
             this.stokDataGridView.MultiSelect = false;
             this.stokDataGridView.Name = "stokDataGridView";
+            this.stokDataGridView.ReadOnly = true;
             this.stokDataGridView.RowHeadersWidth = 51;
             this.stokDataGridView.RowTemplate.Height = 24;
             this.stokDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -13,9 +13,12 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public Guid Id { get; set; } = Guid.NewGuid();
         public decimal KullanimKg { get; set; }      
         public DateTime KullanimTarihi { get; set; }
-
-        public Yemekler Yemek { get; set; }
-
+        [ForeignKey("Stok")]
+        public Guid StokId { get; set; }
+        [ForeignKey("Yemek")]
+        public Guid YemekId { get; set; }
+        public virtual Yemekler Yemek { get; set; }
+      
         public virtual Stoklar Stok { get; set; }
     }
 }

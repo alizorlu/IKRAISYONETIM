@@ -12,15 +12,15 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
     public class Stoklar
     {
         [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid StokId { get; set; } = Guid.NewGuid();
         public string StokAdi { get; set; }
         public decimal StokTutari { get; set; }
         public decimal StokKgBirimAlinan { get; set; }
         public decimal StokKgBirimKalan { get; set; }
         public DateTime AlisTarihi { get; set; } = DateTime.Now;
-        //public bool StokBittiMi { get; set; } = false;
 
-        public ICollection<Malzeme> Malzemeler { get; set; }
+        
+        public virtual ICollection<Malzeme> Malzemeler { get; set; }
 
     }
 }

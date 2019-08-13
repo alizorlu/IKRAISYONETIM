@@ -27,15 +27,15 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
         }
         void Listele()
         {
-            ICollection<Malzeme> sa = frmYeniYemekler.yemekModel.Malzemeler;
+            //ICollection<Malzeme> sa = frmYeniYemekler.yemekModel.Malzemeler;
 
             List<DAL.EntityFramework.Tables.Stoklar> result = 
                 _stok.All().ToList();
           
             stokDataGridView.
                 DataSource = result;
-            stokDataGridView.Columns["Id"].Visible = false;
-            stokDataGridView.Columns["Id"].Visible = false;
+            stokDataGridView.Columns["StokId"].Visible = false;
+            stokDataGridView.Columns["StokId"].Visible = false;
             stokDataGridView.Columns["StokTutari"].Visible = false;
             stokDataGridView.Columns["StokKgBirimAlinan"].Visible = false;
             stokDataGridView.Columns["AlisTarihi"].Visible = false;

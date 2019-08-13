@@ -16,7 +16,7 @@ namespace Ikra_Is_Yonetim.PL.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "home", action = "index", id = UrlParameter.Optional }
             );
         }
     }

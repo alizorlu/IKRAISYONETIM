@@ -32,8 +32,10 @@
             this.stoklarDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.yenileBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.hareketlerBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniStokBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -70,6 +72,8 @@
             this.stoklarDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.stoklarDataGridView.Size = new System.Drawing.Size(956, 553);
             this.stoklarDataGridView.TabIndex = 4;
+            this.stoklarDataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.StoklarDataGridView_RowValidating);
+            this.stoklarDataGridView.SelectionChanged += new System.EventHandler(this.StoklarDataGridView_SelectionChanged);
             // 
             // kryptonPanel2
             // 
@@ -84,8 +88,10 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yenileBtn,
+            this.hareketlerBtn,
             this.toolStripMenuItem3,
+            this.yenileBtn,
+            this.toolStripMenuItem2,
             this.yeniStokBtn,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -94,6 +100,23 @@
             this.menuStrip1.Size = new System.Drawing.Size(956, 48);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // hareketlerBtn
+            // 
+            this.hareketlerBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.hareketlerBtn.Name = "hareketlerBtn";
+            this.hareketlerBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.hareketlerBtn.Size = new System.Drawing.Size(129, 44);
+            this.hareketlerBtn.Text = "Stok Hareketleri";
+            this.hareketlerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.hareketlerBtn.Click += new System.EventHandler(this.HareketlerBtn_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Enabled = false;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(27, 44);
+            this.toolStripMenuItem3.Text = "|";
             // 
             // yenileBtn
             // 
@@ -106,12 +129,12 @@
             this.yenileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.yenileBtn.Click += new System.EventHandler(this.YenileBtn_Click);
             // 
-            // toolStripMenuItem3
+            // toolStripMenuItem2
             // 
-            this.toolStripMenuItem3.Enabled = false;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(27, 44);
-            this.toolStripMenuItem3.Text = "|";
+            this.toolStripMenuItem2.Enabled = false;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(27, 44);
+            this.toolStripMenuItem2.Text = "|";
             // 
             // yeniStokBtn
             // 
@@ -134,6 +157,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(130, 44);
             this.toolStripMenuItem1.Text = "Anasayfaya Dön";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click_1);
             // 
             // frmStoklarList
             // 
@@ -165,5 +189,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView stoklarDataGridView;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
+        private System.Windows.Forms.ToolStripMenuItem hareketlerBtn;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

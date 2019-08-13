@@ -75,6 +75,7 @@
             this.cariBtn.TabIndex = 1;
             this.cariBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.customer;
             this.cariBtn.Values.Text = "Müşteri/Cari";
+            this.cariBtn.Click += new System.EventHandler(this.CariBtn_Click);
             // 
             // stokBtn
             // 

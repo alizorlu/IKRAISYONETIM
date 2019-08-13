@@ -93,7 +93,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Kasa
                 List<Kasalar> list = kasalar.ToList();
                 kasaGirisCikislarGrid.DataSource
                = list;
-                kasaGirisCikislarGrid.Columns["Id"].Visible = false;
+                kasaGirisCikislarGrid.Columns["StokId"].Visible = false;
                 KarHesaplama(list);
             }
             else if (tip=="Tüm İşlemler")
@@ -101,7 +101,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Kasa
                 List<Kasalar> list = kasalar.ToList();
                 kasaGirisCikislarGrid.DataSource
                     = list;
-                kasaGirisCikislarGrid.Columns["Id"].Visible = false;
+                kasaGirisCikislarGrid.Columns["StokId"].Visible = false;
                 KarHesaplama(list);
             }
             else if (tip=="Avans")
@@ -109,7 +109,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Kasa
                 List<Kasalar> list =
                     kasalar.Where(s => s.Aciklama.Contains("avans")).ToList();
                 kasaGirisCikislarGrid.DataSource =list;
-                kasaGirisCikislarGrid.Columns["Id"].Visible = false;
+                kasaGirisCikislarGrid.Columns["StokId"].Visible = false;
                 KarHesaplama(list);
             }
             else if (tip=="Maaş")
@@ -117,14 +117,14 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Kasa
                 List<Kasalar> list =
                     kasalar.Where(s => s.Aciklama.Contains("maaş")).ToList();
                 kasaGirisCikislarGrid.DataSource = list;
-                kasaGirisCikislarGrid.Columns["Id"].Visible = false;
+                kasaGirisCikislarGrid.Columns["StokId"].Visible = false;
                 KarHesaplama(list);
             }
             else if (tip == "Satış")
             {
                 List<Kasalar> list = kasalar.Where(s => s.Aciklama.Contains("satış")).ToList();
                    kasaGirisCikislarGrid.DataSource =list;
-                kasaGirisCikislarGrid.Columns["Id"].Visible = false;
+                kasaGirisCikislarGrid.Columns["StokId"].Visible = false;
                 KarHesaplama(list);
             }
 

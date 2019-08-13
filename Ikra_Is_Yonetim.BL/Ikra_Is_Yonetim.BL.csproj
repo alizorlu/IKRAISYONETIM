@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvanslarManager\AvansManager.cs" />
+    <Compile Include="CarilerManager\CarilerManager.cs" />
     <Compile Include="FirmalarManager\FirmalarManager.cs" />
     <Compile Include="Invoicer\Helpers\DateTimeExtensions.cs" />
     <Compile Include="Invoicer\Helpers\MigraDocHelpers.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="KasaManager\KasaManager.cs" />
     <Compile Include="KullaniciManager\KullanicilarsManager.cs" />
     <Compile Include="MaasManager\MaasManager.cs" />
+    <Compile Include="MalzemeManager\MalzemeManager.cs" />
     <Compile Include="Ninject\NinjectBindings.cs" />
     <Compile Include="Ninject\SingletonKernelManager.cs" />
     <Compile Include="PersonellerManager\PersonellersManager.cs" />
@@ -104,8 +106,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MalzemeManager\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

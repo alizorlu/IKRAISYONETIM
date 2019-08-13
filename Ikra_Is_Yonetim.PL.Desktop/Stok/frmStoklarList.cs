@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.StoklarManager;
+using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,10 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Stok
     public partial class frmStoklarList : KryptonForm
     {
         private StandardKernel
-kernel = SingletonKernelManager.Instance;
+            kernel = SingletonKernelManager.Instance;
         private IStoklarManager _stok;
+        private Stoklar _selectedStok { get; set; }
+        = null;
         public frmStoklarList()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ kernel = SingletonKernelManager.Instance;
                 = _stok.All();
             stoklarDataGridView.DataSource
                 = result.ToList();
-            stoklarDataGridView.Columns["Id"].Visible = false;
+            stoklarDataGridView.Columns["StokId"].Visible = false;
             stoklarDataGridView.Columns["AlisTarihi"].Visible = false;
             stoklarDataGridView.Columns["Malzemeler"].Visible = false;
             stoklarDataGridView.Columns["StokKgBirimAlinan"].Visible = false;
@@ -61,6 +64,50 @@ kernel = SingletonKernelManager.Instance;
         private void YenileBtn_Click(object sender, EventArgs e)
         {
             Listele();
+        }
+
+        private void StoklarDataGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            try
+            {
+                if (true)
+                {
+                    //MessageBox.Show("Test");
+                    Stoklar stok = (Stoklar)stoklarDataGridView.Rows[e.RowIndex]
+                        .DataBoundItem;
+                    _selectedStok = stok;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                //
+            }
+        }
+
+        private void HareketlerBtn_Click(object sender, EventArgs e)
+        {
+            if (_selectedStok!=null)
+            {
+                frmStokHareketler hareketler = new frmStokHareketler(_selectedStok.StokId);
+                hareketler.Show();
+            }
+        }
+
+        private void StoklarDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (stoklarDataGridView.SelectedRows.Count>0)
+            {
+                Stoklar stok = (Stoklar)
+                    stoklarDataGridView.SelectedRows[0].DataBoundItem;
+                _selectedStok = stok;
+            }
+        }
+
+        private void ToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

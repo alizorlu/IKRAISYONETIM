@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikra_Is_Yonetim.PL.Web", "Ikra_Is_Yonetim.PL.Web\Ikra_Is_Yonetim.PL.Web.csproj", "{B23CC60A-4CEE-4445-A194-F2209C6B408A}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikra_Is_Yonetim.PL.Desktop", "Ikra_Is_Yonetim.PL.Desktop\Ikra_Is_Yonetim.PL.Desktop.csproj", "{554F0273-1EE0-4E43-B6AE-561319D962BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikra_Is_Yonetim.Utilities", "Ikra_Is_Yonetim.Utilities\Ikra_Is_Yonetim.Utilities.csproj", "{417A1C59-11A2-45DE-B41B-C39F11089BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFTEST", "EFTEST\EFTEST.csproj", "{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

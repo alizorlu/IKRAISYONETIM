@@ -19,6 +19,7 @@ namespace Ikra_Is_Yonetim.BL.KasaManager
         void InsertAvans(Avanslar avans);
         void InsertMaas(Maaslar maas);
         void InsertStok(Stoklar stok);
+        
         IEnumerable<string> Donem();
         
     }

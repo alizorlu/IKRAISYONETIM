@@ -1,0 +1,47 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Yemekler
+
+@{
+    if (Model != null)
+    {
+        <div class="card">
+            <div class="card-header p-2 text-right">
+                Günün Yemeği
+
+            </div>
+            <div class="card-body p-3 text-center">
+                <div class="h1 m-0">@Html.DisplayFor(s => Model.YemekAdi)</div>
+                <div class="text-muted mb-4">@Html.DisplayFor(s => Model.YemekAciklamasi)</div>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary btn-sm">
+                    Yemeğin Ayrıntısı
+                </a>
+                <a href="#" class="btn btn-success btn-sm float-right">
+                    Sipariş Ver
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header p-2 text-right">
+                Günün Yemeği
+
+            </div>
+            <div class="card-body p-3 text-center">
+                <div class="h1 m-0">Henüz Eklenmedi.</div>
+                <div class="text-muted mb-4">----</div>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary btn-sm disabled">
+                    Yemeğin Ayrıntısı
+                </a>
+                <a href="#" class="btn btn-success btn-sm float-right disabled">
+                    Sipariş Ver
+                </a>
+            </div>
+        </div>
+    }
+}
+

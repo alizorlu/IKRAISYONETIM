@@ -723,7 +723,7 @@
             // 
             // duzenleBtn
             // 
-            this.duzenleBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "Id", true));
+            this.duzenleBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "StokId", true));
             this.duzenleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.duzenleBtn.Location = new System.Drawing.Point(3, 143);
             this.duzenleBtn.Name = "duzenleBtn";
@@ -735,7 +735,7 @@
             // 
             // silBtn
             // 
-            this.silBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "Id", true));
+            this.silBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "StokId", true));
             this.silBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.silBtn.Location = new System.Drawing.Point(3, 73);
             this.silBtn.Name = "silBtn";

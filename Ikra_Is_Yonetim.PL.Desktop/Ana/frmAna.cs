@@ -52,5 +52,11 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
             Yemek.frmYemekListesi yemekList = new Yemek.frmYemekListesi();
             yemekList.Show();
         }
+
+        private void CariBtn_Click(object sender, EventArgs e)
+        {
+            Cariler.frmCarilerList cariListe = new Cariler.frmCarilerList();
+            cariListe.Show();
+        }
     }
 }
