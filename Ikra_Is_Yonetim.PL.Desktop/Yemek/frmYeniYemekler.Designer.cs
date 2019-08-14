@@ -65,7 +65,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuStrip1.Size = new System.Drawing.Size(445, 48);
-            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // kaydetBtn
@@ -106,7 +106,7 @@
             this.porsiyonGr.Location = new System.Drawing.Point(26, 168);
             this.porsiyonGr.Name = "porsiyonGr";
             this.porsiyonGr.Size = new System.Drawing.Size(392, 27);
-            this.porsiyonGr.TabIndex = 9;
+            this.porsiyonGr.TabIndex = 1;
             // 
             // yemeklerBindingSource
             // 
@@ -128,7 +128,7 @@
             this.yemekAdiTxt.Location = new System.Drawing.Point(26, 103);
             this.yemekAdiTxt.Name = "yemekAdiTxt";
             this.yemekAdiTxt.Size = new System.Drawing.Size(392, 27);
-            this.yemekAdiTxt.TabIndex = 7;
+            this.yemekAdiTxt.TabIndex = 0;
             // 
             // kryptonLabel3
             // 
@@ -150,7 +150,7 @@
             this.UretimDate.MinDate = new System.DateTime(2019, 8, 5, 0, 0, 0, 0);
             this.UretimDate.Name = "UretimDate";
             this.UretimDate.Size = new System.Drawing.Size(392, 25);
-            this.UretimDate.TabIndex = 13;
+            this.UretimDate.TabIndex = 3;
             // 
             // kryptonLabel4
             // 
@@ -175,14 +175,14 @@
             this.malzemeGridView.RowTemplate.Height = 24;
             this.malzemeGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.malzemeGridView.Size = new System.Drawing.Size(392, 150);
-            this.malzemeGridView.TabIndex = 15;
+            this.malzemeGridView.TabIndex = 5;
             // 
             // stokEkleBtn
             // 
             this.stokEkleBtn.Location = new System.Drawing.Point(26, 611);
             this.stokEkleBtn.Name = "stokEkleBtn";
             this.stokEkleBtn.Size = new System.Drawing.Size(39, 24);
-            this.stokEkleBtn.TabIndex = 16;
+            this.stokEkleBtn.TabIndex = 6;
             this.stokEkleBtn.Values.Text = "Ekle";
             this.stokEkleBtn.LinkClicked += new System.EventHandler(this.StokEkleBtn_LinkClicked);
             this.stokEkleBtn.Click += new System.EventHandler(this.StokEkleBtn_Click);
@@ -192,7 +192,7 @@
             this.stokSilBtn.Location = new System.Drawing.Point(71, 611);
             this.stokSilBtn.Name = "stokSilBtn";
             this.stokSilBtn.Size = new System.Drawing.Size(125, 24);
-            this.stokSilBtn.TabIndex = 17;
+            this.stokSilBtn.TabIndex = 7;
             this.stokSilBtn.Values.Text = "Seçili olanı kaldır";
             this.stokSilBtn.Click += new System.EventHandler(this.StokSilBtn_Click);
             // 
@@ -227,13 +227,13 @@
             // 
             // kryptonTextBox1
             // 
-            this.kryptonTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.yemeklerBindingSource, "YemekAciklamasi", true));
+            this.kryptonTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.yemeklerBindingSource, "YemekAciklamasi", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.kryptonTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.yemeklerBindingSource, "YemekAciklamasi", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.kryptonTextBox1.Location = new System.Drawing.Point(26, 232);
             this.kryptonTextBox1.Multiline = true;
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(392, 60);
-            this.kryptonTextBox1.TabIndex = 20;
+            this.kryptonTextBox1.TabIndex = 2;
             // 
             // kryptonLabel7
             // 
@@ -252,10 +252,10 @@
             this.kryptonCheckBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.yemeklerBindingSource, "YayinDurumu", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.kryptonCheckBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.yemeklerBindingSource, "YayinDurumu", true));
             this.kryptonCheckBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.yemeklerBindingSource, "YayinDurumu", true));
-            this.kryptonCheckBox1.Location = new System.Drawing.Point(315, 362);
+            this.kryptonCheckBox1.Location = new System.Drawing.Point(364, 381);
             this.kryptonCheckBox1.Name = "kryptonCheckBox1";
             this.kryptonCheckBox1.Size = new System.Drawing.Size(24, 24);
-            this.kryptonCheckBox1.TabIndex = 24;
+            this.kryptonCheckBox1.TabIndex = 4;
             this.kryptonCheckBox1.Values.Text = "    ";
             // 
             // frmYeniYemekler

@@ -1,8 +1,10 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.CarilerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
 using Ikra_Is_Yonetim.PL.Desktop.UI;
+using Ikra_Is_Yonetim.Utilities.HashManager;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -20,11 +22,15 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
     {
         private static StandardKernel kernel = SingletonKernelManager.Instance;
         private ICarilerManager _cari;
+        private ISMSManager _sms;
+        private IHashManager _hash;
         private Musteriler _cariModel = new Musteriler();
         public frmYeniCari()
         {
             InitializeComponent();
             _cari = kernel.Get<ICarilerManager>();
+            _sms = kernel.Get<ISMSManager>();
+            _hash = kernel.Get<IHashManager>();
             musterilerBindingSource.AllowNew = true;
             musterilerBindingSource.DataSource = _cariModel;
         }
@@ -46,7 +52,31 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
             {
                 HataListesiTemizle();
                 _cariModel.LastLogin = _cariModel.KayitTarihi;
+                string pass = "123123123";
+                _cariModel.GeciciPassword =
+                    _hash.Create(pass);
                 _cari.Insert(_cariModel);
+                var smsModel =
+                    new SmsModel()
+                    {
+                        Phone = _cariModel.Telefon,
+                        Text = $"Ikra yemek sistemine kaydınız yapıldı.Giriş bilgileriniz aşağıdaki gibidir.\nTelefon:{_cariModel.Telefon}\nŞifre:{pass}"
+
+                    };
+               bool isSended= _sms.CreateAccountSendSms(smsModel);
+                if (isSended == false)
+                {
+                   DialogResult cevap= MessageBox.Show("Müşteri kaydı yapıldı fakat sms gönderilemedi.Tekrar denensin mi?","Sms gönderilemedi",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
+                    if (cevap==DialogResult.Yes)
+                    {
+                       isSended= _sms.CreateAccountSendSms(smsModel);
+                        if (isSended)
+                        {
+                            MessageBox.Show("Firmaya kayıt sms'i iletildi");
+                            
+                        }
+                    }
+                }
                 _cariModel = new Musteriler();
                 musterilerBindingSource.AllowNew = true;
                 musterilerBindingSource.DataSource = _cariModel;

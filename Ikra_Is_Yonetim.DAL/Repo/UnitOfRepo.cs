@@ -20,6 +20,15 @@ namespace Ikra_Is_Yonetim.DAL.Repo
                 return this.malzemeRepo ?? new EFRepo<Malzeme>(context);
             }
         }
+        private EFRepo<Siparisler> siparisRepo;
+        public EFRepo<Siparisler> siparisRepository
+        {
+            get
+            {
+                return this.siparisRepo ?? new EFRepo<Siparisler>(context);
+            }
+        }
+
         private EFRepo<Musteriler> musteriRepo;
         public EFRepo<Musteriler> musterilerRepository
         {

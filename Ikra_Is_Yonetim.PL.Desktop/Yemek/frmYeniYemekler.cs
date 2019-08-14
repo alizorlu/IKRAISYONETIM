@@ -63,8 +63,9 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
                     YemekId = yemekModel.YemekId,
                     UretimZamani = yemekModel.UretimZamani,
                     YayinDurumu = yemekModel.YayinDurumu,
-                    YemekAdi = yemekModel.YemekAdi
-                });
+                    YemekAdi = yemekModel.YemekAdi,
+                    YemekAciklamasi = yemekModel.YemekAciklamasi
+                }) ;
                 foreach (var item in yemekModel.Malzemeler)
                 {
                     item.Stok = null;

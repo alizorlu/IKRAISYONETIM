@@ -43,11 +43,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.yemekMaaliyetLbl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.YemekAdi = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.yemeklerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,14 +57,18 @@
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.firmaTelefon = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.menuHkk = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.malzemeGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cariSilBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personellerList)).BeginInit();
             this.personellerList.SuspendLayout();
@@ -75,15 +79,16 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
+            this.kryptonPage3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
             this.kryptonPage2.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yemeklerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.malzemeGridView)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).BeginInit();
             this.SuspendLayout();
@@ -157,7 +162,7 @@
             this.personellerList.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.personellerList.SelectedIndex = 0;
-            this.personellerList.Size = new System.Drawing.Size(325, 685);
+            this.personellerList.Size = new System.Drawing.Size(325, 1007);
             this.personellerList.TabIndex = 5;
             this.personellerList.Text = "kryptonNavigator1";
             // 
@@ -170,7 +175,7 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(323, 634);
+            this.kryptonPage1.Size = new System.Drawing.Size(323, 956);
             this.kryptonPage1.Text = "Yemekler Listesi";
             this.kryptonPage1.TextDescription = "Yemekler Listesi";
             this.kryptonPage1.TextTitle = "Yemekler Listesi";
@@ -185,7 +190,7 @@
             this.yemekList.Location = new System.Drawing.Point(0, 46);
             this.yemekList.Name = "yemekList";
             this.yemekList.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.yemekList.Size = new System.Drawing.Size(323, 588);
+            this.yemekList.Size = new System.Drawing.Size(323, 910);
             this.yemekList.TabIndex = 2;
             this.yemekList.SelectedValueChanged += new System.EventHandler(this.YemekList_SelectedValueChanged);
             this.yemekList.SelectedIndexChanged += new System.EventHandler(this.YemekList_SelectedIndexChanged);
@@ -228,9 +233,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(325, 48);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1059, 685);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1059, 1007);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // kryptonNavigator2
@@ -250,21 +255,53 @@
             this.kryptonPage3});
             this.kryptonNavigator2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonNavigator2.SelectedIndex = 0;
-            this.kryptonNavigator2.Size = new System.Drawing.Size(1053, 166);
+            this.kryptonNavigator2.Size = new System.Drawing.Size(1053, 488);
             this.kryptonNavigator2.TabIndex = 2;
             this.kryptonNavigator2.Text = "kryptonNavigator2";
             // 
             // kryptonPage3
             // 
             this.kryptonPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage3.Controls.Add(this.tableLayoutPanel4);
             this.kryptonPage3.Flags = 65534;
             this.kryptonPage3.LastVisibleSet = true;
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(1051, 137);
-            this.kryptonPage3.Text = "Cariye ait borç dökümü.";
+            this.kryptonPage3.Size = new System.Drawing.Size(1051, 459);
+            this.kryptonPage3.Text = "Yemeğe Ait Bazı Mâli Bilgiler";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "7E11FD619E894EB60DB1254688CDAB42";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.kryptonLabel7, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.yemekMaaliyetLbl, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 459F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1051, 459);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // yemekMaaliyetLbl
+            // 
+            this.yemekMaaliyetLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.yemekMaaliyetLbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel;
+            this.yemekMaaliyetLbl.Location = new System.Drawing.Point(3, 3);
+            this.yemekMaaliyetLbl.Name = "yemekMaaliyetLbl";
+            this.yemekMaaliyetLbl.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Silver;
+            this.yemekMaaliyetLbl.Size = new System.Drawing.Size(1045, 35);
+            this.yemekMaaliyetLbl.TabIndex = 3;
+            this.yemekMaaliyetLbl.Values.ExtraText = "2500 TL";
+            this.yemekMaaliyetLbl.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.analiz_rapor;
+            this.yemekMaaliyetLbl.Values.Text = "Kuru Fasülye Yemeğinin Üretim Maaliyeti";
             // 
             // kryptonNavigator1
             // 
@@ -292,7 +329,7 @@
             // kryptonPage2
             // 
             this.kryptonPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage2.Controls.Add(this.tableLayoutPanel2);
+            this.kryptonPage2.Controls.Add(this.tableLayoutPanel3);
             this.kryptonPage2.Flags = 65534;
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
@@ -302,28 +339,12 @@
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "7E11FD619E894EB60DB1254688CDAB42";
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1051, 479);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.kryptonLabel6, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.kryptonLabel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.YemekAdi, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.kryptonTextBox1, 1, 1);
@@ -332,28 +353,24 @@
             this.tableLayoutPanel3.Controls.Add(this.kryptonTextBox2, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.firmaTelefon, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.kryptonLabel4, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.kryptonLabel5, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.kryptonLabel6, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.menuHkk, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.malzemeGridView, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 6);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
+            this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1045, 243);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // kryptonLabel6
-            // 
-            this.kryptonLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel6.Location = new System.Drawing.Point(3, 135);
-            this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(236, 150);
-            this.kryptonLabel6.TabIndex = 38;
-            this.kryptonLabel6.Values.Text = "Kullanılan Malzemeler";
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1051, 479);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // kryptonLabel2
             // 
@@ -371,7 +388,7 @@
             this.YemekAdi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.YemekAdi.Location = new System.Drawing.Point(245, 3);
             this.YemekAdi.Name = "YemekAdi";
-            this.YemekAdi.Size = new System.Drawing.Size(797, 27);
+            this.YemekAdi.Size = new System.Drawing.Size(803, 27);
             this.YemekAdi.TabIndex = 28;
             // 
             // yemeklerBindingSource
@@ -385,7 +402,7 @@
             this.kryptonTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTextBox1.Location = new System.Drawing.Point(245, 36);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(797, 27);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(803, 27);
             this.kryptonTextBox1.TabIndex = 30;
             // 
             // kryptonLabel1
@@ -413,7 +430,7 @@
             this.kryptonTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonTextBox2.Location = new System.Drawing.Point(245, 69);
             this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(797, 27);
+            this.kryptonTextBox2.Size = new System.Drawing.Size(803, 27);
             this.kryptonTextBox2.TabIndex = 33;
             // 
             // firmaTelefon
@@ -423,7 +440,7 @@
             this.firmaTelefon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.firmaTelefon.Location = new System.Drawing.Point(245, 102);
             this.firmaTelefon.Name = "firmaTelefon";
-            this.firmaTelefon.Size = new System.Drawing.Size(797, 27);
+            this.firmaTelefon.Size = new System.Drawing.Size(803, 27);
             this.firmaTelefon.TabIndex = 34;
             // 
             // kryptonLabel4
@@ -436,6 +453,35 @@
             this.kryptonLabel4.TabIndex = 35;
             this.kryptonLabel4.Values.Text = "Yemeğin Web\'teki Yayın Durumu";
             // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonLabel5.Location = new System.Drawing.Point(3, 135);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(236, 24);
+            this.kryptonLabel5.TabIndex = 40;
+            this.kryptonLabel5.Values.Text = "Menü İçeriği";
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonLabel6.Location = new System.Drawing.Point(3, 165);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(236, 24);
+            this.kryptonLabel6.TabIndex = 38;
+            this.kryptonLabel6.Values.Text = "Kullanılan Malzemeler";
+            // 
+            // menuHkk
+            // 
+            this.menuHkk.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.yemeklerBindingSource, "YemekAciklamasi", true));
+            this.menuHkk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.yemeklerBindingSource, "YemekAciklamasi", true));
+            this.menuHkk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuHkk.Location = new System.Drawing.Point(245, 135);
+            this.menuHkk.Multiline = true;
+            this.menuHkk.Name = "menuHkk";
+            this.menuHkk.Size = new System.Drawing.Size(803, 24);
+            this.menuHkk.TabIndex = 41;
+            // 
             // malzemeGridView
             // 
             this.malzemeGridView.AllowUserToAddRows = false;
@@ -443,43 +489,46 @@
             this.malzemeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.malzemeGridView.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.yemeklerBindingSource, "Malzemeler", true));
             this.malzemeGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.malzemeGridView.Location = new System.Drawing.Point(245, 135);
+            this.malzemeGridView.Location = new System.Drawing.Point(245, 165);
             this.malzemeGridView.MultiSelect = false;
             this.malzemeGridView.Name = "malzemeGridView";
+            this.malzemeGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.malzemeGridView.ReadOnly = true;
             this.malzemeGridView.RowHeadersWidth = 51;
             this.malzemeGridView.RowTemplate.Height = 24;
             this.malzemeGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.malzemeGridView.Size = new System.Drawing.Size(797, 150);
+            this.malzemeGridView.Size = new System.Drawing.Size(803, 144);
             this.malzemeGridView.TabIndex = 39;
             // 
-            // tableLayoutPanel4
+            // tableLayoutPanel2
             // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.kryptonButton3, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.cariSilBtn, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.kryptonButton2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.kryptonButton1, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 252);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 224F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1045, 224);
-            this.tableLayoutPanel4.TabIndex = 2;
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton3, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cariSilBtn, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.kryptonButton1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(245, 315);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(803, 161);
+            this.tableLayoutPanel2.TabIndex = 42;
             // 
             // kryptonButton3
             // 
             this.kryptonButton3.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
             this.kryptonButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonButton3.Location = new System.Drawing.Point(786, 3);
+            this.kryptonButton3.Location = new System.Drawing.Point(603, 3);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.kryptonButton3.Size = new System.Drawing.Size(256, 71);
+            this.kryptonButton3.Size = new System.Drawing.Size(197, 76);
             this.kryptonButton3.TabIndex = 4;
             this.kryptonButton3.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.edit;
             this.kryptonButton3.Values.Text = "Yemeği Düzenle";
@@ -488,31 +537,31 @@
             // 
             this.cariSilBtn.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Custom1;
             this.cariSilBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cariSilBtn.Location = new System.Drawing.Point(525, 3);
+            this.cariSilBtn.Location = new System.Drawing.Point(403, 3);
             this.cariSilBtn.Name = "cariSilBtn";
             this.cariSilBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.cariSilBtn.Size = new System.Drawing.Size(255, 71);
+            this.cariSilBtn.Size = new System.Drawing.Size(194, 76);
             this.cariSilBtn.TabIndex = 3;
             this.cariSilBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.delete;
-            this.cariSilBtn.Values.Text = "Bu Yemeği Sil";
+            this.cariSilBtn.Values.Text = "Yemeği Sil";
             // 
             // kryptonButton2
             // 
             this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonButton2.Location = new System.Drawing.Point(3, 3);
+            this.kryptonButton2.Location = new System.Drawing.Point(203, 3);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(255, 71);
+            this.kryptonButton2.Size = new System.Drawing.Size(194, 78);
             this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Text = "Önceki Yemek";
+            this.kryptonButton2.Values.Text = "Önceki Kayıt";
             // 
             // kryptonButton1
             // 
             this.kryptonButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonButton1.Location = new System.Drawing.Point(264, 3);
+            this.kryptonButton1.Location = new System.Drawing.Point(3, 3);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(255, 71);
+            this.kryptonButton1.Size = new System.Drawing.Size(194, 78);
             this.kryptonButton1.TabIndex = 0;
-            this.kryptonButton1.Values.Text = "Sonraki Yemek";
+            this.kryptonButton1.Values.Text = "Sonraki Kayıt";
             // 
             // kryptonPage4
             // 
@@ -538,17 +587,31 @@
             this.kryptonPage5.ToolTipTitle = "Page ToolTip";
             this.kryptonPage5.UniqueName = "283C5C889E2F4092A78FDE96ECF7A1CD";
             // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel;
+            this.kryptonLabel7.Location = new System.Drawing.Point(3, 44);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Silver;
+            this.kryptonLabel7.Size = new System.Drawing.Size(1045, 35);
+            this.kryptonLabel7.TabIndex = 4;
+            this.kryptonLabel7.Values.ExtraText = "0";
+            this.kryptonLabel7.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.analiz_rapor;
+            this.kryptonLabel7.Values.Text = "Kuru Fasülye Yemeğinin Satış Sayısı";
+            // 
             // frmYemekListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 733);
+            this.ClientSize = new System.Drawing.Size(1384, 1055);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.personellerList);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmYemekListesi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yemek İşlemleri";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personellerList)).EndInit();
@@ -561,16 +624,18 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
+            this.kryptonPage3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             this.kryptonPage2.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yemeklerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.malzemeGridView)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
             this.ResumeLayout(false);
@@ -598,9 +663,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox yemekAramaTxt;
         private ComponentFactory.Krypton.Toolkit.ButtonSpecAny cariAramaTemizleBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonListBox yemekList;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.BindingSource yemeklerBindingSource;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox YemekAdi;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
@@ -609,12 +673,17 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox firmaTelefon;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
-        private System.Windows.Forms.BindingSource yemeklerBindingSource;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox menuHkk;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView malzemeGridView;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton cariSilBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel yemekMaaliyetLbl;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel7;
     }
 }

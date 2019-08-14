@@ -21,6 +21,6 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public string YemekAciklamasi { get; set; }
 
         public virtual ICollection<Malzeme> Malzemeler { get; set; }
-
+        public virtual ICollection<Siparisler> Siparisler { get; set; }
     }
 }

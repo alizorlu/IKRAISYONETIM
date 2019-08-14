@@ -16,6 +16,7 @@ namespace Ikra_Is_Yonetim.BL.CarilerManager
         void Update(Musteriler model);
         void Delete(Guid id);
         Musteriler Find(Guid id);
+        Musteriler Login(string phone, string pass);
     }
     public class EFCarilerManager : ICarilerManager
     {
@@ -45,6 +46,14 @@ namespace Ikra_Is_Yonetim.BL.CarilerManager
         {
             _repo.musterilerRepository.Insert(model);
             _repo.Save();
+        }
+
+        public Musteriler Login(string phone, string pass)
+        {
+            var result = All().Where(s => s.Telefon.Equals(phone)
+              && s.GeciciPassword.Equals(pass)).FirstOrDefault();
+            if (result == null) return null;
+            else return result;
         }
 
         public IEnumerable<Musteriler> Search(string query)

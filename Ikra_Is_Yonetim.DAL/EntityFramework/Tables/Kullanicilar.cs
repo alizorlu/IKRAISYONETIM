@@ -49,5 +49,6 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public string Address { get; set; }
         public int MealCount { get; set; } = 0;
 
+
     }
 }

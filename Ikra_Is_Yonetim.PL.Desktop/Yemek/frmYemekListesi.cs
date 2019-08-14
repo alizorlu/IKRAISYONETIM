@@ -1,4 +1,5 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using Ikra_Is_Yonetim.BL.MalzemeManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.YemekManager;
 using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
@@ -20,11 +21,13 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
         private static StandardKernel kernel = SingletonKernelManager.Instance;
         private IYemekManager _yemek;
         private Yemekler _selectedYemek = null;
+        private IMalzemeMananager _malzeme;
 
         public frmYemekListesi()
         {
             InitializeComponent();
             _yemek = kernel.Get<IYemekManager>();
+            _malzeme = kernel.Get<IMalzemeMananager>();
             if (_selectedYemek == null) return;
             yemeklerBindingSource.DataSource = _selectedYemek;
         }
@@ -47,6 +50,9 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
                 malzemeGridView.Columns["StokAdi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 malzemeGridView.Columns["KullanimKg"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 malzemeGridView.Columns["StokId"].Visible = false;
+
+                yemekMaaliyetLbl.Text = $"{_selectedYemek.YemekAdi} Yemeğinin Toplam Üretim Maaliyeti :";
+                yemekMaaliyetLbl.Values.ExtraText = $"{_malzeme.UretimMaaliyetHesabi(_selectedYemek.Malzemeler.ToList()).ToString("0.00 TL")}";
             }
         }
         protected override void OnActivated(EventArgs e)
@@ -83,6 +89,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
         {
             _selectedYemek = (Yemekler)
                     yemekList.SelectedItem;
+            if (_selectedYemek == null) return;
             yemeklerBindingSource.DataSource = _selectedYemek;
             yemeklerBindingSource.BindingComplete += YemeklerBindingSource_BindingComplete;
             MalzemeListesiYukle();
@@ -96,5 +103,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Yemek
             yemeklerBindingSource.BindingComplete += YemeklerBindingSource_BindingComplete;
             MalzemeListesiYukle();
         }
+
+        
     }
 }

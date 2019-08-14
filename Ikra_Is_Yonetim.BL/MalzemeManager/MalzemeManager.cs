@@ -17,6 +17,7 @@ namespace Ikra_Is_Yonetim.BL.MalzemeManager
         void Update(Malzeme malzeme);
         void Delete(Guid id);
         Malzeme Find(Guid id);
+        decimal UretimMaaliyetHesabi(List<Malzeme> malzemeler);
     }
     public class EFMalzemeManager : IMalzemeMananager
     {
@@ -66,6 +67,17 @@ namespace Ikra_Is_Yonetim.BL.MalzemeManager
         {
             _repo.malzemeRepository.Update(malzeme);
             _repo.Save();
+        }
+
+        public decimal UretimMaaliyetHesabi(List<Malzeme> malzemeler)
+        {
+            decimal total = 0m;
+            foreach (var item in malzemeler)
+            {
+                decimal kgTutari = item.Stok.StokTutari / item.Stok.StokKgBirimAlinan;
+                total += total + (kgTutari * item.KullanimKg);
+            }
+            return total;
         }
     }
     class MalzemeManager

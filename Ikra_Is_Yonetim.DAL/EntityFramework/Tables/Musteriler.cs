@@ -23,5 +23,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         [DataType(DataType.MultilineText)]
         public string FirmaAdres { get; set; }
         public decimal GunlukYemekFiyati { get; set; }
+        public string GeciciPassword { get; set; }
+        public ICollection<Siparisler> Siparisler { get; set; }
     }
 }

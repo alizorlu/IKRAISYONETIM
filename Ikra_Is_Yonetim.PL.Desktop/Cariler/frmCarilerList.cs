@@ -40,31 +40,31 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
             this.Enabled = true;
         }
 
-        //public void MyTestMethod()
-        //{
-        //    var result = _cari.All();
-        //    foreach (var item in result.ToList())
-        //    {
-        //        _cari.Delete(item.StokId);
-        //    }
-        //    for (int i = 0; i < 5362; i++)
-        //    {
+        public void MyTestMethod()
+        {
+            var result = _cari.All();
+            //foreach (var item in result.ToList())
+            //{
+            //    _cari.Delete(item.StokId);
+            //}
+            for (int i = 0; i < 2; i++)
+            {
 
-        //        _cari.Insert(new Musteriler()
-        //        {
-        //            Email = FakeData.NetworkData.GetEmail(),
-        //            FirmaAdres = FakeData.PlaceData.GetAddress(),
-        //            FirmaAdSoyad = FakeData.NameData.GetFullName(),
-        //            GunlukYemekFiyati = (decimal)
-        //            FakeData.NumberData.GetDouble(),
-        //            GunlukYemekSayisi = FakeData.NumberData.GetNumber(10, 15),
-        //            KayitTarihi = FakeData.DateTimeData.GetDatetime(),
-        //            LastLogin = FakeData.DateTimeData.GetDatetime(),
-        //            Telefon = $"053181213{new Random().Next(10,99)}"
-        //        });
+                _cari.Insert(new Musteriler()
+                {
+                    Email = FakeData.NetworkData.GetEmail(),
+                    FirmaAdres = FakeData.PlaceData.GetAddress(),
+                    FirmaAdSoyad = i%2==0?"Karakoçan Holding":"Harput Dibek",
+                    GunlukYemekFiyati = (decimal)
+                    FakeData.NumberData.GetDouble(),
+                    GunlukYemekSayisi = FakeData.NumberData.GetNumber(10, 15),
+                    KayitTarihi = FakeData.DateTimeData.GetDatetime(),
+                    LastLogin = FakeData.DateTimeData.GetDatetime(),
+                    Telefon = $"053181213{new Random().Next(10, 99)}"
+                });
 
-        //    }
-        //}
+            }
+        }
         void CariArama(string query)
         {
             if (query == null || query.Length <= 0) return;

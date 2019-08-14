@@ -1,0 +1,55 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Siparisler
+
+@{
+    if (Model == null)
+    {
+        <span class="text-default font-weight-light">
+            <i class="fe fe-circle"></i> &nbsp;
+            Bugün herhangi bir sipariş vermediniz.
+        </span>
+    }
+    else
+    {
+        if (Model.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.Onay)
+        {
+            <a class="nav-link icon text-success" data-toggle="dropdown">
+                <i class="fe fe-clock text-primary"></i>
+                <span class=" "></span>
+                &nbsp;
+                <span class="font-weight-light text-primary">Siparişinizi aldık.Onay bekleniyor.</span>
+            </a>
+        }
+        else if (Model.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.Hazırlanıyor)
+        {
+            <a class="nav-link icon" data-toggle="dropdown">
+                <i class="fe fe-check text-warning"></i>
+                <span class=" "></span>
+                &nbsp;
+                <span class="font-weight-light text-warning">Siparişinizi hazırlıyoruz.</span>
+            </a>
+        }
+        else if (Model.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.Yolda)
+        {
+            <a class="nav-link icon" data-toggle="dropdown">
+                <i class="fe fe-truck text-success"></i>
+                <span class=" "></span>
+                &nbsp;
+                <span class="font-weight-light text-success">Siparişinizi hazırladık.Şimdi yolda</span>
+            </a>
+        }
+        else if (Model.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İletildi)
+        {
+            <a class="nav-link icon" data-toggle="dropdown">
+                <i class="fe fe-check-circle text-success"></i>
+                <span class=" "></span>
+                &nbsp;
+                <span class="font-weight-light text-success">Siparişinizi teslim ettik.</span>
+            </a>
+        }
+    }
+}
+
+
+
+
+

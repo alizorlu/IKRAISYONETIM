@@ -1,0 +1,64 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Siparisler
+
+@{
+    ViewBag.Title = "Yeni Sipariş İşlemi";
+    Layout = "~/Views/layouts/dashboard_layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+           @{ Html.RenderAction("_yemekBilgiView", "order",new { yemekid=Model.YemekId});}
+        </div>
+        <div class="col-7">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Siparişinizi Oluşturun</h3>
+
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm("create", "order", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(s => Model.YemekId)
+                            @Html.HiddenFor(s => Model.MusteriId)
+                            @Html.HiddenFor(s => Model.SiparisDurum)
+                            @Html.HiddenFor(s => Model.SiparisTarihi)
+                            @Html.HiddenFor(s => Model.Id)
+                            @Html.HiddenFor(s=>Model.Yemek)
+                            @Html.HiddenFor(s=>Model.Musteri)
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.YemekSayisi, "Kaç Kişilik Sipariş Verilsin", htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.YemekSayisi, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.YemekSayisi, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Şimdi Siparişi Ver" class="btn btn-success btn-sm rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="card-footer">
+                    <em>Sipariş tarihiniz :</em> @Html.DisplayFor(s=>Model.SiparisTarihi)
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.6.4.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

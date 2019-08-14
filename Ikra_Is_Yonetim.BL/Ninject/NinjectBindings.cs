@@ -9,6 +9,7 @@ using Ikra_Is_Yonetim.BL.KullaniciManager;
 using Ikra_Is_Yonetim.BL.MaasManager;
 using Ikra_Is_Yonetim.BL.MalzemeManager;
 using Ikra_Is_Yonetim.BL.PersonellerManager;
+using Ikra_Is_Yonetim.BL.SiparisManager;
 using Ikra_Is_Yonetim.BL.SirketManager;
 using Ikra_Is_Yonetim.BL.StoklarManager;
 using Ikra_Is_Yonetim.BL.YemekManager;
@@ -43,7 +44,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             Bind<IYemekManager>().To<EFYemekManager>();
             Bind<ICarilerManager>().To<EFCarilerManager>();
             Bind<IMalzemeMananager>().To<EFMalzemeManager>();
-            
+            Bind<ISiparisManager>().To<EFSiparisManager>();
 
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();

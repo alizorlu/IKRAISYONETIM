@@ -30,7 +30,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Context
 
         public virtual DbSet<Yemekler> Yemekler { get; set; }
         public virtual DbSet<Malzeme> Malzemeler { get; set; }
-
+        public virtual DbSet<Siparisler> Siparisler { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
          

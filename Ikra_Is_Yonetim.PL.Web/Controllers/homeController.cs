@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Ikra_Is_Yonetim.PL.Web.Controllers
 {
+    [Authorize]
     public class homeController : Controller
     {
         private static StandardKernel kernel = SingletonKernelManager.Instance;

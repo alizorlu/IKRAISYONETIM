@@ -44,11 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Ikra_Is_Yonetim.DAL\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\Ikra_Is_Yonetim.DAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -529,11 +528,17 @@
     <Content Include="Content\assets\plugins\prismjs\plugin.css" />
     <Content Include="Content\assets\plugins\prismjs\plugin.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\accountController.cs" />
+    <Compile Include="Controllers\authPartialController.cs" />
     <Compile Include="Controllers\homeController.cs" />
+    <Compile Include="Controllers\orderController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -565,6 +570,11 @@
     <Content Include="Views\test\Index.cshtml" />
     <Content Include="Views\home\index.cshtml" />
     <Content Include="Views\home\_gununYemegi.cshtml" />
+    <Content Include="Views\account\login.cshtml" />
+    <Content Include="Views\authPartial\_profileView.cshtml" />
+    <Content Include="Views\authPartial\_orderView.cshtml" />
+    <Content Include="Views\order\create.cshtml" />
+    <Content Include="Views\order\_yemekBilgiView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -584,6 +594,10 @@
     <ProjectReference Include="..\Ikra_Is_Yonetim.DAL\Ikra_Is_Yonetim.DAL.csproj">
       <Project>{EC56DF53-48AA-49EA-B1FA-F6930BB135A7}</Project>
       <Name>Ikra_Is_Yonetim.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.Utilities\Ikra_Is_Yonetim.Utilities.csproj">
+      <Project>{417A1C59-11A2-45DE-B41B-C39F11089BE0}</Project>
+      <Name>Ikra_Is_Yonetim.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

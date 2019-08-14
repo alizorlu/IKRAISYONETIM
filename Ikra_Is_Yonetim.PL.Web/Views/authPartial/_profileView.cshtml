@@ -1,0 +1,43 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Musteriler
+
+
+@{
+    if (Model == null)
+    {
+        <span>&nbsp;HATA !</span>
+    }
+    else
+    {
+        <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+            <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+            <span class="ml-2 d-none d-lg-block">
+                <span class="text-default">@Html.DisplayFor(s=>Model.FirmaAdSoyad)</span>
+                <small class="text-muted d-block mt-1">Firma</small>
+            </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fe-user"></i> Firma Profili
+            </a>
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fe-settings"></i> Ayarlar
+            </a>
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fe-send"></i> Ödeme İşlemi
+            </a>
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fe-clock"></i> Sipariş Geçmişi
+            </a>
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fc-event-dot"></i> Giriş Hareketleriniz
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <i class="dropdown-icon fe fe-help-circle"></i> Şifre Değiştir
+            </a>
+            <a class="dropdown-item" href="/account/logout">
+                <i class="dropdown-icon fe fe-log-out"></i> Çıkış
+            </a>
+        </div>
+    }
+}
