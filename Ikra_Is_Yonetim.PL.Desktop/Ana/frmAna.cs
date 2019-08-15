@@ -58,5 +58,11 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Ana
             Cariler.frmCarilerList cariListe = new Cariler.frmCarilerList();
             cariListe.Show();
         }
+
+        private void SiparisBtn_Click(object sender, EventArgs e)
+        {
+            Siparis.frmSiparislerList siparisListe = new Siparis.frmSiparislerList();
+            siparisListe.Show();
+        }
     }
 }

@@ -66,6 +66,7 @@
             this.siparisBtn.TabIndex = 0;
             this.siparisBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.tray;
             this.siparisBtn.Values.Text = "Sipariş İşlemleri";
+            this.siparisBtn.Click += new System.EventHandler(this.SiparisBtn_Click);
             // 
             // cariBtn
             // 

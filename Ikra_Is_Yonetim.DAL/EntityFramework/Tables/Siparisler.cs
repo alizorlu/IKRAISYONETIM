@@ -13,7 +13,8 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         Onay,
         Hazırlanıyor,
         Yolda,
-        İletildi
+        İletildi,
+        İptal
     }
     [Table("Siparis", Schema = "IkraGenel")]
     public class Siparisler
@@ -34,7 +35,10 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public Guid YemekId { get; set; }
         public virtual  Yemekler Yemek{ get; set; }
 
-       
+        [ForeignKey("Odeme")]
+        public Guid? OdemeId { get; set; }
+        public virtual SiparisOdeme Odeme { get; set; }
+
 
     }
 }

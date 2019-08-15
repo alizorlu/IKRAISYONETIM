@@ -71,5 +71,33 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
             _siparis.Insert(model);
             return RedirectToAction("index", "home");
         }
+
+        public ActionResult index(string type)
+        {
+            
+            Guid _id = getLoginUserId();
+            if (_id == Guid.Empty) return null;
+            IEnumerable<Siparisler> result = _siparis.AllMyOrder(_id);
+            if (type=="1")
+            {
+                result = result.Where(s => (s.OdemeId == null || s.OdemeId == Guid.Empty)
+                  &&
+                  s.SiparisDurum == SiparisDurumu.İletildi
+                );
+            }
+            else if (type=="2")
+            {
+                result = result.Where(s => (s.OdemeId != null &&s.OdemeId != Guid.Empty)
+                  &&
+                  s.SiparisDurum == SiparisDurumu.İletildi
+                );
+            }
+            return View(result);
+        }
+        [HttpPost]
+        public ActionResult multipayment(List<string> selected)
+        {
+            return null;
+        }
     }
 }

@@ -46,6 +46,15 @@
                 <span class="font-weight-light text-success">Siparişinizi teslim ettik.</span>
             </a>
         }
+         else if (Model.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İptal)
+        {
+            <a class="nav-link icon" data-toggle="dropdown">
+                <i class="fe fe-x-circle text-danger"></i>
+                <span class=" "></span>
+                &nbsp;
+                <span class="font-weight-light text-danger">Siparişiniz iptal edildi.</span>
+            </a>
+        }
     }
 }
 
