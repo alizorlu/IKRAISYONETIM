@@ -1,6 +1,8 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.IyzicoManager;
 using Ikra_Is_Yonetim.BL.CarilerManager;
+using Ikra_Is_Yonetim.BL.KasaManager;
 using Ikra_Is_Yonetim.BL.Ninject;
+using Ikra_Is_Yonetim.BL.OdemeManager;
 using Ikra_Is_Yonetim.BL.SiparisManager;
 using Ikra_Is_Yonetim.BL.YemekManager;
 using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
@@ -23,6 +25,11 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         private static readonly object _yemekLock = new object();
         private ICarilerManager _cari;
         private static readonly object _cariLock = new object();
+        private IOdemeManager _odeme;
+        private static readonly object _odemeLock = new object();
+        private IKasaManager _kasa;
+        private static readonly object _kasaLock = new object();
+
         private IIyzicoPaymentManager _iyzico;
         // GET: order
         public orderController()
@@ -34,6 +41,14 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
             lock (_cariLock)
             {
                 if (_cari == null) _cari = kernel.Get<ICarilerManager>();
+            }
+            lock (_odemeLock)
+            {
+                if (_odeme == null) _odeme = kernel.Get<IOdemeManager>();
+            }
+            lock (_kasaLock)
+            {
+                if (_kasa == null) _kasa = kernel.Get<IKasaManager>();
             }
             _siparis = kernel.Get<ISiparisManager>();
             _iyzico = kernel.Get<IIyzicoPaymentManager>();
@@ -110,14 +125,53 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
                 form = _iyzico.GetPaymentForm(result);
             if (form.Status == "success")
             {
+                TempData["cid"] = form.ConversationId.ToString();
                 return View(form);
             }
             else return null;
             
         }
-        public ActionResult paymentForm(string token)
+        //MerchantPayoutAmount = "788.4875" net fiyat
+        //PaidPrice = "810" ÖDenen fiyat
+        public ActionResult paymentForm(string token,string conversationId)
         {
-            return View();
+            string cid = TempData["cid"] as string;
+            var result = _iyzico.ContolPayment(token, cid);
+            if (result.Status== "success")
+            {
+                foreach (var item in result.PaymentItems)
+                {
+                    Guid siparisId = Guid.Parse(item.ItemId);
+                    //Ödemeyi kaydet.
+                    //Siparişi Güncelle.
+                    //Kasaya Giriş yap.
+                    SiparisOdeme odeme = new SiparisOdeme()
+                    {
+                        KartTip = result.CardType,
+                        KartBinNumber = result.BinNumber,
+                        KartAile = result.CardFamily,
+                        NetOdemeTutari = item.MerchantPayoutAmount,
+                        OdemeTarihi = DateTime.Now,
+                        OdemeTutari = item.PaidPrice,
+                        SonDortHane = result.LastFourDigits,
+                    };
+
+                    _odeme.Insert(odeme);
+
+                    Siparisler siparis = _siparis.Find(siparisId);
+                    siparis.OdemeId = odeme.OdemeId;
+                    //siparis.Odeme = odeme;
+                    _siparis.Update(siparis);
+                  
+                    
+                    _kasa.InsertSiparisOdeme(siparis);
+                }
+                return RedirectToAction("index", "order");
+            }
+            else
+            {
+                return View(result);
+            }
         }
     }
 }

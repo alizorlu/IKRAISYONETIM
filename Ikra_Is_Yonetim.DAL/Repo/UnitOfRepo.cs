@@ -13,6 +13,14 @@ namespace Ikra_Is_Yonetim.DAL.Repo
         private IkraContext context = new IkraContext();
         private EFRepo<Kullanicilar> kullaniciRepo;
         private EFRepo<Malzeme> malzemeRepo;
+        private EFRepo<SiparisOdeme> odemeRepo;
+        public EFRepo<SiparisOdeme> odemeRepository
+        {
+            get
+            {
+                return this.odemeRepo ?? new EFRepo<SiparisOdeme>(context);
+            }
+        }
         public EFRepo<Malzeme> malzemeRepository
         {
             get

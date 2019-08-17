@@ -1,7 +1,18 @@
 ﻿@model Iyzipay.Model.CheckoutFormInitialize
 @{
-    Layout = null;
+     ViewBag.Title = "Ödemenizi Yapabilirsiniz";
+    Layout = "~/Views/layouts/dashboard_layout.cshtml";
 }
-
 @Html.Raw(Model.CheckoutFormContent)
-    <div id="iyzipay-checkout-form" class="responsive"></div>
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div id="iyzipay-checkout-form" class="responsive"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

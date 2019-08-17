@@ -11,10 +11,15 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
     [Table("SiparisOdemeTB", Schema = "IkraGenel")]
     public class SiparisOdeme
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+       
         [Key]
-        public Guid OdemeId { get; set; }
-        public string Odeme { get; set; }
-
+        public Guid OdemeId { get; set; } = Guid.NewGuid();      
+        public string KartBinNumber { get; set; }
+        public string SonDortHane { get; set; }
+        public string KartTip { get; set; }
+        public string KartAile { get; set; }
+        public DateTime OdemeTarihi { get; set; }
+        public string OdemeTutari { get; set; }
+        public string NetOdemeTutari { get; set; }
     }
 }

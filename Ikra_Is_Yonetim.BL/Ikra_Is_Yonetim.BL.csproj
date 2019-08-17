@@ -83,6 +83,7 @@
     <Compile Include="MalzemeManager\MalzemeManager.cs" />
     <Compile Include="Ninject\NinjectBindings.cs" />
     <Compile Include="Ninject\SingletonKernelManager.cs" />
+    <Compile Include="OdemeManager\OdemeManager.cs" />
     <Compile Include="PersonellerManager\PersonellersManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiparisManager\SiparisManager.cs" />

@@ -12,6 +12,7 @@ namespace Ikra_Is_Yonetim._3rdApp.IyzicoManager
 {
     public interface IIyzicoPaymentManager
     {
+        CheckoutForm ContolPayment(string token, string conversationid);
         CheckoutFormInitialize GetPaymentForm(List<Siparisler> siparisler);
 
         //Ödeme tamamlandığında fatura.pdf geriye döner
@@ -37,14 +38,17 @@ namespace Ikra_Is_Yonetim._3rdApp.IyzicoManager
             }
             CreateCheckoutFormInitializeRequest request = new CreateCheckoutFormInitializeRequest();
             request.Locale = Locale.TR.ToString();
-            request.ConversationId = "123456789";
+            request.ConversationId = Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 25);
             request.Price = totalUcret.ToString("0.0");
             request.PaidPrice = totalUcret.ToString("0.0");
             request.Currency = Currency.TRY.ToString();
-            request.BasketId = "B67832";
+            request.BasketId = $"B{request.ConversationId.ToString()}";
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
             request.CallbackUrl = "http://localhost:63013/order/paymentForm";
 
+            List<int> installement = new List<int>();
+            installement.Add(1);
+            request.EnabledInstallments = installement;
             var musteri = siparisler.First().Musteri;
             if (musteri == null) return null;
             Buyer buyer = new Buyer();
@@ -70,7 +74,14 @@ namespace Ikra_Is_Yonetim._3rdApp.IyzicoManager
             billingAddress.Description = musteri.FirmaAdres;
             billingAddress.ZipCode = "23000";
             request.BillingAddress = billingAddress;
-            request.ShippingAddress = billingAddress;
+            request.ShippingAddress = new Address() {
+                ContactName="Ikra Yemek A.Ş",
+                City="Elazig",
+                Country="Turkey",
+                Description= "Sanayi, Santral Cd. No:22/A, 23200 Merkez/Elazığ",
+                ZipCode="23200",
+                
+            } ;
 
 
             List<BasketItem> basketItems = new List<BasketItem>();
@@ -99,6 +110,16 @@ namespace Ikra_Is_Yonetim._3rdApp.IyzicoManager
         public string PaymentMulti(List<Siparisler> siparisler)
         {
             throw new NotImplementedException();
+        }
+
+        public CheckoutForm ContolPayment(string token, string conversationid)
+        {
+            RetrieveCheckoutFormRequest request = new RetrieveCheckoutFormRequest();
+            request.ConversationId = conversationid;
+            request.Token = token;
+
+            return CheckoutForm.Retrieve(request, this._option);
+
         }
     }
     class IyzicoPaymentManager

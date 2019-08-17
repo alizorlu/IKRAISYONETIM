@@ -1,0 +1,22 @@
+﻿@model Iyzipay.Model.CheckoutForm
+@{
+    ViewBag.Title = "Ödeme Başarısız !";
+    Layout = "~/Views/layouts/dashboard_layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <strong>Hata Bilgisi;</strong>
+                <h2 class="h2 text-danger">@Model.ErrorMessage</h2>
+                <h6 class="text-danger">Kod:@Model.ErrorCode</h6>
+                <hr />
+                <a href="/order" class="btn btn-sm btn-warning">
+                    Siparişler Sayfası
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

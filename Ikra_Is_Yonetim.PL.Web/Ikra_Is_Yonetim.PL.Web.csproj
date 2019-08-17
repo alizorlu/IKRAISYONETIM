@@ -583,6 +583,7 @@
     <Content Include="Views\order\_yemekBilgiView.cshtml" />
     <Content Include="Views\order\index.cshtml" />
     <Content Include="Views\order\multipayment.cshtml" />
+    <Content Include="Views\order\paymentForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

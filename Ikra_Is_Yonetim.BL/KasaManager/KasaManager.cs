@@ -19,7 +19,7 @@ namespace Ikra_Is_Yonetim.BL.KasaManager
         void InsertAvans(Avanslar avans);
         void InsertMaas(Maaslar maas);
         void InsertStok(Stoklar stok);
-        
+        void InsertSiparisOdeme(Siparisler siparis);
         IEnumerable<string> Donem();
         
     }
@@ -81,6 +81,19 @@ namespace Ikra_Is_Yonetim.BL.KasaManager
                 IslemTipi=IslemTip.Cikis,
                 Miktar=maas.OdemeTutari
 
+            });
+        }
+
+        public void InsertSiparisOdeme(Siparisler siparis)
+        {
+            Insert(new Kasalar()
+            {
+                Aciklama = $"{siparis.Musteri.FirmaAdSoyad}-({siparis.SiparisTarihi} yemek ödemesi)",
+                Donem = DateTime.Now.Year.ToString(),
+                Id = Guid.NewGuid(),
+                IslemTarihi = DateTime.Now,
+                IslemTipi = IslemTip.Giris,
+                Miktar = decimal.Parse(siparis.Odeme.NetOdemeTutari)
             });
         }
 

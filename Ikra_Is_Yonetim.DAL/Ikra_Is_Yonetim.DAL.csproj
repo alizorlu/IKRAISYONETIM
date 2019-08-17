@@ -187,6 +187,18 @@
     <Compile Include="Migrations\201908152328590_ikradb-v62.Designer.cs">
       <DependentUpon>201908152328590_ikradb-v62.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908171444323_ikradb-v63.cs" />
+    <Compile Include="Migrations\201908171444323_ikradb-v63.Designer.cs">
+      <DependentUpon>201908171444323_ikradb-v63.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908171510510_ikradb-v64.cs" />
+    <Compile Include="Migrations\201908171510510_ikradb-v64.Designer.cs">
+      <DependentUpon>201908171510510_ikradb-v64.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908171514514_ikradb-v65.cs" />
+    <Compile Include="Migrations\201908171514514_ikradb-v65.Designer.cs">
+      <DependentUpon>201908171514514_ikradb-v65.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\EFRepo.cs" />
@@ -286,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908152328590_ikradb-v62.resx">
       <DependentUpon>201908152328590_ikradb-v62.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908171444323_ikradb-v63.resx">
+      <DependentUpon>201908171444323_ikradb-v63.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908171510510_ikradb-v64.resx">
+      <DependentUpon>201908171510510_ikradb-v64.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908171514514_ikradb-v65.resx">
+      <DependentUpon>201908171514514_ikradb-v65.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

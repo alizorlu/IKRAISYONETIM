@@ -53,7 +53,10 @@
                                         <tr>
                                             <td class="text-center">
                                                 @{
-                                                    if (item.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İletildi)
+                                                    if (item.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İletildi
+                                                        &&
+                                                        item.OdemeId==null
+                                                        )
                                                     {
                                                         <label class="custom-control custom-checkbox custom-control-inline">
                                                             <input type="checkbox" class="custom-control-input"
