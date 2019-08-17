@@ -49,7 +49,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Iyzipay, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iyzipay.2.1.25\lib\net45\Iyzipay.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Ikra_Is_Yonetim.PL.Desktop\bin\Debug\Ninject.dll</HintPath>
@@ -576,6 +582,7 @@
     <Content Include="Views\order\create.cshtml" />
     <Content Include="Views\order\_yemekBilgiView.cshtml" />
     <Content Include="Views\order\index.cshtml" />
+    <Content Include="Views\order\multipayment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -588,6 +595,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
+      <Project>{69504593-641D-4DD0-B47C-BE7C014FFD8A}</Project>
+      <Name>Ikra_Is_Yonetim.3rdApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ikra_Is_Yonetim.BL\Ikra_Is_Yonetim.BL.csproj">
       <Project>{A4C4FCE4-8ED0-4333-B5E6-A70CE39B5FB5}</Project>
       <Name>Ikra_Is_Yonetim.BL</Name>

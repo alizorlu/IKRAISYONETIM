@@ -1,4 +1,5 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.EmailManager;
+using Ikra_Is_Yonetim._3rdApp.IyzicoManager;
 using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.AvanslarManager;
 using Ikra_Is_Yonetim.BL.CarilerManager;
@@ -54,6 +55,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             //3RD
             Bind<ISMSManager>().To<VatanSMS>();
             Bind<IEmailManager>().To<EFEmailManager>();
+            Bind<IIyzicoPaymentManager>().To<IyzicoPayment>();
 
             //DAL
             Bind<ISetSQLQuery>().To<IkraContextTsql>();

@@ -1,4 +1,5 @@
-﻿using Ikra_Is_Yonetim.BL.CarilerManager;
+﻿using Ikra_Is_Yonetim._3rdApp.IyzicoManager;
+using Ikra_Is_Yonetim.BL.CarilerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.SiparisManager;
 using Ikra_Is_Yonetim.BL.YemekManager;
@@ -22,6 +23,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         private static readonly object _yemekLock = new object();
         private ICarilerManager _cari;
         private static readonly object _cariLock = new object();
+        private IIyzicoPaymentManager _iyzico;
         // GET: order
         public orderController()
         {
@@ -34,6 +36,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
                 if (_cari == null) _cari = kernel.Get<ICarilerManager>();
             }
             _siparis = kernel.Get<ISiparisManager>();
+            _iyzico = kernel.Get<IIyzicoPaymentManager>();
         }
         private bool isLoginUser()
         {
@@ -97,7 +100,24 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         [HttpPost]
         public ActionResult multipayment(List<string> selected)
         {
-            return null;
+
+            List<Siparisler> result = new List<Siparisler>();
+            foreach (var item in selected)
+            {
+                result.Add(_siparis.Find(Guid.Parse(item.ToString())));
+            }
+            Iyzipay.Model.CheckoutFormInitialize
+                form = _iyzico.GetPaymentForm(result);
+            if (form.Status == "success")
+            {
+                return View(form);
+            }
+            else return null;
+            
+        }
+        public ActionResult paymentForm(string token)
+        {
+            return View();
         }
     }
 }
