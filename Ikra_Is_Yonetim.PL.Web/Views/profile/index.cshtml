@@ -1,0 +1,67 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Musteriler
+@{
+    ViewBag.Title = "Profilim";
+    Layout = "~/Views/profile/profile_layout.cshtml";
+}
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="form-label">Firma Adı</label>
+                <input type="text"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.DisplayFor(s=>Model.FirmaAdSoyad)" />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-label">Telefon Numarası</label>
+                <input type="text"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.DisplayFor(s=>Model.Telefon)" />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-label">Email Adresi</label>
+                <input type="email"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.Raw(Model.Email)" />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-label">Kayıt Tarihi</label>
+                <input type="text"
+                       readonly="readonly"
+                       class="form-control form-control "
+                       value="@Html.DisplayFor(s=>Model.KayitTarihi)" />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-label">Günlük İstediğiniz Yemek Sayısı</label>
+                <input type="text"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.DisplayFor(s=>Model.GunlukYemekSayisi) Kişilik" />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-label">Size Özel 1 Kişilik Yemek Ücreti</label>
+                <input type="text"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.DisplayFor(s=>Model.GunlukYemekFiyati) TL" />
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Son Giriş Tarihiniz</label>
+                <input type="text"
+                       class="form-control form-control "
+                       readonly="readonly"
+                       value="@Html.DisplayFor(s=>Model.LastLogin)" />
+            </div>
+            <div class="form-group col-md-12">
+                <label class="form-label">Firmanızın Açık Adresi</label>
+              <textarea class="form-control"
+                        readonly="readonly"
+                        rows="5" cols="21">
+@Html.DisplayFor(s=>Model.FirmaAdres)
+</textarea>
+            </div>
+        </div>
+
+    </div>

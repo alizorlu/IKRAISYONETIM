@@ -115,7 +115,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         [HttpPost]
         public ActionResult multipayment(List<string> selected)
         {
-
+            if (selected == null) return null;
             List<Siparisler> result = new List<Siparisler>();
             foreach (var item in selected)
             {
@@ -133,7 +133,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         }
         //MerchantPayoutAmount = "788.4875" net fiyat
         //PaidPrice = "810" ÖDenen fiyat
-        public ActionResult paymentForm(string token,string conversationId)
+        public ActionResult paymentForm(string token)
         {
             string cid = TempData["cid"] as string;
             var result = _iyzico.ContolPayment(token, cid);
@@ -145,8 +145,10 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
                     //Ödemeyi kaydet.
                     //Siparişi Güncelle.
                     //Kasaya Giriş yap.
+                    
                     SiparisOdeme odeme = new SiparisOdeme()
                     {
+                        Kart=result.CardAssociation,
                         KartTip = result.CardType,
                         KartBinNumber = result.BinNumber,
                         KartAile = result.CardFamily,

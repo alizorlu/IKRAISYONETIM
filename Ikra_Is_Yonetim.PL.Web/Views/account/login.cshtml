@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="~/content/assets/js/require.min.js"></script>
     <script>
-      requirejs.config({
-          baseUrl: '../content/'
-      });
+        requirejs.config({
+            baseUrl: '../content/'
+        });
     </script>
     <!-- Dashboard Core -->
     <link href="~/content/assets/css/dashboard.css" rel="stylesheet" />
@@ -45,9 +45,9 @@
     <div class="page">
         <div class="page-single">
             <div class="container">
-                <div class="row"> 
-                    @{ 
-                        if (TempData["hata"]!=null&&TempData["hata"].ToString()=="0")
+                <div class="row">
+                    @{
+                        if (TempData["hata"] != null && TempData["hata"].ToString() == "0")
                         {
                             <div class="col-12 bg-red text-white m-2 pl-2">
                                 <span>Giriş bilgileri hatalı...Lütfen tekrar deneyiniz.</span>
@@ -63,24 +63,59 @@
                                 <div class="card-title text-center">İkra Yemek A.Ş<br /><span class="text-muted">Müşteri giriş paneli</span></div>
                                 <div class="form-group">
                                     <label class="form-label">Telefon Numaranız(*)</label>
-                                    <input type="tel" 
-                                           class="form-control" id="phone" name="phone" required 
-                                           aria-describedby="emailHelp" 
+                                    <input type="tel"
+                                           class="form-control" id="phone" name="phone" required
+                                           aria-describedby="emailHelp"
                                            placeholder="0531XXXXXXX şeklinde 11 haneli giriniz">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">
                                         Tarafınıza SMS ile iletilen şifre
-                                        <a href="#" class="float-right small">Bilmiyorum?</a>
+                                        <a href="#" data-toggle="modal" data-target="#modal_pass" class="float-right small">Şifremi Unuttum?</a>
                                     </label>
                                     <input type="password" class="form-control" id="pass" name="pass" required
                                            placeholder="Tarafınıza iletilen 6 haneli şifreniz">
                                 </div>
-                                <div class="form-group">
-                                    @*<label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" />
-                                        <span class="custom-control-label">Remember me</span>
-                                    </label>*@
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal_pass" tabindex="-1" role="dialog" aria-labelledby="modal_passLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="modal_passLabel">Şifremi Unuttum</h4>
+                                                <button type="button"
+                                                        class="close"
+                                                        data-dismiss="modal"
+                                                        aria-label="Close">
+                                                </button>
+
+                                            </div>
+                                            <div id="modal_body" class="modal-body dimmer">
+                                                <div class="loader text-muted" id="result_password">
+                                                    
+                                                </div>
+
+                                                <div class="container dimmer-content">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Telefon Numaranız(*)</label>
+                                                        <input type="tel"
+                                                               class="form-control" id="rephone" name="rephone" required
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="0531XXXXXXX şeklinde 11 haneli giriniz">
+                                                    </div>
+                                                    <div class="form-group text-left">
+                                                        <button id="yenisifrebtn" type="button" class="btn btn-sm btn-success btn-pill">
+                                                            Yeni Şifre Gönder
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <small id="bildirimlbl" class="text-muted small">Telefon numaranızı giriniz ve ardından <em class="font-weight-bold">yeni şifre gönder</em>'e basınız</small>
+                                           
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-footer">
                                     <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
@@ -97,3 +132,29 @@
     </div>
 </body>
 </html>
+<script src="~/Scripts/jquery-1.6.4.js"></script>
+<script>
+    $("#yenisifrebtn").click(function () {
+
+        
+        var data = { 'phone': $("#rephone").val().toString() };
+        if ($('#rephone').val().length == 11) {
+            $("#modal_body").addClass("active");
+            $("#bildirimlbl").text("Lütfen bekleyiniz...");
+            jQuery.ajax({
+                url: "/account/repass",
+                data: JSON.stringify(data),
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data, status) {
+                    $("#bildirimlbl").text("Sunucu yanıtı :"+data + "\n");
+                    console.log("DATA:" + data + "\nStatus:" + status);
+                },
+                error: function (data, status) {
+                $("#bildirimlbl").text("Sunucu yanıtı :"+data + "\n");}
+            });
+            $("#modal_body").removeClass("active");
+        }
+    });
+</script>

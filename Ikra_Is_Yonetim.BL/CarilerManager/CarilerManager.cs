@@ -1,5 +1,8 @@
-﻿using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
+﻿using Ikra_Is_Yonetim.BL.Ninject;
+using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
 using Ikra_Is_Yonetim.DAL.Repo;
+using Ikra_Is_Yonetim.Utilities.HashManager;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +19,20 @@ namespace Ikra_Is_Yonetim.BL.CarilerManager
         void Update(Musteriler model);
         void Delete(Guid id);
         Musteriler Find(Guid id);
+        Musteriler Query(string phone);
         Musteriler Login(string phone, string pass);
+        Musteriler SifreGuncelle(Guid id, string pass);
+        string YeniSifreOlustur();
     }
     public class EFCarilerManager : ICarilerManager
     {
         private UnitOfRepo _repo;
+        private static StandardKernel kernel = SingletonKernelManager.Instance;
+        private IHashManager _hash;
         public EFCarilerManager()
         {
             _repo = new UnitOfRepo();
+            _hash = kernel.Get<IHashManager>();
         }
         public IEnumerable<Musteriler> All()
         {
@@ -62,10 +71,44 @@ namespace Ikra_Is_Yonetim.BL.CarilerManager
             return All().Where(s => s.FirmaAdSoyad.ToLower().Contains(query.ToLower()));
         }
 
+        public Musteriler SifreGuncelle(Guid id, string pass)
+        {
+            string hashPass = _hash.Create(pass);
+            var result = Find(id);
+            if (result == null) return null;
+            result.GeciciPassword = hashPass;
+            Update(result);
+            return result;
+        }
+
         public void Update(Musteriler model)
         {
             _repo.musterilerRepository.Update(model);
             _repo.Save();
+        }
+
+        public string YeniSifreOlustur()
+        {
+            tekrar:
+            string pass = new Random().Next(10000, 99999).ToString();
+            StandardKernel kernel = SingletonKernelManager.Instance;
+            IHashManager _hash = kernel.Get<IHashManager>();
+            string hashPass = _hash.Create(pass);
+            //Bunu tüm şifrelerde ara...
+            var result = All().Where(s => s.GeciciPassword.Equals(hashPass))
+                .FirstOrDefault();
+            if (result == null)
+            {
+                //Çakışmayan şifre gönder...
+                return pass;
+            }
+            else goto tekrar;
+        }
+
+        public Musteriler Query(string phone)
+        {
+            return All().Where(s => s.Telefon.Equals(phone))
+                .FirstOrDefault();
         }
     }
     public class CarilerManager

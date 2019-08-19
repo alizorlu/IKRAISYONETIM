@@ -1,0 +1,68 @@
+﻿
+@{ 
+    Layout = "~/Views/layouts/dashboard_layout.cshtml";
+}
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                @ViewBag.Title
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Profil İşlemleri
+                    </div>
+                    <div class="card-body">
+                       
+                        <div class="list-group list-group-transparent mb-0">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <span class="icon mr-3">
+                                    <i class="fe fe-user"></i>
+                                </span>
+                                Profilim
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <span class="icon mr-3">
+                                    <i class="fe fe-edit-3"></i>
+                                </span>
+                                Bilgilerinizi Düzenleyin
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <span class="icon mr-3">
+                                    <i class="fe fe-lock"></i>
+                                </span>
+                                Şifrenizi Değiştirin
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <span class="icon mr-3">
+                                    <i class="fe fe-printer"></i>
+                                </span>
+                                Faturalarım
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <span class="icon mr-3">
+                                    <i class="fe fe-cast"></i>
+                                </span>
+                                Giriş Hareketlerim
+                            </a>
+                        </div>
+                        <div class="d-none d-lg-block mt-6">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        @ViewBag.Title
+                    </div>
+                    <div class="card-body">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

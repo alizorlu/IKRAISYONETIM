@@ -30,6 +30,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
             InitializeComponent();
             _cari = kernel.Get<ICarilerManager>();
             _sms = kernel.Get<ISMSManager>();
+            _sms.SetAuth();
             _hash = kernel.Get<IHashManager>();
             musterilerBindingSource.AllowNew = true;
             musterilerBindingSource.DataSource = _cariModel;
@@ -51,8 +52,9 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
             else
             {
                 HataListesiTemizle();
+                
                 _cariModel.LastLogin = _cariModel.KayitTarihi;
-                string pass = "123123123";
+                string pass = _cari.YeniSifreOlustur();
                 _cariModel.GeciciPassword =
                     _hash.Create(pass);
                 _cari.Insert(_cariModel);
@@ -60,7 +62,7 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Cariler
                     new SmsModel()
                     {
                         Phone = _cariModel.Telefon,
-                        Text = $"Ikra yemek sistemine kaydınız yapıldı.Giriş bilgileriniz aşağıdaki gibidir.\nTelefon:{_cariModel.Telefon}\nŞifre:{pass}"
+                        Text = $"{_cariModel.FirmaAdSoyad} hoş geldiniz.Giriş bilgileriniz:\nTelefon:{_cariModel.Telefon}\nŞifre:{pass}\nbu bilgiler size özeldir.Kimseyle paylaşmayın."
 
                     };
                bool isSended= _sms.CreateAccountSendSms(smsModel);

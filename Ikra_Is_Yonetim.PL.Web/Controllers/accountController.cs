@@ -1,4 +1,5 @@
-﻿using Ikra_Is_Yonetim.BL.CarilerManager;
+﻿using Ikra_Is_Yonetim._3rdApp.SmsManager;
+using Ikra_Is_Yonetim.BL.CarilerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.Utilities.HashManager;
 using Ninject;
@@ -18,6 +19,8 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         private static readonly object _hashLock = new object();
         private ICarilerManager _cari;
         private static readonly object _cariLock = new object();
+        private ISMSManager _sms;
+        private static readonly object _smsLock = new object();
         public accountController()
         {
             lock (_hashLock)
@@ -27,6 +30,10 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
             lock (_cariLock)
             {
                 if (_cari == null) _cari = kernel.Get<ICarilerManager>();
+            }
+            lock (_smsLock)
+            {
+                if (_sms == null) _sms = kernel.Get<ISMSManager>();
             }
         }
 
@@ -61,6 +68,48 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("login", "account");
+        }
+
+        [HttpPost]
+        public JsonResult repass(string phone)
+        {
+            if (phone == null || phone == "") return new JsonResult() {
+                Data="Telefon boş olamaz",
+                JsonRequestBehavior=JsonRequestBehavior.AllowGet
+            };
+            if (phone.Length != 11) return new JsonResult() {
+                Data="Telefon 11 haneli girilmelidir.",
+                JsonRequestBehavior=JsonRequestBehavior.AllowGet
+            };
+            var result = _cari.Query(phone);
+            if (result==null)
+            {
+                return new JsonResult()
+                {
+                    Data = "Böyle bir hesap bulunamadı",
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+            string sifre = _cari.YeniSifreOlustur();
+            _cari.SifreGuncelle(result.Id, sifre);
+            _sms.SetAuth();
+           bool isSended=
+                _sms.TekSmsGonder(new SmsModel() {
+                Phone=result.Telefon,
+                Text=$"Talebiniz doğrultusunda" +
+                $" şifrenizi güncelledik." +
+                $"Bilgileriniz;\nTelefon:{result.Telefon}\nŞifre:{sifre}"
+            });
+            if (isSended == true)
+            {
+                return Json("Yeni şifre telefon numaranıza gönderildi.", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("Yeni şifreni oluşturduk fakat SMS hizmetimizde bir sorun oluştuğu için sms gönderemedik.Lütfen bizimle iletişime geçiniz.", JsonRequestBehavior.AllowGet);
+            }
+           
+
         }
     }
 }

@@ -114,5 +114,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ikra_Is_Yonetim.3rdApp\Ikra_Is_Yonetim.3rdApp.csproj">
+      <Project>{69504593-641d-4dd0-b47c-be7c014ffd8a}</Project>
+      <Name>Ikra_Is_Yonetim.3rdApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

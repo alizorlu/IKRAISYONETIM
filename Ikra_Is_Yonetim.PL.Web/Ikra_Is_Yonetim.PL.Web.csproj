@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44393</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -545,6 +545,8 @@
     <Compile Include="Controllers\authPartialController.cs" />
     <Compile Include="Controllers\homeController.cs" />
     <Compile Include="Controllers\orderController.cs" />
+    <Compile Include="Controllers\paidController.cs" />
+    <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -584,6 +586,9 @@
     <Content Include="Views\order\index.cshtml" />
     <Content Include="Views\order\multipayment.cshtml" />
     <Content Include="Views\order\paymentForm.cshtml" />
+    <Content Include="Views\paid\index.cshtml" />
+    <Content Include="Views\profile\profile_layout.cshtml" />
+    <Content Include="Views\profile\index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

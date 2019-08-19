@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Siparisler>
+@{
+    ViewBag.Title = "Yapılan Ödeme Ayrıntıları";
+    Layout = "~/Views/layouts/dashboard_layout.cshtml";
+}
+
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                Yapılan Ödeme Ayrıntıları
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="table-responsive" style="overflow-y:scroll;max-height:600px !important;">
+                        <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center w-1"><i class="icon-people"></i></th>
+                                    <th>Ödeme Yapılan Kart</th>
+                                    <th>Sipariş Bilgisi</th>
+                                    <th class="text-center">Kart</th>
+                                    <th>Ödeme Tarihi</th>
+                                    <th class="text-center">Ödeme Tutarı</th>
+                                    <th class="text-center">
+                                        <i class="icon-settings">
+                                            <i class="fe fe-file"></i>
+                                        </i>
+                                        &nbsp;Faturanızı Alın
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model.Where(s => s.OdemeId != null && s.OdemeId != Guid.Empty))
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @{
+                                                string odemeKarti = $"{item.Odeme.KartBinNumber}****{item.Odeme.SonDortHane}";
+                                                string odemeKartTip = item.Odeme.KartTip;
+                                            }
+                                            <div>@odemeKarti</div>
+                                            <div class="small text-muted">
+                                                Kart Tipi: @odemeKartTip
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>@Html.DisplayFor(s => item.Yemek.YemekAdi) - @Html.DisplayFor(s => item.Yemek.PorsiyonGr) gr</div>
+                                            <div class="small text-muted">
+                                                Sipariş, Tarihi:@Html.DisplayFor(s => item.SiparisTarihi) Kişi Sayısı : @Html.DisplayFor(s => item.YemekSayisi)
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            @{
+                                                string kart = item.Odeme.Kart.ToString().Replace("_", "").ToLower();
+                                            }
+                                            <i class="payment payment-@kart"></i>
+                                            <br />
+                                            <small class="small text-muted">@Html.DisplayFor(s => item.Odeme.Kart)</small>
+                                        </td>
+                                        <td>
+                                            <div class="small text-muted">Ödeme Tarihi</div>
+                                            <div>@Html.DisplayFor(s => item.Odeme.OdemeTarihi)</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="font-weight-light">
+                                                <div class="">
+                                                    @{
+                                                        string odemeTutari = $"{item.Odeme.OdemeTutari} TL";
+
+                                                    }
+                                                    @odemeTutari
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="text-center">
+                                                <button class="btn btn-sm btn-primary btn-pill">
+                                                    Fatura
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Genel Borç Özetiniz.
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">&nbsp;</div>
+                            <div class="col-4 text-left">
+                                <h5>Kalan Borcunuz</h5>
+                                <div class="h4 text-danger">
+                                    @{
+                                        decimal borc = 0m;
+                                        var result = Model.Where(s => s.OdemeId == null)
+                                            .ToList();
+                                        if (result != null)
+                                        {
+                                            borc = result.
+                                           Sum(s => s.Musteri.GunlukYemekFiyati * s.YemekSayisi);
+                                        }
+
+                                    }
+                                    @borc.ToString("0.00 TL")
+                                </div>
+                            </div>
+                            <div class="col-4 text-right">
+                                <h5>Yaptığınız Ödeme Tutarı</h5>
+                                <div class="h4 text-success">
+                                    @{
+                                        decimal odeme = 0m;
+                                        var resultOdeme = Model.Where(s => s.OdemeId != null && s.OdemeId != Guid.Empty)
+                                            .ToList();
+                                        if (resultOdeme != null)
+                                        {
+                                            odeme = resultOdeme.
+                                           Sum(s => s.Musteri.GunlukYemekFiyati * s.YemekSayisi);
+                                        }
+
+                                    }
+                                    @odeme.ToString("0.00 TL")
+                                </div>
+                            </div>
+                            <div class="col-2">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

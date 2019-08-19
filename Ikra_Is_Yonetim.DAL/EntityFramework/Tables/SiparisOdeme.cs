@@ -16,6 +16,7 @@ namespace Ikra_Is_Yonetim.DAL.EntityFramework.Tables
         public Guid OdemeId { get; set; } = Guid.NewGuid();      
         public string KartBinNumber { get; set; }
         public string SonDortHane { get; set; }
+        public string Kart { get; set; }
         public string KartTip { get; set; }
         public string KartAile { get; set; }
         public DateTime OdemeTarihi { get; set; }

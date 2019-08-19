@@ -19,7 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikra_Is_Yonetim.PL.Desktop"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikra_Is_Yonetim.Utilities", "Ikra_Is_Yonetim.Utilities\Ikra_Is_Yonetim.Utilities.csproj", "{417A1C59-11A2-45DE-B41B-C39F11089BE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFTEST", "EFTEST\EFTEST.csproj", "{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A11981B-8FCB-4E91-866C-93D41588BCDB}"
+	ProjectSection(SolutionItems) = preProject
+		Hatırlatma.txt = Hatırlatma.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +62,6 @@ Global
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417A1C59-11A2-45DE-B41B-C39F11089BE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E87B0E3-B7A7-42CD-8C3F-36FFA8AFFE92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

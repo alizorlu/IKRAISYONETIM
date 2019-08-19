@@ -93,6 +93,7 @@ namespace Ikra_Is_Yonetim.BL.SiparisManager
 
         public Siparisler VerilenSiparis(Guid cariid)
         {
+          
             List<Siparisler> cariResults =
                 All().Where(s => s.MusteriId == cariid)
                 .ToList();
@@ -104,7 +105,7 @@ namespace Ikra_Is_Yonetim.BL.SiparisManager
                     cariResults.Where(s => s.SiparisTarihi.ToShortDateString()
                 ==
                 DateTime.Now.ToShortDateString())
-                    .FirstOrDefault();
+                    .LastOrDefault();
                 if (resultToday == null) return null;
                 else return resultToday;
             }

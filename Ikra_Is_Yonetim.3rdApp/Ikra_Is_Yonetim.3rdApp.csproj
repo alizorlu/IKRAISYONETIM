@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\Oztek\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="EmailManager\EmailManager.cs" />
     <Compile Include="IyzicoManager\IyzicoPaymentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,9 +69,55 @@
       <Name>Ikra_Is_Yonetim.DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.GunlukRaporSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.HerBirNumarayaFarkliSmsGonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.ikitariharasisorgulaXMLverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.OrjinatorGonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.OrjinatorSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.RaporSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.SmsiptaletResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.TekSmsiBirdenCokNumarayaGonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\Ikra_Is_Yonetim._3rdApp.Oztek.UyeBilgisiSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Oztek\service.wsdl" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Oztek\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Oztek\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Oztek\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Oztek\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

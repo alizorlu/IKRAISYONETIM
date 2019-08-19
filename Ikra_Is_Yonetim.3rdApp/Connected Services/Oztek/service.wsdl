@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:OztekSmsWebService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:OztekSmsWebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:OztekSmsWebService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TekSmsiBirdenCokNumarayaGonderRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="orjinator" type="xsd:string" />
+    <wsdl:part name="numaralar" type="xsd:string" />
+    <wsdl:part name="mesaj" type="xsd:string" />
+    <wsdl:part name="zaman" type="xsd:DateTime" />
+    <wsdl:part name="zamanasimi" type="xsd:DateTime" />
+    <wsdl:part name="tip" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="TekSmsiBirdenCokNumarayaGonderResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="HerBirNumarayaFarkliSmsGonderRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="orjinator" type="xsd:string" />
+    <wsdl:part name="numaramesaj" type="xsd:string" />
+    <wsdl:part name="zaman" type="xsd:DateTime" />
+    <wsdl:part name="zamanasimi" type="xsd:DateTime" />
+    <wsdl:part name="tip" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="HerBirNumarayaFarkliSmsGonderResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SmsiptaletRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="ozelid" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SmsiptaletResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="OrjinatorGonderRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="orjinator" type="xsd:string" />
+    <wsdl:part name="aciklama" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="OrjinatorGonderResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="RaporSorgulaRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="ozelid" type="xsd:string" />
+    <wsdl:part name="numara" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="RaporSorgulaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UyeBilgisiSorgulaRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UyeBilgisiSorgulaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="OrjinatorSorgulaRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="orjinator" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="OrjinatorSorgulaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GunlukRaporSorgulaRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="tarih" type="xsd:Date" />
+  </wsdl:message>
+  <wsdl:message name="GunlukRaporSorgulaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="ikitariharasisorgulaXMLverRequest">
+    <wsdl:part name="kullanicino" type="xsd:integer" />
+    <wsdl:part name="kullaniciadi" type="xsd:string" />
+    <wsdl:part name="sifre" type="xsd:string" />
+    <wsdl:part name="baslangictarih" type="xsd:Date" />
+    <wsdl:part name="bitistarih" type="xsd:Date" />
+  </wsdl:message>
+  <wsdl:message name="ikitariharasisorgulaXMLverResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="OztekSmsWebServicePortType">
+    <wsdl:operation name="TekSmsiBirdenCokNumarayaGonder">
+      <documentation>Aciklama bir adet sabit mesaj bir yada birden cok kisiye gonderilir. ÃrneÄin 5354447711,5415524155,5457851144... bu numaralara bir seferde "Merhabalar sayin musterimiz" Åeklinde sms yollayabilirsiniz.
+				&lt;br&gt; Zaman:yyyy-mm-dd hh-dd-ss</documentation>
+      <wsdl:input message="tns:TekSmsiBirdenCokNumarayaGonderRequest" />
+      <wsdl:output message="tns:TekSmsiBirdenCokNumarayaGonderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="HerBirNumarayaFarkliSmsGonder">
+      <documentation>Aciklama: Her bir mesaj farklÄ± kullanicilara iletilme durumudur. Musteriye ozel mesaj yada benzeri durumlarda kullanilir. Ornek gonderim: &lt;br&gt;{[5354447711][Merhaba bu ilk kisiye gideecek mesaj]}&lt;br&gt;{[5415524155][Bu da ikinci kisiye gidecek olan mesaj]}</documentation>
+      <wsdl:input message="tns:HerBirNumarayaFarkliSmsGonderRequest" />
+      <wsdl:output message="tns:HerBirNumarayaFarkliSmsGonderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Smsiptalet">
+      <documentation>ileri tarihli gonderilen smsleri iptal etmek icin kullaniniz</documentation>
+      <wsdl:input message="tns:SmsiptaletRequest" />
+      <wsdl:output message="tns:SmsiptaletResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="OrjinatorGonder">
+      <documentation>Uzerinize kayitli kullaniciya yeni bir Orjinator tanimlama islemidir. 11 karakterden az belgeleyebileceginiz ve turkce karakter icermeyen gonderen adi gonderiniz</documentation>
+      <wsdl:input message="tns:OrjinatorGonderRequest" />
+      <wsdl:output message="tns:OrjinatorGonderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RaporSorgula">
+      <documentation>Mesaj gonderiminde sonlanan id den sonraki zamanlarda gidisatini sorgulama servisidir.</documentation>
+      <wsdl:input message="tns:RaporSorgulaRequest" />
+      <wsdl:output message="tns:RaporSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UyeBilgisiSorgula">
+      <documentation>Kullanicinin Uye bilgilerini ve kalan kontor sayisini verir</documentation>
+      <wsdl:input message="tns:UyeBilgisiSorgulaRequest" />
+      <wsdl:output message="tns:UyeBilgisiSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="OrjinatorSorgula">
+      <documentation>Gonderilen Orjinatorun durumunu sorgular</documentation>
+      <wsdl:input message="tns:OrjinatorSorgulaRequest" />
+      <wsdl:output message="tns:OrjinatorSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GunlukRaporSorgula">
+      <documentation>yyyy-MM-dd formatinda verilen gun icersindeki tum mesajlariniz durumlariyla beraber listelenir. Bu durum zaman alabilir.</documentation>
+      <wsdl:input message="tns:GunlukRaporSorgulaRequest" />
+      <wsdl:output message="tns:GunlukRaporSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ikitariharasisorgulaXMLver">
+      <documentation>yyyy-MM-dd formatinda verilen 2 tarih arasÄ±nda ki tum mesajlariniz durumlariyla beraber listelenir. Bu durum zaman alabilir.</documentation>
+      <wsdl:input message="tns:ikitariharasisorgulaXMLverRequest" />
+      <wsdl:output message="tns:ikitariharasisorgulaXMLverResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OztekSmsWebServiceBinding" type="tns:OztekSmsWebServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="TekSmsiBirdenCokNumarayaGonder">
+      <soap:operation soapAction="urn:testnamespace#TekSmsiBirdenCokNumarayaGonder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:TekSmsiBirdenCokNumarayaGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:TekSmsiBirdenCokNumarayaGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HerBirNumarayaFarkliSmsGonder">
+      <soap:operation soapAction="urn:testnamespace#HerBirNumarayaFarkliSmsGonder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:HerBirNumarayaFarkliSmsGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:HerBirNumarayaFarkliSmsGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Smsiptalet">
+      <soap:operation soapAction="urn:testnamespace#Smsiptalet" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:Smsiptalet" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:Smsiptalet" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrjinatorGonder">
+      <soap:operation soapAction="urn:testnamespace#OrjinatorGonder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:OrjinatorGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:OrjinatorGonder" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaporSorgula">
+      <soap:operation soapAction="urn:testnamespace#RaporSorgula" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:RaporSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:RaporSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UyeBilgisiSorgula">
+      <soap:operation soapAction="urn:testnamespace#UyeBilgisiSorgula" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:UyeBilgisiSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:UyeBilgisiSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrjinatorSorgula">
+      <soap:operation soapAction="urn:testnamespace#OrjinatorSorgula" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:OrjinatorSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:OrjinatorSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GunlukRaporSorgula">
+      <soap:operation soapAction="urn:testnamespace#GunlukRaporSorgula" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:GunlukRaporSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:GunlukRaporSorgula" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ikitariharasisorgulaXMLver">
+      <soap:operation soapAction="urn:testnamespace#ikitariharasisorgulaXMLver" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ikitariharasisorgulaXMLver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ikitariharasisorgulaXMLver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OztekSmsWebService">
+    <wsdl:port name="OztekSmsWebServicePort" binding="tns:OztekSmsWebServiceBinding">
+      <soap:address location="http://panel.vatansms.com/webservis/service.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

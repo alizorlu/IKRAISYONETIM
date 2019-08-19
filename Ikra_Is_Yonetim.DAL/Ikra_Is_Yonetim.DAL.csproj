@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201908171514514_ikradb-v65.Designer.cs">
       <DependentUpon>201908171514514_ikradb-v65.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908191436271_ikradb-v66.cs" />
+    <Compile Include="Migrations\201908191436271_ikradb-v66.Designer.cs">
+      <DependentUpon>201908191436271_ikradb-v66.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\EFRepo.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908171514514_ikradb-v65.resx">
       <DependentUpon>201908171514514_ikradb-v65.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908191436271_ikradb-v66.resx">
+      <DependentUpon>201908191436271_ikradb-v66.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

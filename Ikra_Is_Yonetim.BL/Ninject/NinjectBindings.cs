@@ -48,6 +48,7 @@ namespace Ikra_Is_Yonetim.BL.Ninject
             Bind<IMalzemeMananager>().To<EFMalzemeManager>();
             Bind<ISiparisManager>().To<EFSiparisManager>();
             Bind<IOdemeManager>().To<EFOdemeManager>();
+            
             //Utilities
             Bind<IHashManager>().To<CryptoHashManager>();
             Bind<IRegexManager>().To<SystemRegexManager>();

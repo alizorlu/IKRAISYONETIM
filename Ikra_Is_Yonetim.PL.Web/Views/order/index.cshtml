@@ -31,7 +31,8 @@
                       
                     </div>
                     <div class="table-responsive" style="overflow-y:scroll;max-height:600px !important;">
-                        <form id="frmPayment" method="post" action="/order/multipayment">
+                        <form id="frmPayment" method="post" 
+                              action="/order/multipayment">
                             <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
                                 <thead>
                                     <tr>
@@ -43,7 +44,7 @@
 
                                         <th>Yemek Sayısı(Kişi)</th>
                                         <th class="text-center">Hizmet Bedeli</th>
-                                        <th class="text-center"><i class="icon-settings"></i></th>
+                                   
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -172,18 +173,7 @@
                                                 }
 
                                             </td>
-                                            <td class="text-center">
-                                                <div class="item-action dropdown">
-                                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            
                                         </tr>
                                     }
 
@@ -194,9 +184,13 @@
                         </form>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-lg btn-green btn-pill float-lg-right"
+                        <button 
+                                id="paymentbtn"
+                                class="btn btn-lg btn-green btn-pill float-lg-right"
                                 onclick="$('#frmPayment').submit();"
-                                >Seçilenleri Şimdi Öde</button>
+                                >
+                        <i class="fe fe-credit-card fa-2x"></i>
+                        Seçilenleri Şimdi Öde</button>
                     </div>
                 </div>
             </div>
@@ -204,5 +198,37 @@
         </div>
     </div>
 
+<script src="~/Scripts/jquery-1.6.4.js"></script>
 
+<script>
+    var swapChecked = 0;
+    function add(val) {
+        swapChecked += 1;
+        triggerOrderBtn();
+    }
+    function remove(val) {
+        if (swapChecked > 0) {
+        swapChecked -= 1;
+        }
+        triggerOrderBtn();
+    }
+    function triggerOrderBtn() {
+        if (swapChecked > 0) {
+            $("#paymentbtn").show();
+        }
+        else {
+            $("#paymentbtn").hide();
+        }
+    }
+    $("#paymentbtn").hide();
+    $("input[name='selected']").change(function() {
+        if (this.checked) {
+            //Do stuff
+            add(this.value);
+        }
+        else if (!this.checked) {
+            remove(this.value);
+        }
 
+    });
+</script>
