@@ -21,6 +21,14 @@ namespace Ikra_Is_Yonetim.DAL.Repo
                 return this.odemeRepo ?? new EFRepo<SiparisOdeme>(context);
             }
         }
+        private EFRepo<MusteriGirisHareketleri> hareketRepo;
+        public EFRepo<MusteriGirisHareketleri> hareketRepository
+        {
+            get
+            {
+                return this.hareketRepo ?? new EFRepo<MusteriGirisHareketleri>(context);
+            }
+        }
         public EFRepo<Malzeme> malzemeRepository
         {
             get

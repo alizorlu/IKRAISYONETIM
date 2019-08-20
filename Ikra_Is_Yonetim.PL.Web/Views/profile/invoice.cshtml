@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Siparisler>
+@{
+    ViewBag.Title = "Faturalarım";
+    Layout = "~/Views/profile/profile_layout.cshtml";
+}
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+         <div class="col-md-12">
+            <div class="card card-collapsed">
+                <div class="card-header text-primary font-weight-bold">
+                    
+                    <h3 class="card-title">@Html.DisplayFor(s=>item.Yemek.YemekAdi)  @Html.DisplayFor(s=>item.Yemek.PorsiyonGr) gr siparişinin faturası</h3>
+                    <div class="card-options">
+                        <span class="font-weight-bold text-danger float-right">
+                            Sipariş Tarihi : @item.SiparisTarihi.Date.ToShortDateString()
+                        </span>
+                        &nbsp;
+                        <a href="#" class="card-options-collapse btn btn-pill btn-primary btn-sm" data-toggle="card-collapse">
+                            <i class="fe fe-chevron-up"></i>
+                            &nbsp; Fatura Ayrıntıları
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Ürün/Hizmet Adı</label>
+                                <input type="text"
+                                       class="form-control form-control "
+                                       readonly="readonly"
+                                       value="@Html.DisplayFor(s=>item.Yemek.YemekAdi) @Html.DisplayFor(s=>item.Yemek.PorsiyonGr) gr günlük yemek hizmeti" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Birim Fiyatı</label>
+                                <input type="text"
+                                       class="form-control form-control "
+                                       readonly="readonly"
+                                       value="@Html.DisplayFor(s=>item.Musteri.GunlukYemekFiyati) Türk Lirası(TL)" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Ürün/Hizmet Adedi</label>
+                                <input type="text"
+                                       class="form-control form-control "
+                                       readonly="readonly"
+                                       value="@Html.DisplayFor(s=>item.YemekSayisi) kişilik yemek" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Toplam Hizmet</label>
+                                <input type="text"
+                                       class="form-control form-control "
+                                       readonly="readonly"
+                                       value="@Html.DisplayFor(s=>item.Odeme.OdemeTutari) TL" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <a href="/profile/createinvoice/@item.Id" target="_blank" class="btn btn-outline-danger btn-pill">
+                                    <i class="fe fe-download"></i>&nbsp;Faturayı (PDF) İndir
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>

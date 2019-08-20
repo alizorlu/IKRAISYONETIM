@@ -1,0 +1,82 @@
+﻿@model Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Musteriler
+
+@{
+    ViewBag.Title = "Bilgilerinizi Düzenleyin";
+    Layout = "~/Views/profile/profile_layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal row">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.KayitTarihi)
+        @Html.HiddenFor(model => model.LastLogin)
+        @Html.HiddenFor(model => model.Siparisler)
+        @Html.HiddenFor(model => model.GeciciPassword)
+        @Html.HiddenFor(model => model.GunlukYemekFiyati)
+
+        @{
+            if (TempData["ok"] != null && TempData["ok"].ToString() == "1")
+            {
+                <div class="form-group col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        <i class="fe fe-check fa2x"></i>
+                        Profil bilgileriniz başarıyla güncellendi.
+                    </div>
+                </div>
+            }
+            else if (TempData["ok"] != null && TempData["ok"].ToString() == "2")
+            {
+                <div class="form-group col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <i class="fe fe-alert-triangle fa2x"></i>
+                        Bir hata oluştu.Lütfen tüm alanları doldurup
+                        yeniden güncelleyiniz.
+                    </div>
+                </div>
+            }
+        }
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.FirmaAdSoyad, "Firma Adı", htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.FirmaAdSoyad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirmaAdSoyad, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Telefon, "Telefon Numarası", htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Email, "Email Adresi", htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.GunlukYemekSayisi, "Günlük İstediğiniz Yemek Sayısı", htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.GunlukYemekSayisi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GunlukYemekSayisi, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.FirmaAdres, "Firmanızın Açık Adresi", htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.FirmaAdres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirmaAdres, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-success btn-pill" />
+            </div>
+        </div>
+
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

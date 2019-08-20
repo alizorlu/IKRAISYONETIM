@@ -155,7 +155,7 @@ namespace Ikra_Is_Yonetim.BL.MaasManager
         DetailRow.Make("Maaş ödeme faturası",
         "Personel maaş bordrosu yerine kullanılabilir.",
         "",
-        $"Ek bu fatura,İkra yemek fabrikası çalışanı {personal.AdSoyad} 'ın maaş ödemesinin yapıldığını gösterir.Çeşitli nedenlerle kesintileri varsa bu faturada belirtilir.")
+        $"Ek bu faturada,İkra yemek fabrikası çalışanı {personal.AdSoyad} 'ın maaş ödemesinin yapıldığını gösterir.Çeşitli nedenlerle kesintileri varsa bu faturada belirtilir.")
  })
              .Footer("http://www.ikrayemek.com.tr").Reference(fatid.ToString().Substring(0,32))
                  .Save();

@@ -16,23 +16,21 @@
             </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="/profile">
                 <i class="dropdown-icon fe fe-user"></i> Firma Profili
             </a>
-            <a class="dropdown-item" href="#">
-                <i class="dropdown-icon fe fe-settings"></i> Ayarlar
-            </a>
             <a class="dropdown-item" href="/paid/index/@Html.DisplayFor(s=>Model.Id)">
-                <i class="dropdown-icon fe fe-send"></i> Ödeme Geçmişi
+                @*<i class=" fe fe-send"></i>*@
+                <i class="dropdown-icon fe fe-credit-card"></i>Ödeme Geçmişi
             </a>
             <a class="dropdown-item" href="/order/">
-                <i class="dropdown-icon fe fe-clock"></i> Sipariş Geçmişi
+                <i class="dropdown-icon fe fe-shopping-bag"></i>Sipariş Geçmişi
             </a>
-            <a class="dropdown-item" href="#">
-                <i class="dropdown-icon fe fc-event-dot"></i> Giriş Hareketleriniz
+            <a class="dropdown-item" href="/profile/history">
+                <i class="dropdown-icon fe fe-cast"></i> Hareketlerim
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="profile/repassword">
                 <i class="dropdown-icon fe fe-help-circle"></i> Şifre Değiştir
             </a>
             <a class="dropdown-item" href="/account/logout">

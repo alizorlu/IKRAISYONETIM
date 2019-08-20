@@ -21,6 +21,7 @@ namespace Ikra_Is_Yonetim.BL.SiparisManager
         Siparisler DurumGuncelle(Guid siparisId, SiparisDurumu state);
         Siparisler VerilenSiparis(Guid cariid);
         long SiparisSayiControl();
+        IEnumerable<Siparisler> OdemesiYapilanSiparisler(Guid id);
     }
     public class EFSiparisManager : ISiparisManager
     {
@@ -78,6 +79,13 @@ namespace Ikra_Is_Yonetim.BL.SiparisManager
         {
             _repo.siparisRepository.Insert(model);
             _repo.Save();
+        }
+
+        public IEnumerable<Siparisler> OdemesiYapilanSiparisler(Guid id)
+        {
+            return All().Where(s => s.MusteriId == id)
+                .Where(f => f.OdemeId != null && f.OdemeId != Guid.Empty)
+                ;
         }
 
         public long SiparisSayiControl()

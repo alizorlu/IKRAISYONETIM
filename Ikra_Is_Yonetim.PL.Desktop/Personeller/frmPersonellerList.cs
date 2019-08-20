@@ -42,8 +42,8 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
                 IEnumerable<DAL.EntityFramework.Tables.Maaslar> result
                     = _maas.All(_selected.Id);
                 maasGridView.DataSource = result;
-                maasGridView.Columns["StokId"].Visible = false;
-                maasGridView.Columns["PersonelId"].Visible = false;
+                //maasGridView.Columns["StokId"].Visible = false;
+                maasGridView.Columns["Id"].Visible = false;
                 maasGridView.Columns["Personel"].Visible = false;
             }
 
@@ -54,9 +54,9 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
             {
                 IEnumerable<DAL.EntityFramework.Tables.Avanslar> result = _avans.All(_selected.Id);
                 avansGridView.DataSource = result;
-                avansGridView.Columns["StokId"].Visible = false;
+                //avansGridView.Columns["StokId"].Visible = false;
                 avansGridView.Columns["Personel"].Visible = false;
-                avansGridView.Columns["PersonelId"].Visible = false;
+                avansGridView.Columns["Id"].Visible = false;
             }
             
         }
@@ -70,8 +70,8 @@ namespace Ikra_Is_Yonetim.PL.Desktop.Personeller
 
                 izinlerGridView.DataSource = resultIzin;
                 izinlerGridView.Columns["Personel"].Visible = false;
-                izinlerGridView.Columns["PersonelId"].Visible = false;
-                izinlerGridView.Columns["StokId"].Visible = false;
+                izinlerGridView.Columns["Id"].Visible = false;
+                //izinlerGridView.Columns["StokId"].Visible = false;
             }
         }
         public void Yenile()

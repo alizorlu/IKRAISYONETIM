@@ -1,0 +1,136 @@
+﻿
+@model IEnumerable<Ikra_Is_Yonetim.DAL.EntityFramework.Tables.Siparisler>
+
+    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+        <thead>
+            <tr>
+                
+                <th>Yemek Bilgisi</th>
+                <th>Zaman Bilgisi(Sipariş-Teslim)</th>
+                <th class="text-center">Durumu</th>
+                <th class="text-center">Ödeme</th>
+
+                <th>Yemek Sayısı(Kişi)</th>
+                <th class="text-center">Hizmet Bedeli</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                   
+                    <td>
+                        <div>@Html.DisplayFor(s => item.Yemek.YemekAdi) - Porsiyon : @Html.DisplayFor(s => item.Yemek.PorsiyonGr) gr</div>
+                        <div class="small text-muted">
+                            @Html.DisplayFor(s => item.Yemek.YemekAciklamasi)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="float-left">
+                            <span class="text-muted">Sipariş Tarihi</span>
+                            <small>@Html.DisplayFor(s => item.SiparisTarihi)</small>
+                        </div>
+                        <br />
+                        <div class="float-left">
+                            <span class="text-muted">Teslim Tarihi</span>
+                            @{
+                                if (item.TeslimTarihi == null)
+                                {
+                                    <small class="text-danger">-----</small>
+                                }
+                                else
+                                {
+                                    <small>@Html.DisplayFor(s => item.TeslimTarihi)</small>
+                                }
+                            }
+
+                        </div><br />
+                        <div class="float-left">
+
+                            @{
+                                if (item.TeslimTarihi == null)
+                                {
+                                    <small class="text-muted">----</small>
+                                }
+                                else
+                                {
+                                    TimeSpan fark = (DateTime)item.TeslimTarihi - item.SiparisTarihi;
+                                    <small class="text-success">@fark.TotalMinutes.ToString("0.00 dk")</small>
+                                }
+                            }
+                        </div>
+                    </td>
+                    <td class="text-center">
+
+                        @{
+                            if (item.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İletildi)
+                            {
+                                <span class="status-icon bg-success"></span><span>Teslim Edildi</span>
+                            }
+                            else if (item.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İptal)
+                            {
+                                <span class="status-icon bg-danger"></span><span>İptal Edildi</span>
+                            }
+                        }
+
+
+                    </td>
+                    <td class="text-center">
+                        @{
+                            if (item.OdemeId == null)
+                            {
+                                <span class="status-icon bg-danger"></span>
+                                <span>Ödeme bekleniyor</span>
+
+                            }
+                            else
+                            {
+                                <span class="status-icon bg-success"></span>
+                                <span>Ödeme yapıldı</span>
+                            }
+                        }
+
+
+                    </td>
+                    <td>
+                        <div class="small text-muted">Sipariş Sayısı</div>
+                        <div>@Html.DisplayFor(s => item.YemekSayisi) kişilik</div>
+                    </td>
+                    <td class="text-center">
+                        @{
+                            if (item.SiparisDurum == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.SiparisDurumu.İptal)
+                            {
+                                <span class="bg-danger m-2 rounded text-white">X İPTAL</span>
+                            }
+                            else
+                            {
+                                <span class="stamp stamp-md bg-green mr-3">
+                                    <i class="fe fe-shopping-cart"></i>
+                                </span>
+                                <div>
+                                    <h4 class="m-0">
+                                        <a href="javascript:void(0)">
+                                            @(item.YemekSayisi * item.Musteri.GunlukYemekFiyati)
+                                            <small>TL</small>
+                                        </a>
+                                    </h4>
+                                    <small class="text-muted">
+                                        @Html.DisplayFor(s => item.YemekSayisi)
+                                        kişilik yemek
+                                    </small>
+                                </div>
+
+                            }
+                        }
+
+                    </td>
+
+                </tr>
+            }
+
+
+
+        </tbody>
+    </table>

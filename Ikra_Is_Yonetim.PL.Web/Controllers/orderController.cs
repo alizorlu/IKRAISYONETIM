@@ -1,11 +1,13 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.IyzicoManager;
 using Ikra_Is_Yonetim.BL.CarilerManager;
 using Ikra_Is_Yonetim.BL.KasaManager;
+using Ikra_Is_Yonetim.BL.MusteriHareketlerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
 using Ikra_Is_Yonetim.BL.OdemeManager;
 using Ikra_Is_Yonetim.BL.SiparisManager;
 using Ikra_Is_Yonetim.BL.YemekManager;
 using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
+using Ikra_Is_Yonetim.Utilities.ClientManager;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -29,11 +31,24 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         private static readonly object _odemeLock = new object();
         private IKasaManager _kasa;
         private static readonly object _kasaLock = new object();
-
+        private IMusteriHareketManager _hareket;
+        private static readonly object _hareketLock = new object();
+        private IClientManager _client;
+        private static readonly object _clientLock = new object();
         private IIyzicoPaymentManager _iyzico;
         // GET: order
         public orderController()
         {
+            #region Cihaz Hareketleri İçin Kullanılan Modüller
+            lock (_hareketLock)
+            {
+                if (_hareket == null) _hareket = kernel.Get<IMusteriHareketManager>();
+            }
+            lock (_clientLock)
+            {
+                if (_client == null) _client = kernel.Get<IClientManager>();
+            }
+            #endregion
             lock (_yemekLock)
             {
                 if (_yemek == null) _yemek = kernel.Get<IYemekManager>();
@@ -80,6 +95,16 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
             model.SiparisDurum = SiparisDurumu.Onay;
             model.SiparisTarihi = DateTime.Now;
             model.YemekSayisi = model.Musteri.GunlukYemekSayisi;
+            _hareket.Insert(new MusteriGirisHareketleri()
+            {
+                IslemTarihi = DateTime.Now,
+                Islem = HareketTipleri.Siparis,
+                IslemAciklama = $"{model.Yemek.YemekAdi} yemeğini [yemek tarihi:{model.Yemek.UretimZamani}] {model.YemekSayisi} kişilik sipariş verdiniz.",
+                MusteriId = musteriId,
+                CihazIp = _client.GetClientIp(),
+                CihazBrowserAnonId = _client.GetClientAnonId(),
+                CihazBrowser = _client.GetBrowser(_client.GetUserAgent(), _client.GetVersion())
+            }) ;
             return View(model);
         }
         [HttpPost]
@@ -116,6 +141,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         public ActionResult multipayment(List<string> selected)
         {
             if (selected == null) return null;
+
             List<Siparisler> result = new List<Siparisler>();
             foreach (var item in selected)
             {
@@ -158,13 +184,21 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
                         SonDortHane = result.LastFourDigits,
                     };
 
-                    _odeme.Insert(odeme);
-
+                    _odeme.Insert(odeme);                    
                     Siparisler siparis = _siparis.Find(siparisId);
                     siparis.OdemeId = odeme.OdemeId;
                     //siparis.Odeme = odeme;
                     _siparis.Update(siparis);
-                  
+                  _hareket.Insert(new MusteriGirisHareketleri()
+                    {
+                        IslemTarihi = DateTime.Now,
+                        Islem = HareketTipleri.Odeme,
+                        IslemAciklama = $"{siparis.Yemek.YemekAdi} yemeğin, {siparis.YemekSayisi} kişilik [sipariş tarihi:{siparis.SiparisTarihi}] siparişini [Kart:{odeme.KartTip} - {odeme.KartBinNumber}***{odeme.SonDortHane} kart bilgisi ile ödediniz.",
+                        MusteriId = siparis.MusteriId,
+                        CihazIp = _client.GetClientIp(),
+                        CihazBrowserAnonId = _client.GetClientAnonId(),
+                      CihazBrowser = _client.GetBrowser(_client.GetUserAgent(), _client.GetVersion())
+                  });
                     
                     _kasa.InsertSiparisOdeme(siparis);
                 }

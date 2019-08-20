@@ -1,0 +1,248 @@
+﻿@model IEnumerable<Ikra_Is_Yonetim.DAL.EntityFramework.Tables.MusteriGirisHareketleri>
+@{
+    ViewBag.Title = "Hareketlerim";
+    Layout = "~/Views/profile/profile_layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>
+                <div class="h4">Hareket Kayıtları Hakkında Kullanıcı Bildirimi</div>
+                
+                Görmüş olduğunuz kayıtlar,geçmişteki hareketlerinizi size sunmak ve gerektiğinde doğrulamak yapmak amacıyla tutulur.İkra Yemek A.Ş adına herhangi bir şahıs,kişi,kişiler bu verilere <strong><u>kesinlikle erişemez </u></strong> ve beraberinde, üzerinde herhangi <strong><u>bir işlem dahi yapamaz</u></strong>
+            </p>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-collapsed">
+                <div class="card-header text-primary font-weight-bold">
+                    <h3 class="card-title">Giriş Hareketleri</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse btn btn-pill btn-primary btn-sm" data-toggle="card-collapse">
+                            <i class="fe fe-chevron-up"></i>
+                            &nbsp; Göster
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+
+
+                        @foreach (var item in Model.Where(s => s.Islem == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.HareketTipleri.Giris).OrderByDescending(sa => sa.IslemTarihi))
+                        {
+                            <li class="list-group-item">
+                                @Html.DisplayFor(sa => item.CihazIp) - @Html.DisplayFor(sa => item.IslemAciklama) | <small class="text-muted small">
+                                    @Html.DisplayFor(sa => item.IslemTarihi)
+                                </small>
+                                <a href="#logid-@Html.DisplayFor(s=>item.Id)"
+                                   class="float-right btn btn-success btn-sm"
+                                   data-toggle="collapse"
+                                   data-target="#logid-@Html.DisplayFor(s=>item.Id)">
+                                    <i class="fe fe-more-horizontal"></i>
+                                    &nbsp;Detaylı Göster
+                                </a>
+                                <br />
+                                <div class="collapse mt-1 pt-1" id="logid-@Html.DisplayFor(s=>item.Id)">
+                                    <div class="card">
+                                        <div class=" card-body bg-gray-lightest mt-1">
+                                            @{
+                                                if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Chrome"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/chrome.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+                                                else if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Firefox"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/firefox.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+
+                                            }
+                                            <strong class="font-weight-bold">Cihaz Bilgisi :</strong>
+                                            <span class="font-weight-light">@Html.DisplayFor(s => item.CihazBrowser)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-collapsed">
+                <div class="card-header text-primary font-weight-bold">
+                    <h3 class="card-title">Şifre Değişiklik Hareketleri</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse btn btn-pill btn-primary btn-sm" data-toggle="card-collapse">
+                            <i class="fe fe-chevron-up"></i>
+                            &nbsp; Göster
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+
+
+                        @foreach (var item in Model.Where(s => s.Islem == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.HareketTipleri.Sifre_Degistirme).OrderByDescending(sa => sa.IslemTarihi))
+                        {
+                            <li class="list-group-item">
+                                @Html.DisplayFor(sa => item.CihazIp) - @Html.DisplayFor(sa => item.IslemAciklama) | <small class="text-muted small">
+                                    @Html.DisplayFor(sa => item.IslemTarihi)
+                                </small>
+                                <a href="#logid-@Html.DisplayFor(s=>item.Id)"
+                                   class="float-right btn btn-success btn-sm"
+                                   data-toggle="collapse"
+                                   data-target="#logid-@Html.DisplayFor(s=>item.Id)">
+                                    <i class="fe fe-more-horizontal"></i>
+                                    &nbsp;Detaylı Göster
+                                </a>
+                                <br />
+                                <div class="collapse mt-1 pt-1" id="logid-@Html.DisplayFor(s=>item.Id)">
+                                    <div class="card">
+                                        <div class=" card-body bg-gray-lightest mt-1">
+                                            @{
+                                                if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Chrome"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/chrome.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+                                                else if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Firefox"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/firefox.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+
+                                            }
+                                            <strong class="font-weight-bold">Cihaz Bilgisi :</strong>
+                                            <span class="font-weight-light">@Html.DisplayFor(s => item.CihazBrowser)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-collapsed">
+                <div class="card-header text-primary font-weight-bold">
+                    <h3 class="card-title">Sipariş Hareketleri</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse btn btn-pill btn-primary btn-sm" data-toggle="card-collapse">
+                            <i class="fe fe-chevron-up"></i>
+                            &nbsp; Göster
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+
+
+                        @foreach (var item in Model.Where(s => s.Islem == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.HareketTipleri.Siparis).OrderByDescending(sa => sa.IslemTarihi))
+                        {
+                            <li class="list-group-item">
+                                @Html.DisplayFor(sa => item.CihazIp) - @Html.DisplayFor(sa => item.IslemAciklama) | <small class="text-muted small">
+                                    @Html.DisplayFor(sa => item.IslemTarihi)
+                                </small>
+                                <a href="#logid-@Html.DisplayFor(s=>item.Id)"
+                                   class="float-right btn btn-success btn-sm"
+                                   data-toggle="collapse"
+                                   data-target="#logid-@Html.DisplayFor(s=>item.Id)">
+                                    <i class="fe fe-more-horizontal"></i>
+                                    &nbsp;Detaylı Göster
+                                </a>
+                                <br />
+                                <div class="collapse mt-1 pt-1" id="logid-@Html.DisplayFor(s=>item.Id)">
+                                    <div class="card">
+                                        <div class=" card-body bg-gray-lightest mt-1">
+                                            @{
+                                                if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Chrome"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/chrome.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+                                                else if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Firefox"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/firefox.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+
+                                            }
+                                            <strong class="font-weight-bold">Cihaz Bilgisi :</strong>
+                                            <span class="font-weight-light">@Html.DisplayFor(s => item.CihazBrowser)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-collapsed">
+                <div class="card-header text-primary font-weight-bold">
+                    <h3 class="card-title">Ödeme Hareketleri</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse btn btn-pill btn-primary btn-sm" data-toggle="card-collapse">
+                            <i class="fe fe-chevron-up"></i>
+                            &nbsp; Göster
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+
+
+                        @foreach (var item in Model.Where(s => s.Islem == Ikra_Is_Yonetim.DAL.EntityFramework.Tables.HareketTipleri.Odeme).OrderByDescending(sa => sa.IslemTarihi))
+                        {
+                            <li class="list-group-item">
+                                @Html.DisplayFor(sa => item.CihazIp) - @Html.DisplayFor(sa => item.IslemAciklama) | <small class="text-muted small">
+                                    @Html.DisplayFor(sa => item.IslemTarihi)
+                                </small>
+                                <a href="#logid-@Html.DisplayFor(s=>item.Id)"
+                                   class="float-right btn btn-success btn-sm"
+                                   data-toggle="collapse"
+                                   data-target="#logid-@Html.DisplayFor(s=>item.Id)">
+                                    <i class="fe fe-more-horizontal"></i>
+                                    &nbsp;Detaylı Göster
+                                </a>
+                                <br />
+                                <div class="collapse mt-1 pt-1" id="logid-@Html.DisplayFor(s=>item.Id)">
+                                    <div class="card">
+                                        <div class=" card-body bg-gray-lightest mt-1">
+                                            @{
+                                                if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Chrome"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/chrome.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+                                                else if (item.CihazBrowser != null && item.CihazBrowser.StartsWith("Firefox"))
+                                                {
+                                                    <img src="~/Content/assets/images/browsers/firefox.svg"
+                                                         alt="Bitcoin" class="w-6 h-6"><br />
+                                                }
+
+                                            }
+                                            <strong class="font-weight-bold">Cihaz Bilgisi :</strong>
+                                            <span class="font-weight-light">@Html.DisplayFor(s => item.CihazBrowser)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+

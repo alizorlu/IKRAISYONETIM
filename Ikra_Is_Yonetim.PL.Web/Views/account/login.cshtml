@@ -99,7 +99,7 @@
                                                     <div class="form-group">
                                                         <label class="form-label">Telefon Numaranız(*)</label>
                                                         <input type="tel"
-                                                               class="form-control" id="rephone" name="rephone" required
+                                                               class="form-control" id="rephone" name="rephone"
                                                                aria-describedby="emailHelp"
                                                                placeholder="0531XXXXXXX şeklinde 11 haneli giriniz">
                                                     </div>
@@ -149,12 +149,14 @@
                 dataType: "json",
                 success: function (data, status) {
                     $("#bildirimlbl").text("Sunucu yanıtı :"+data + "\n");
-                    console.log("DATA:" + data + "\nStatus:" + status);
+                    $("#modal_body").removeClass("active");
                 },
                 error: function (data, status) {
-                $("#bildirimlbl").text("Sunucu yanıtı :"+data + "\n");}
+                    $("#bildirimlbl").text("Sunucu yanıtı :" + data + "\n");
+                    $("#modal_body").removeClass("active");
+                }
             });
-            $("#modal_body").removeClass("active");
+            
         }
     });
 </script>

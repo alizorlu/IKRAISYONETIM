@@ -96,12 +96,12 @@
             this.avansYenileBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.maasGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.maasGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personellerList)).BeginInit();
             this.personellerList.SuspendLayout();
@@ -130,8 +130,8 @@
             this.menuStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             this.kryptonPage4.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maasGridView)).BeginInit();
+            this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -162,7 +162,7 @@
             this.toolStripMenuItem6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(61, 44);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(63, 44);
             this.toolStripMenuItem6.Text = "İzinler";
             this.toolStripMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -172,7 +172,7 @@
             this.toolStripMenuItem5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(73, 44);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(75, 44);
             this.toolStripMenuItem5.Text = "Maaşlar";
             this.toolStripMenuItem5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -182,14 +182,14 @@
             this.toolStripMenuItem2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(77, 44);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(79, 44);
             this.toolStripMenuItem2.Text = "Avanslar";
             this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem4.Text = "|";
             // 
             // yenileBtn
@@ -198,7 +198,7 @@
             this.yenileBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.yenileBtn.Name = "yenileBtn";
             this.yenileBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.yenileBtn.Size = new System.Drawing.Size(105, 44);
+            this.yenileBtn.Size = new System.Drawing.Size(107, 44);
             this.yenileBtn.Text = "Listeyi Yenile";
             this.yenileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.yenileBtn.Click += new System.EventHandler(this.yenileBtn_Click);
@@ -206,7 +206,7 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem3.Text = "|";
             // 
             // topSilBtn
@@ -215,7 +215,7 @@
             this.topSilBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.topSilBtn.Name = "topSilBtn";
             this.topSilBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.topSilBtn.Size = new System.Drawing.Size(78, 44);
+            this.topSilBtn.Size = new System.Drawing.Size(80, 44);
             this.topSilBtn.Text = "Kaydı Sil";
             this.topSilBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.topSilBtn.Click += new System.EventHandler(this.topSilBtn_Click);
@@ -226,7 +226,7 @@
             this.topDuzenleBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.topDuzenleBtn.Name = "topDuzenleBtn";
             this.topDuzenleBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.topDuzenleBtn.Size = new System.Drawing.Size(75, 44);
+            this.topDuzenleBtn.Size = new System.Drawing.Size(77, 44);
             this.topDuzenleBtn.Text = "Düzenle";
             this.topDuzenleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.topDuzenleBtn.Click += new System.EventHandler(this.topDuzenleBtn_Click);
@@ -237,7 +237,7 @@
             this.yeniPersonelBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.yeniPersonelBtn.Name = "yeniPersonelBtn";
             this.yeniPersonelBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.yeniPersonelBtn.Size = new System.Drawing.Size(107, 44);
+            this.yeniPersonelBtn.Size = new System.Drawing.Size(109, 44);
             this.yeniPersonelBtn.Text = "Yeni Personel";
             this.yeniPersonelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.yeniPersonelBtn.CheckStateChanged += new System.EventHandler(this.yeniPersonelBtn_CheckStateChanged);
@@ -250,7 +250,7 @@
             this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 44);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(130, 44);
             this.toolStripMenuItem1.Text = "Anasayfaya Dön";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -416,7 +416,7 @@
             this.avansTanimlaBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.avansTanimlaBtn.Location = new System.Drawing.Point(3, 143);
             this.avansTanimlaBtn.Name = "avansTanimlaBtn";
-            this.avansTanimlaBtn.Size = new System.Drawing.Size(366, 63);
+            this.avansTanimlaBtn.Size = new System.Drawing.Size(366, 84);
             this.avansTanimlaBtn.TabIndex = 23;
             this.avansTanimlaBtn.Values.Image = global::Ikra_Is_Yonetim.PL.Desktop.Properties.Resources.avans;
             this.avansTanimlaBtn.Values.Text = "Yeni avans tanımla";
@@ -586,7 +586,7 @@
             this.kryptonLabel7.Location = new System.Drawing.Point(3, 197);
             this.kryptonLabel7.Name = "kryptonLabel7";
             this.kryptonLabel7.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.kryptonLabel7.Size = new System.Drawing.Size(140, 96);
+            this.kryptonLabel7.Size = new System.Drawing.Size(140, 24);
             this.kryptonLabel7.TabIndex = 14;
             this.kryptonLabel7.Values.Text = "Diğer Bilgiler";
             // 
@@ -594,7 +594,7 @@
             // 
             this.kryptonRichTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personellerBindingSource, "DigerBilgiler", true));
             this.kryptonRichTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(149, 212);
+            this.kryptonRichTextBox1.Location = new System.Drawing.Point(149, 197);
             this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
             this.kryptonRichTextBox1.Size = new System.Drawing.Size(420, 81);
             this.kryptonRichTextBox1.TabIndex = 15;
@@ -723,7 +723,7 @@
             // 
             // duzenleBtn
             // 
-            this.duzenleBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "StokId", true));
+            this.duzenleBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "Id", true));
             this.duzenleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.duzenleBtn.Location = new System.Drawing.Point(3, 143);
             this.duzenleBtn.Name = "duzenleBtn";
@@ -735,7 +735,7 @@
             // 
             // silBtn
             // 
-            this.silBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "StokId", true));
+            this.silBtn.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.personellerBindingSource, "Id", true));
             this.silBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.silBtn.Location = new System.Drawing.Point(3, 73);
             this.silBtn.Name = "silBtn";
@@ -789,6 +789,7 @@
             this.izinlerGridView.Name = "izinlerGridView";
             this.izinlerGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.izinlerGridView.ReadOnly = true;
+            this.izinlerGridView.RowHeadersWidth = 51;
             this.izinlerGridView.RowTemplate.Height = 24;
             this.izinlerGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.izinlerGridView.Size = new System.Drawing.Size(1112, 335);
@@ -817,7 +818,7 @@
             this.izinYenileBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.izinYenileBtn.Name = "izinYenileBtn";
             this.izinYenileBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.izinYenileBtn.Size = new System.Drawing.Size(105, 44);
+            this.izinYenileBtn.Size = new System.Drawing.Size(107, 44);
             this.izinYenileBtn.Text = "Listeyi Yenile";
             this.izinYenileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.izinYenileBtn.Click += new System.EventHandler(this.izinYenileBtn_Click);
@@ -825,7 +826,7 @@
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem12.Text = "|";
             // 
             // izinSilBtn
@@ -835,7 +836,7 @@
             this.izinSilBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.izinSilBtn.Name = "izinSilBtn";
             this.izinSilBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.izinSilBtn.Size = new System.Drawing.Size(78, 44);
+            this.izinSilBtn.Size = new System.Drawing.Size(80, 44);
             this.izinSilBtn.Text = "Kaydı Sil";
             this.izinSilBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.izinSilBtn.Click += new System.EventHandler(this.izinSilBtn_Click);
@@ -843,7 +844,7 @@
             // toolStripMenuItem10
             // 
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem10.Text = "|";
             // 
             // kryptonPage5
@@ -873,6 +874,7 @@
             this.avansGridView.Name = "avansGridView";
             this.avansGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.avansGridView.ReadOnly = true;
+            this.avansGridView.RowHeadersWidth = 51;
             this.avansGridView.RowTemplate.Height = 24;
             this.avansGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.avansGridView.Size = new System.Drawing.Size(1112, 335);
@@ -898,7 +900,7 @@
             this.avansYenileBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.avansYenileBtn.Name = "avansYenileBtn";
             this.avansYenileBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.avansYenileBtn.Size = new System.Drawing.Size(105, 44);
+            this.avansYenileBtn.Size = new System.Drawing.Size(107, 44);
             this.avansYenileBtn.Text = "Listeyi Yenile";
             this.avansYenileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.avansYenileBtn.Click += new System.EventHandler(this.avansYenileBtn_Click);
@@ -906,7 +908,7 @@
             // toolStripMenuItem18
             // 
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem18.Text = "|";
             // 
             // kryptonPage4
@@ -922,6 +924,25 @@
             this.kryptonPage4.Text = "Maaşlar";
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "EDB81431DCFD4C46AAA0DC2CDBBEBCF5";
+            // 
+            // maasGridView
+            // 
+            this.maasGridView.AllowUserToAddRows = false;
+            this.maasGridView.AllowUserToDeleteRows = false;
+            this.maasGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.maasGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.maasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.maasGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maasGridView.Location = new System.Drawing.Point(0, 48);
+            this.maasGridView.MultiSelect = false;
+            this.maasGridView.Name = "maasGridView";
+            this.maasGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.maasGridView.ReadOnly = true;
+            this.maasGridView.RowHeadersWidth = 51;
+            this.maasGridView.RowTemplate.Height = 24;
+            this.maasGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.maasGridView.Size = new System.Drawing.Size(1112, 335);
+            this.maasGridView.TabIndex = 3;
             // 
             // menuStrip3
             // 
@@ -945,14 +966,14 @@
             this.toolStripMenuItem7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(105, 44);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(107, 44);
             this.toolStripMenuItem7.Text = "Listeyi Yenile";
             this.toolStripMenuItem7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem8.Text = "|";
             // 
             // toolStripMenuItem9
@@ -961,33 +982,15 @@
             this.toolStripMenuItem9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(78, 44);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(80, 44);
             this.toolStripMenuItem9.Text = "Kaydı Sil";
             this.toolStripMenuItem9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripMenuItem14
             // 
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(25, 44);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(27, 44);
             this.toolStripMenuItem14.Text = "|";
-            // 
-            // maasGridView
-            // 
-            this.maasGridView.AllowUserToAddRows = false;
-            this.maasGridView.AllowUserToDeleteRows = false;
-            this.maasGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.maasGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.maasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.maasGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.maasGridView.Location = new System.Drawing.Point(0, 48);
-            this.maasGridView.MultiSelect = false;
-            this.maasGridView.Name = "maasGridView";
-            this.maasGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.maasGridView.ReadOnly = true;
-            this.maasGridView.RowTemplate.Height = 24;
-            this.maasGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.maasGridView.Size = new System.Drawing.Size(1112, 335);
-            this.maasGridView.TabIndex = 3;
             // 
             // frmPersonellerList
             // 
@@ -1039,9 +1042,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             this.kryptonPage4.ResumeLayout(false);
             this.kryptonPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maasGridView)).EndInit();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maasGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

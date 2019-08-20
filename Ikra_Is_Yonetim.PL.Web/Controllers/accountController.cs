@@ -1,6 +1,9 @@
 ﻿using Ikra_Is_Yonetim._3rdApp.SmsManager;
 using Ikra_Is_Yonetim.BL.CarilerManager;
+using Ikra_Is_Yonetim.BL.MusteriHareketlerManager;
 using Ikra_Is_Yonetim.BL.Ninject;
+using Ikra_Is_Yonetim.DAL.EntityFramework.Tables;
+using Ikra_Is_Yonetim.Utilities.ClientManager;
 using Ikra_Is_Yonetim.Utilities.HashManager;
 using Ninject;
 using System;
@@ -21,8 +24,22 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         private static readonly object _cariLock = new object();
         private ISMSManager _sms;
         private static readonly object _smsLock = new object();
+        private IMusteriHareketManager _hareket;
+        private static readonly object _hareketLock = new object();
+        private IClientManager _client;
+        private static readonly object _clientLock = new object();
         public accountController()
         {
+            #region Cihaz Hareketleri İçin Kullanılan Modüller
+            lock (_hareketLock)
+            {
+                if (_hareket == null) _hareket = kernel.Get<IMusteriHareketManager>();
+            }
+            lock (_clientLock)
+            {
+                if (_client == null) _client = kernel.Get<IClientManager>();
+            }
+            #endregion
             lock (_hashLock)
             {
                 if (_hash == null) _hash = kernel.Get<IHashManager>();
@@ -59,6 +76,16 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
                 else
                 {
                     FormsAuthentication.SetAuthCookie(result.Id.ToString(), false);
+                    _hareket.Insert(new MusteriGirisHareketleri()
+                    {
+                        IslemTarihi = DateTime.Now,
+                        Islem = HareketTipleri.Giris,
+                        IslemAciklama = "Giriş yaptınız.",
+                        MusteriId = result.Id,
+                        CihazIp = _client.GetClientIp(),
+                        CihazBrowserAnonId = _client.GetClientAnonId(),
+                        CihazBrowser=_client.GetBrowser(_client.GetUserAgent(),_client.GetVersion())
+                    });
                     return RedirectToAction("index", "home");
                 }
             }
@@ -66,7 +93,7 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
         }
         public ActionResult logout()
         {
-            FormsAuthentication.SignOut();
+            FormsAuthentication.SignOut();            
             return RedirectToAction("login", "account");
         }
 
@@ -102,10 +129,31 @@ namespace Ikra_Is_Yonetim.PL.Web.Controllers
             });
             if (isSended == true)
             {
+                _hareket.Insert(new MusteriGirisHareketleri()
+                {
+                    IslemTarihi = DateTime.Now,
+                    Islem = HareketTipleri.Sifre_Degistirme,
+                    IslemAciklama = "Şifrenizi unuttuğunuz için talebiniz doğrultusunda yeni şifre verildi.",
+                    MusteriId = result.Id,
+                    CihazIp = _client.GetClientIp(),
+                    CihazBrowserAnonId = _client.GetClientAnonId(),
+                    CihazBrowser = _client.GetBrowser(_client.GetUserAgent(), _client.GetVersion())
+                });
                 return Json("Yeni şifre telefon numaranıza gönderildi.", JsonRequestBehavior.AllowGet);
+
             }
             else
             {
+                _hareket.Insert(new MusteriGirisHareketleri()
+                {
+                    IslemTarihi = DateTime.Now,
+                    Islem = HareketTipleri.Sifre_Degistirme,
+                    IslemAciklama = "Şifrenizi unuttuğunuz için talebiniz doğrultusunda yeni şifre verildi.",
+                    MusteriId = result.Id,
+                    CihazIp = _client.GetClientIp(),
+                    CihazBrowserAnonId = _client.GetClientAnonId(),
+                    CihazBrowser = _client.GetBrowser(_client.GetUserAgent(), _client.GetVersion())
+                });
                 return Json("Yeni şifreni oluşturduk fakat SMS hizmetimizde bir sorun oluştuğu için sms gönderemedik.Lütfen bizimle iletişime geçiniz.", JsonRequestBehavior.AllowGet);
             }
            

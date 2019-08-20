@@ -79,9 +79,11 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="text-center">
-                                                <button class="btn btn-sm btn-primary btn-pill">
+                                                <a 
+                                                   target="_blank"
+                                                   href="/profile/createinvoice/@Html.DisplayFor(s=>item.Id)" class="btn btn-sm btn-primary btn-pill">
                                                     Fatura
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -124,7 +126,7 @@
                                         if (resultOdeme != null)
                                         {
                                             odeme = resultOdeme.
-                                           Sum(s => s.Musteri.GunlukYemekFiyati * s.YemekSayisi);
+                                           Sum(s => decimal.Parse(s.Odeme.OdemeTutari));
                                         }
 
                                     }

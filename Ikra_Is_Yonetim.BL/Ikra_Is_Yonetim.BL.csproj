@@ -81,6 +81,7 @@
     <Compile Include="KullaniciManager\KullanicilarsManager.cs" />
     <Compile Include="MaasManager\MaasManager.cs" />
     <Compile Include="MalzemeManager\MalzemeManager.cs" />
+    <Compile Include="MusteriHareketlerManager\MusteriHareketManager.cs" />
     <Compile Include="Ninject\NinjectBindings.cs" />
     <Compile Include="Ninject\SingletonKernelManager.cs" />
     <Compile Include="OdemeManager\OdemeManager.cs" />
